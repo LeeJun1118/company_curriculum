@@ -5,10 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEB - CSS</title>
-    <style>
+    <style>/*id > 클래스 > 태그 선택자 순으로 강함
+            전부다 같은 클래스 선택자라면 가장 마지막에 나오는 선택자가 우선 순위가 높다*/
+        /*태그 선택자 : . */
         a{
             color: black;
             text-decoration: none;
+        }
+
+        /*클래스 선택자 : . */
+        .saw{
+            color: gray;
+        }
+
+        /*id선택자 : # */
+         #active{ 
+            color: red;
         }
         h1{
             font-size: 50px;
@@ -19,9 +31,8 @@
 <body>
     <h1><a href="index.html">WEB</a></h1>
     <ol>
-        <li><a href="1_1.html">HTML</a></li>
-        <li><a href="1_2.html"
-            style="color: red; text-decoration: underline;">CSS</a></li>
+        <li><a href="1_1.html" class="saw">HTML</a></li>
+        <li><a href="1_2.html" class="saw" id="active">CSS</a></li>
         <li><a href="1_3.html">JavaScript</a></li>
     </ol>
 
