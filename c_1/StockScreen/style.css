@@ -1,0 +1,18 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 1150px;
+}
+li { float: left; }
+li a{
+    padding : 2px 5px 2px;
+    background-color: #f1f1f1;
+    border-left: white solid 1px;
+    border-right: white solid 1px;
+}
+
+li a.current {
+    background-color: #606060;
+    color: white;
+}
