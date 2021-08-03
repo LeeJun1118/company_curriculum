@@ -11,13 +11,16 @@ ul {
 
 
 }
-ul a{
-    border-bottom: solid white 1px;
-}
-
 
 /* 상단바 관심종목부터 왼쪽에서 정렬 */
 li { float: left; }
+/* float 한 다음에는 clear both를 해제해야함 : clear both를 부여할 가짜
+요소를 만들어준다. container안에 실제로 없는 마지막 박스를 만들고 부여함 */
+/* #container:after{
+    content:"";
+    display: block;
+    clear: both;
+} */
 
 /* 상단바 기본 스타일*/
 li a{
@@ -37,10 +40,10 @@ li a.current {
     border-top: 1.5px solid orange;
     border-left: 1px solid orange;
     border-right: 1px solid orange;
-    border-bottom: white;
+    /* border-bottom: white; */
 }
 
-.button {
+.nextButton {
       float: right;
       font-size:1px;
       color: rgb(143, 143, 143);
@@ -55,10 +58,15 @@ li a.current {
 .left-box {
     position: absolute;
     top: 0; left: 0;
-    background: red;
+    background: white;
   }
   .right-box {
     position: absolute;
     top: 0; left: 770px;
     background: blue;
+  }
+
+  .middle{
+      display: block;
+      width: 755px;
   }
