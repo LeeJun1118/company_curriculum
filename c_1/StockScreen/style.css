@@ -15,6 +15,7 @@ ul a{
     border-bottom: solid white 1px;
 }
 
+
 /* 상단바 관심종목부터 왼쪽에서 정렬 */
 li { float: left; }
 
@@ -58,6 +59,6 @@ li a.current {
   }
   .right-box {
     position: absolute;
-    top: 0; right: 0;
+    top: 0; left: 770px;
     background: blue;
   }
