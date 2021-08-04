@@ -77,5 +77,14 @@ li a.current {
 
 .middleBar{
       display: block;
-      width: 755px;
-  }
+      background-color: #f1f1f1; /*바탕색*/
+      border-top: 10px solid white;
+      border-bottom: 10px solid white;
+ }
+ .middleBar.left{
+    width: 755px;
+ }
+ }
+ .middleBar.right{
+    width: 380px;
+ }
