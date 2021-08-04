@@ -2,14 +2,18 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 755px;
+    /* width: 755px; */
     
     
     display: block;
     border-bottom: solid orange 1px;
     position: absolute;
-
-
+}
+ul.left{
+    width: 755px;
+}
+ul.right{
+    width: 380px;
 }
 
 /* 상단바 관심종목부터 왼쪽에서 정렬 */
@@ -63,14 +67,15 @@ li a.current {
     position: absolute;
     top: 0; left: 0;
     background: white;
+
   }
 .right-box {
     position: absolute;
     top: 0; left: 770px;
-    background: blue;
+    width: 380px;
   }
 
-.middle{
+.middleBar{
       display: block;
       width: 755px;
   }
