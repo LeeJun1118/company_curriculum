@@ -46,7 +46,7 @@ li a.current {
     border-right: 1px solid orange;
     border-bottom: 1px solid white;
 }
-
+/* 버튼 */
 /* 이전/다음 버튼 */
 .nextButton {
       float: right;
@@ -57,7 +57,33 @@ li a.current {
       border  : 1px solid rgb(190, 190, 190);
       margin : 3px;
 }
+/* 조회 버튼 */
+.lookupButton{
+    float: right;
+    font-size: 10px;
+    font-weight: 900;
+    background-color: sandybrown;
+    border  : 1px solid rgb(190, 190, 190);
+    margin : 3px;
+    width : 30px;
+}
+.button{
+    border: 0px;
+    color: gray;
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 5px;
+    margin : 0;
+}
+.buttonRegist{
+    width: 68px;
+    border: 1px solid rgb(150, 150, 150);
+    font-weight: 900;
+    padding-left: 2px;
+    padding-right: 2px;
 
+}
 
 /* 4개 박스로 나누기 */
 .wrap-box{
@@ -83,8 +109,8 @@ li a.current {
       background-color: #f1f1f1; /*바탕색*/
       /* border-top: 10px solid white;
       border-bottom: 10px solid white; */
-      height: 18px;
-      border: 1px solid rgb(230, 230, 230);
+      height: 22px;
+      border: 1px solid rgb(216, 216, 216);
       margin: 5px 0px 5px;
       font-size: 5px;
       font-weight: 900;
@@ -97,10 +123,15 @@ li a.current {
     width: 380px;
  }
 
+ /* 드롭다운 박스 */
  select{
-     width: 120px;
      height: 16px;
+     width: 50px;
      color: rgb(141, 141, 141);
      font-size: 10px;
      font-weight: 600;
+     margin: 0px;
+ }
+ select.interest{
+    width: 130px;
  }
