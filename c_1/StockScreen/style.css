@@ -2,19 +2,23 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    /* width: 755px; */
-    
-    
+}
+.nav{
     display: block;
     border-bottom: solid orange 1px;
     position: absolute;
 }
-ul.left{
-    width: 755px;
-}
-ul.right{
+.right{
     width: 380px;
 }
+
+.list_nav{
+    float:left;
+    line-height: 10px;
+    font-weight: 900;
+}
+
+
 
 /* 상단바 관심종목부터 왼쪽에서 정렬 */
 li { float: left; }
@@ -27,21 +31,33 @@ li { float: left; }
 } */
 
 /* 상단바 기본 스타일*/
-li a{
+.top_nav{
+    float: left;
+    height: 19px;
+    font-weight: 900;
+    color: rgb(90, 90, 90); /* 글자색 */
+    border-bottom: 1px solid orange;
+    margin: 0;
+}
+.nav_btn{
     padding : 2px 10px 2px;
-    font-size: 5px;
+    font-size: 11px;
     font-weight: 900;
     color: rgb(90, 90, 90); /* 글자색 */
     background-color: #f1f1f1; /*바탕색*/
     border: rgb(195, 193, 193) solid 1px;
-    border-bottom: white;
+}
+.next{
+}
+.previous_btn{
+    margin-left: 150px;
 }
 
 /* 상단바 클릭했을 때 나타나는 스타일*/
-li a.current {
+.current {
     background-color: white;
     color: black;
-    border-top: 1.5px solid orange;
+    border-top: 1px solid orange;
     border-left: 1px solid orange;
     border-right: 1px solid orange;
     border-bottom: 1px solid white;
@@ -49,13 +65,9 @@ li a.current {
 /* 버튼 */
 /* 이전/다음 버튼 */
 .nextButton {
-      float: right;
       font-size:1px;
       color: rgb(143, 143, 143);
-      background-color: rgb(230, 230, 230);
-      /* padding: 2px; */
-      border  : 1px solid rgb(190, 190, 190);
-      margin : 3px;
+      padding: 1px;
 }
 /* 조회 버튼 */
 .lookupButton{
@@ -93,7 +105,6 @@ li a.current {
 .left-box {
     position: absolute;
     top: 0; left: 0;
-    background: white;
     width: 755px;
 
   }
@@ -102,6 +113,22 @@ li a.current {
     top: 0; left: 770px;
     width: 380px;
   }
+
+  /* 상단바 스타일 지정 */
+#bar_top{
+    height: 20px;
+    padding: 0;
+    margin-bottom: 3px;
+}
+/* 중간바 스타일 2 */
+#bar_middle{
+    height: 24px;
+    padding: 0;
+    margin: 0;
+}
+.interest{
+    width: 755px;
+}
 
   /* 중간바 스타일 지정 */
 .middleBar{
