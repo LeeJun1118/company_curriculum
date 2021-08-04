@@ -40,7 +40,7 @@ li a.current {
     border-top: 1.5px solid orange;
     border-left: 1px solid orange;
     border-right: 1px solid orange;
-    /* border-bottom: white; */
+    border-bottom: 1px solid white;
 }
 
 .nextButton {
@@ -54,19 +54,23 @@ li a.current {
 }
 
 
-/* 세로 나누기 */
+/* 나누기 */
+.wrap-box{
+    position : absolute;
+    width : 1150px;
+}
 .left-box {
     position: absolute;
     top: 0; left: 0;
     background: white;
   }
-  .right-box {
+.right-box {
     position: absolute;
     top: 0; left: 770px;
     background: blue;
   }
 
-  .middle{
+.middle{
       display: block;
       width: 755px;
   }
