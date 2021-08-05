@@ -21,7 +21,14 @@ ul {
 
 
 /* 상단바 관심종목부터 왼쪽에서 정렬 */
-li { float: left; }
+.horizontal_left{ 
+    float: left;
+    padding-left: 3px;
+}
+.horizontal_right{
+    float: right;
+
+}
 /* float 한 다음에는 clear both를 해제해야함 : clear both를 부여할 가짜
 요소를 만들어준다. container안에 실제로 없는 마지막 박스를 만들고 부여함 */
 /* #container:after{
@@ -35,9 +42,11 @@ li { float: left; }
     float: left;
     height: 19px;
     font-weight: 900;
-    color: rgb(90, 90, 90); /* 글자색 */
-    border-bottom: 1px solid orange;
     margin: 0;
+    padding-bottom: 1px;
+}
+.rightBtn{
+    float: right;
 }
 .nav_btn{
     padding : 2px 10px 2px;
@@ -46,11 +55,16 @@ li { float: left; }
     color: rgb(90, 90, 90); /* 글자색 */
     background-color: #f1f1f1; /*바탕색*/
     border: rgb(195, 193, 193) solid 1px;
+    border-bottom: 1px solid orange;
 }
 .next{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    float: right;
 }
 .previous_btn{
-    margin-left: 150px;
+    margin-left: 223px;
 }
 
 /* 상단바 클릭했을 때 나타나는 스타일*/
@@ -72,28 +86,26 @@ li { float: left; }
 /* 조회 버튼 */
 .lookupButton{
     float: right;
-    font-size: 10px;
     font-weight: 900;
-    background-color: sandybrown;
-    border  : 1px solid rgb(190, 190, 190);
-    margin : 3px;
-    width : 30px;
+    padding: 0;
+    background-color: rgb(247, 195, 99);
+    margin : 3px 5px 5px 3px;
+    width : 36px;
+    color: black;
+    border: 1px solid rgb(140, 140, 140);
 }
 .button{
-    border: 0px;
-    color: gray;
     padding: 1px;
-    text-align: center;
-    text-decoration: none;
     font-size: 5px;
-    margin : 0;
 }
 .buttonRegist{
     width: 68px;
+    color: gray;
     border: 1px solid rgb(150, 150, 150);
     font-weight: 900;
     padding-left: 2px;
     padding-right: 2px;
+    margin-right: 15px;
 
 }
 
@@ -106,28 +118,44 @@ li { float: left; }
     position: absolute;
     top: 0; left: 0;
     width: 755px;
+    height: 800px;
 
   }
 .right-box {
     position: absolute;
     top: 0; left: 770px;
     width: 380px;
+    height: 800px;
   }
+.top{
+    height: 500px;
+}
 
   /* 상단바 스타일 지정 */
 #bar_top{
     height: 20px;
     padding: 0;
     margin-bottom: 3px;
+    border-bottom: 1px solid orange;
 }
 /* 중간바 스타일 2 */
 #bar_middle{
-    height: 24px;
+    height: 36px;
     padding: 0;
-    margin: 0;
+    margin: 1px;
 }
 .interest{
     width: 755px;
+    background-color: #f1f1f1;
+    height: 26px;
+    line-height: 15px;
+}
+
+.right_middlebar{
+    width: 380px;
+    background-color: #f1f1f1;
+    height: 26px;
+    line-height: 15px;
 }
 
   /* 중간바 스타일 지정 */
@@ -153,12 +181,22 @@ li { float: left; }
  /* 드롭다운 박스 */
  select{
      height: 16px;
-     width: 50px;
      color: rgb(141, 141, 141);
      font-size: 10px;
      font-weight: 600;
      margin: 0px;
  }
- select.interest{
-    width: 130px;
+ .drop_down{
+    width: 140px;
+ }
+ .hoga{
+     width: 60px;
+ }
+
+ .bord_word{
+     font-weight: 900;
+     font-size: 11px;
+     padding-left: 10px;
+     padding-right:8px;
+     padding-top: 3px;
  }
