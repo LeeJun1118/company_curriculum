@@ -395,6 +395,8 @@ ul {
  }
 .dis_flex{
      display: flex;
+     margin-top: -1px;
+     margin-right: 1px;
  }
 
  .edge_left{
