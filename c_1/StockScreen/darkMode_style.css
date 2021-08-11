@@ -120,14 +120,30 @@ ul {
 }
 /* 버튼 */
 /* 이전/다음 버튼 */
-#nextButton {
-      font-size:1px;
-      color: rgb(143, 143, 143);
-      padding: 2px;
-      height: 20px;
-      display: block;
-      border: 1px solid black;
-      background-color: #474a53;
+.nextButton {
+    font-size: 1px;
+    color: rgb(143, 143, 143);
+    padding: 2px;
+    height: 20px;
+    display: block;
+    border: 1px solid black;
+    background-color: rgb(94, 95, 113);
+    width: 20px;
+    margin-top: 4px;
+    box-shadow: -3px 5px 4px rgb(67, 69, 77) inset;
+}
+
+.nextButton2 {
+    font-size: 1px;
+    color: rgb(143, 143, 143);
+    padding: 2px;
+    height: 20px;
+    display: block;
+    border: 1px solid black;
+    background-color: rgb(67, 69, 77);
+    width: 20px;
+    margin-top: 4px;
+    box-shadow: -4px 4px 7px rgb(94, 95, 113) inset;
 }
 
 .nextPage {

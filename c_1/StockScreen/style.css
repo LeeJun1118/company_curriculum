@@ -117,7 +117,7 @@ ul {
 }
 /* 버튼 */
 /* 이전/다음 버튼 */
-#nextButton {
+.nextButton {
       font-size:1px;
       color: rgb(129, 129, 129);
       padding: 0px 0px 2px 0px;
