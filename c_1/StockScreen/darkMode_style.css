@@ -520,6 +520,7 @@ ul {
     border-right: 1px solid black;
     margin: 20px 10px;
     box-shadow: 2px 2px 2px rgb(97 100 117) inset;
+    border-bottom: 1px solid rgb(46, 50, 59);
   }
   table.type20 tbody th {
     text-align: right;
@@ -618,6 +619,7 @@ ul {
     border: 1px solid rgb(62, 68, 77);
     margin: 20px 10px;
     box-shadow: 1px 1px 3px rgb(97, 100, 117) inset;
+    border-bottom: 1px solid rgb(46, 50, 59);
   }
   table.type10 tbody th {
     text-align: left;
