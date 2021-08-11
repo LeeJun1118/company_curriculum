@@ -516,6 +516,13 @@ ul {
 
 
  /* 테이블 */
+
+ table#small_table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
  table.type20 {
     border-collapse: collapse;
     text-align: right;

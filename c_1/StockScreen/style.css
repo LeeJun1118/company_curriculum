@@ -458,22 +458,29 @@ option{
     margin-top: 4px;
   }
 
-
-
-table.small_table{
+table#small_table{
+    width: 100%;
     border-collapse: collapse;
-    text-align: center;
-    vertical-align: bottom;
-    width: 70px;
-    height: 50px;
+    text-align: right;
 }
 
-table.small_table td{
-    border-collapse: collapse;
-    text-align: center;
-    vertical-align: bottom;
+table#small_table thead th{
+    border : 1px solid black;
 }
 
+table#small_table tbody th{
+    border-collapse: collapse;
+    text-align: center;
+    border: 0;
+}
+table#small_table td{
+    width: 52%;
+    border :0;
+}
+
+/* .t_center{
+    margin-right: 10px;
+} */
 
 
  /* 테이블 */
@@ -484,7 +491,7 @@ table.small_table td{
     border-top: 1px solid #ccc;
     margin-top: 3px;
   }
-
+  
   table.type20 thead th {
     width: 150px;
     padding: 1px 10px 1px 10px;
@@ -504,19 +511,16 @@ table.small_table td{
     border-right: 1px solid rgb(218, 218, 218);
     /* border-bottom: 1px solid rgb(218, 218, 218);
     border-top: 1px solid rgb(218, 218, 218); */
-    padding-right: 1px;
+    /* padding-right: 1px; */
     /* width: 150px;
     padding: 10px; */
   }
   table.type20 td {
-    /* width: 350px; */
     padding: 1px;
     font-size: 12px;
     border-right: 1px solid rgb(218, 218, 218);
     color: rgb(92, 92, 92);
     font-weight: 900;
-    /* border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc; */
   }
   .back_gray{
       background-color: #f1f1f1;

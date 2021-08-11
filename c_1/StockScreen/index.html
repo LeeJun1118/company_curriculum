@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Stock Screen</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="darkMode_style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="darkMode_style.css"> -->
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
 <body>
@@ -401,22 +401,57 @@
                   <th scope="cols">매수증감</th>
                 </tr>
                 </thead>
+
                 <tbody>
+
                 <tr>
                   <th scope="row" class="back_blue1">0</th>
+                  
                   <td class="back_blue1"><span>74,872</span></td>
                   <td class="back_blue1"><span class="up">74,600</span></td>
-                  <td id="text_center"><div class="back_gray2"><span>상한</span></div></td>
-                  <td><span class="up">84,800</span></td>
-        
+                  <td rowspan="5" colspan="2">
+                    <table id="small_table">
+                        <tr>
+                            <td id="text_center" scope="row"><div class="back_gray2"><span>상한</span></div></td>
+                            <td><span class="up">84,800</span></td>
+                        </tr>
+
+                        <tr>
+                            <td id="text_center" scope="row"><div class="back_gray2"><span>하한</span></div></td>
+                            <td><span class="down">62,800</span></td>
+                        </tr>
+
+                        <tr>
+                            <td id="text_center" scope="row"><div class="back_gray2"><span>시가</span></div></td>
+                            <td><span class="up">74,100</span></td>
+                        </tr>
+
+                        <tr>
+                            <td id="text_center" scope="row"><div class="back_gray2"><span>고가</span></div></td>
+                            <td><span class="up">74,900</span></td>
+                        </tr>
+
+                        <tr>
+                            <td id="text_center" scope="row"><div class="back_gray2"><span>저가</span></div></td>
+                            <td><span class="up">74,100</span></td>
+                        </tr>
+
+
+                    </table>
+                </td> 
+                    
+                  <!-- <td id="text_center"><div class="back_gray2"><span>상한</span></div></td>
+                  <td><span class="up">84,800</span></td> -->
                 </tr>
 
                 <tr>
                     <th scope="row" class="back_blue2">0</th>
                     <td class="back_blue2"><span>8,066</span></td>
+                    
+                    </td>
                     <td class="back_blue2"><span class="up">74,500</span></td>
-                    <td id="text_center"><div class="back_gray2"><span>하한</span></div></td>
-                    <td><span class="down">62,800</span></td>
+                    <!-- <td id="text_center"><div class="back_gray2"><span>하한</span></div></td>
+                    <td><span class="down">62,800</span></td> -->
                    
                 </tr>
 
@@ -424,16 +459,16 @@
                     <th scope="row" class="back_blue3">0</th>
                     <td class="back_blue3"><span>4,414</span></td>
                     <td class="back_blue3"><span class="up">74,400</span></td>
-                    <td id="text_center"><div class="back_gray2"><span>시가</span></div></td>
-                    <td><span class="up">74,100</span></td>
+                    <!-- <td id="text_center"><div class="back_gray2"><span>시가</span></div></td>
+                    <td><span class="up">74,100</span></td> -->
                 </tr>
 
                 <tr>
                     <th scope="row" class="back_blue4">0</th>
                     <td class="back_blue4"><span>856</span></td>
                     <td class="back_blue4"><span class="up">74,300</span></td>
-                    <td id="text_center"><div class="back_gray2"><span>고가</span></div></td>
-                    <td><span class="up">74,900</span></td>
+                    <!-- <td id="text_center"><div class="back_gray2"><span>고가</span></div></td>
+                    <td><span class="up">74,900</span></td> -->
                    
                 </tr>
 
@@ -441,34 +476,32 @@
                     <th scope="row" class="back_blue5">0</th>
                     <td class="back_blue5"><span>1,058</span></td>
                     <td class="back_blue5"><span class="up">74,200</span></td>
-                    <td id="text_center"><div class="back_gray2"><span>저가</span></div></td>
-                    <td><span class="up">74,100</span></td>
+                    
+                    <!-- <td id="text_center"><div class="back_gray2"><span>저가</span></div></td>
+                    <td><span class="up">74,100</span></td> -->
                 </tr>
 
-
-
+                
                  
                 <tr>
-                    <td rowspan="6" colspan="2">
-                        <table class="small_table">
+                    <td rowspan="4" colspan="2">
+                        <table id="small_table">
                             <tr>
                                 <th id="text_center" scope="row"><div class="back_gray2"><span>액면가</span></div></th>
-                                <td>5,000</td>
+                                <td><span class="t_center">5,000</span></td>
                             </tr>
 
                             <tr>
                                 <th id="text_center" scope="row"><div class="back_gray2"><span>PER</span></div></th>
-                                <td>9.04</td>
+                                <td><span class="t_center">9.04</span></td>
                             </tr>
 
                             <tr>
                                 <th id="text_center" scope="row"><div class="back_gray2"><span>자본금</span></div></th>
-                                <td>5,827 억</td>
+                                <td><span class="t_center">5,827 억</span></td>
                             </tr>
                         </table>
                     </td>
-
-                    
                 </tr>
                
                 
@@ -476,6 +509,8 @@
                 
 
                 <tr>
+                    <!-- <th id="text_center" scope="row" ><div class="back_gray2"><span>액면가</span></div></th>
+                    <td>5,000</td> -->
                     <td id ="back_red"><span >74,100</span></td>
                     <td id="text_center" class="back_red2">3,103</td>
                     <td class="back_red2">-1</td>
@@ -484,6 +519,8 @@
                   </tr>
   
                   <tr>
+                      <!-- <th id="text_center" scope="row"><div class="back_gray2"><span>PER</span></div></th>
+                      <td>9.04</td> -->
                       <td class="back_red3"><span class="up">74,000</span></td>
                       <td id="text_center" class="back_red3">2,324</td>
                       <td class="back_red3">0</td>
@@ -491,12 +528,17 @@
                   </tr>
   
                   <tr>
+                      <!-- <th id="text_center" scope="row"><div class="back_gray2"><span>자본금</span></div></th>
+                      <td>5,827 억</td> -->
                       <td class="back_red5"><span class="up">73,900</span></td>
                       <td id="text_center" class="back_red5">1,717</td>
                       <td class="back_red5">0</td>
                   </tr>
   
                   <tr>
+                      <td colspan="2"></td>
+                      <!-- <td></td>
+                      <td></td> -->
                       <td class="back_red6">74,800</td>
                       <td id="text_center" class="back_red6">2,943</td>
                       <td class="back_red6">0</td>
@@ -504,9 +546,13 @@
                   </tr>
   
                   <tr>
+                    <td colspan="2"></td>
+                      <!-- <td></td>
+                      <td></td> -->
                       <td class="back_red7"><span class="down">73,700</span></td>
                       <td id="text_center" class="back_red7"><span>1,044</span></td>
                       <td  class="back_red7">0</td>
+                      <td></td>
                   </tr>
 
                   <tr class="back_gray">
