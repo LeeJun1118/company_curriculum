@@ -514,6 +514,30 @@ ul {
     margin-top: 4px;
   }
 
+table#small_table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+table#small_table thead th{
+    border : 1px solid black;
+}
+
+table#small_table tbody th{
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid black;
+}
+table#small_table td{
+    width: 52%;
+    border : 1px solid black;
+}
+
+/* .t_center{
+    margin-right: 10px;
+} */
+
 
  /* 테이블 */
 
