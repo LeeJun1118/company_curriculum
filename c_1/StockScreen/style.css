@@ -458,6 +458,12 @@ option{
     margin-top: 4px;
   }
 
+  .pos_right{
+      position: relative;
+      right: 7px
+  }
+
+
 table#small_table{
     width: 100%;
     border-collapse: collapse;

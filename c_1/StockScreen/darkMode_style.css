@@ -534,19 +534,18 @@ table#small_table td{
     border : 1px solid black;
 }
 
+
+.pos_right{
+    position: relative;
+    right: 7px
+}
+
 /* .t_center{
     margin-right: 10px;
 } */
 
 
  /* 테이블 */
-
- table#small_table{
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-}
-
  table.type20 {
     border-collapse: collapse;
     text-align: right;
