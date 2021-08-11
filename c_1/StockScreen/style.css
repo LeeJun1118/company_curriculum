@@ -403,14 +403,13 @@ option{
 
  .drop_down3 {
     width: 90px;
-    margin-top: 4px;
+    margin-top: 3px;
     margin-right: 3px;
-    margin-left: -2px;
+    margin-left: -3px;
 }
 
  .drop_down4 {
     width: 65px;
-    margin-top: 4px;
     margin-right: 3px;
 }
 .drop_down5 {
@@ -443,12 +442,21 @@ option{
      font-weight: 900;
      font-size: 12px;
      padding-left: 10px;
-     padding-right: 6px;
-     padding-top: 3px;
-     margin-top: 3px;
+     padding-right: 4px;
+     padding-top: 1px;
+     margin-top: 7px;
      color: rgb(96, 77, 66);
  }
 
+ .bord_word6{
+    font-weight: 900;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-top: 1px;
+    margin-top: 3px;
+    color: rgb(96, 77, 66);
+}
  #big_middleBar{
     display: block;
     margin-top: 4px;
@@ -458,11 +466,18 @@ option{
     margin-top: 4px;
   }
 
+  .pos_left{
+      position: relative;
+      left: 4px
+  }
   .pos_right{
       position: relative;
       right: 7px
   }
 
+  #item_name{
+      width: 16%;
+  }
 
 table#small_table{
     width: 100%;
@@ -659,7 +674,7 @@ table#small_table td{
 .searchIcon{
     color: rgb(70, 70, 70);
     font-size: 13px;
-    margin-top: 4px;
+    margin-top: 3px;
     margin-left: 3px;
     background-color: rgb(217, 217, 217);
     border: 1px solid rgb(186, 186, 186);
@@ -689,7 +704,7 @@ table#small_table td{
     padding: 3px 3px 3px 3px;
     color: white;
     font-size: 10px;
-    margin-top: 3px;
+    margin-top: 2px;
     margin-left: 2px;
     background-color: rgb(236, 93, 3);
     border: 1px solid rgb(218, 218, 218);
@@ -701,17 +716,17 @@ table#small_table td{
     color: rgb(82, 82, 82);
     font-size: 11px;
     font-weight: 800;
-    margin-top: 2px;
+    margin-top: 1px;
     margin-left: 5px;
     background-color: rgb(230, 230, 230);
 }
 .hyundae2{
-    padding: 3px 30px 1px 10px;
+    padding: 4px 30px 3px 10px;
     color: rgb(207, 0, 0);
     font-size: 12px;
     font-weight: 900;
     text-align: center;
-    margin-top: 2px;
+    margin-top: 1px;
     margin-left: 0px;
     background-color: rgb(230, 230, 230);
 }
