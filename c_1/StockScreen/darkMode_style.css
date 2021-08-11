@@ -57,9 +57,9 @@ ul {
     font-weight: 500;
     margin: 0;
     padding-bottom: 1px;
-    font-size: 12px;
+    font-size: 13px;
     display: block;
-    color: orange;
+    color: rgb(196, 136, 20);
     padding-left: 5px
 }
 
@@ -82,8 +82,11 @@ ul {
     font-size: 13px;
     font-weight: 400;
     color: white; /* 글자색 */
-    background-color: #474a53; /*바탕색*/
-    border: black solid 1px;
+    background-color: rgb(58, 61, 73);
+    border: rgb(26, 25, 27) solid 1px;
+
+    box-shadow: 1px 1px 3px #6c707c inset;
+    border-radius: 5%;
 }
 
 .next{
@@ -91,6 +94,15 @@ ul {
     border: 0;
     padding: 0;
     float: right;
+}
+.previous_btn{
+    color: rgb(245, 245, 246);
+    margin-top: 5px;
+    background-color: rgb(68, 70, 79);
+    height: 21px;
+    box-shadow: 1px 6px 10px rgb(97, 98, 117) inset;
+    height: 24px;
+    border-radius: 5%;
 }
 
 /* 상단바 클릭했을 때 나타나는 스타일*/
@@ -100,9 +112,11 @@ ul {
     box-shadow: 1px 3px 7px 3px rgb(118, 75, 245) inset;
 }
 .current_blue {
-    background-color: #174075;
+    background-color: rgb(0, 58, 143);
     color: white;
     margin-left: 7px;
+    box-shadow: 1px 4px 5px rgb(5, 67, 149) inset;
+
 }
 /* 버튼 */
 /* 이전/다음 버튼 */
@@ -124,10 +138,16 @@ ul {
     padding-right: 11px;
     height: 24px;
     display: block;
-    margin-top: 2px;
+    margin-top: 5px;
     padding-top: 0px;
     background-color: #474a53;
-    margin-right: 5px;
+    margin-right: 4px;
+
+
+    box-shadow: 1px 6px 10px rgb(97 98 117) inset;
+    height: 24px;
+    padding-top: 1px;
+    border-radius: 5%;
 }
 
 .possible_btn {
@@ -136,78 +156,89 @@ ul {
     color: white;
     padding-left: 9px;
     padding-right: 9px;
-    height: 22px;
+    height: 21px;
     display: block;
-    margin-top: 7px;
+    margin-top: 6px;
+    margin-left: 4px;
     padding-bottom: 2px;
     padding-top: 0px;
-    background-color: #474a53;
+
+    background-color: rgb(68, 70, 79);
+    border-radius: 5%;
+    box-shadow: 1px 2px 5px rgb(97 98 117) inset;
+    border: 1px solid black;
 }
 
 .sell_btn{
     font-weight: 400;
     font-size: 13px;
-    background-color: #174075;
-    margin: 0px 0px 1px 131px;
+    background-color: rgb(2, 59, 140);
+    margin: 3px 0px 1px 118px;
     width: 70px;
     height: 24px;
     color: white;
     padding-left: 1px;
     padding-right: 1px;
     border: 1px solid black;
-    box-shadow: 1px 1px 3px 1px rgb(59, 74, 211) inset;
+    box-shadow: 1px 2px 5px rgb(32, 131, 202) inset;
+    border-radius: 8%;
 }
 .erase_btn{
     font-weight: 400;
     font-size: 13px;
     background-color: #474a53;
-    margin: 0px 0px 1px 0px;
+    margin: 3px 0px 1px 0px;
     width: 70px;
     height: 24px;
     color: white;
     border: 1px solid black;
-    box-shadow: 1px 0.5px 0.5px 0.5px #6c707c inset;
+    box-shadow: 1px 2px 6px #6c707c inset;
+    border-radius: 8%;
 }
 /* 조회 버튼 */
 .lookupButton{
     float: right;
     font-weight: 900;
     padding: 0;
-    background-color: rgb(248, 167, 61);
+    background-color: rgb(230, 133, 26);
     margin : 6px 5px 5px 3px;
-    width : 40px;
+    width : 44px;
     color: black;
-    border: 1px solid rgb(140, 140, 140);
-    height: 25px;
+    border: 1px solid rgb(95, 66, 38);
+    height: 22px;
     font-size: 13px;
+    box-shadow: 1px 5px 4px rgb(244, 167, 17) inset;
 }
 #lookupButton2{
     float: right;
     font-weight: 900;
     font-size: 12px;
     padding: 8px 9px 5px 10px;
-    background-color: rgb(248, 167, 61);
+    background-color: rgb(230, 133, 26);
     margin: 12px 7px 2px 3px;
     width: 48px;
     height: 39px;
     color: black;
-    border: 1px solid rgb(189, 138, 44);
+    border: 1px solid rgb(95, 66, 38);
+    box-shadow: 1px 5px 4px rgb(244, 167, 17) inset;
 }
 .button{
     padding: 1px;
     font-size: 13px;
 }
 .buttonRegist{
-    width: 68px;
+    width: 90px;
     color: white;
     border: 1px solid black;
     font-weight: 100;
     font-size: 12px;
-    padding-left: 2px;
+    padding-left: 4px;
     padding-right: 2px;
-    margin-right: 15px;
-    margin-top: 4px;
-    background-color: #474a53;;
+    margin-right: 20px;
+    margin-top: 5px;
+    background-color: #474a53;
+    height: 21px;
+    box-shadow: 1px 6px 10px rgb(98, 100, 119) inset;
 }
 
 /* 4개 박스로 나누기 */
@@ -219,7 +250,7 @@ ul {
     position: absolute;
     left: 19.8%;
     width: 755px;
-    height: 790px;
+    height: 810px;
     top: 10%;
     background-color: rgb(46, 48, 58);
     display: block;
@@ -229,7 +260,7 @@ ul {
     position: absolute;
     left: 60%;
     width: 380px;
-    height: 790px;
+    height: 810px;
     top: 10%;
     background-color: rgb(46, 48, 58);
     display: block;
@@ -244,8 +275,13 @@ ul {
     position: absolute;
     margin-top: 10px;
     background-color: rgb(46, 48, 58);
-    border: 1px solid rgb(70, 70, 70);
-    height: 330px;
+    border: 1px solid rgb(39, 41, 49);
+    height: 335px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    box-shadow: 1px 2px 1px rgb(56, 59, 72) inset;
 }
 
   /* 상단바 스타일 지정 */
@@ -274,29 +310,32 @@ ul {
     height: 62px;
     width: 753px;
     padding: 0;
-    background-color: #323540;
-    border: 1px solid rgb(70, 70, 70);
+    background-color: rgb(46, 48, 58);
+    border: 1px solid rgb(39, 41, 49);
+    box-shadow: 1px 1px 4px rgb(61, 64, 78) inset;
 }
 #bar_blue{
     height: 300px;
 }
 .interest{
     width: 753px;
-    background-color: #f1f1f1;
-    border: 1px solid rgb(62, 65, 79);
+    border: 1px solid rgb(39, 41, 49);
     height: 34px;
     line-height: 15px;
+
     background-color: rgb(46, 48, 58);
+    box-shadow: 1px 1px 1px rgb(54, 57, 71) inset;
 }
 
 
 .interest2{
     width: 378px;
-    background-color: #f1f1f1;
-    border: 1px solid black;
     height: 33px;
     line-height: 12px;
-    background-color: #323540;
+
+    border: 1px solid rgb(39, 41, 49);
+    background-color: rgb(46, 48, 58);
+    box-shadow: 1px 2px 2px rgb(54, 57, 71) inset;
 }
 
 .interest4{
@@ -334,10 +373,9 @@ ul {
 }
 
 .blue_middlebar{
-    width: 380px;
+    width: 375px;
     height: 280px;
     line-height: 15px;
-    background-color: #323540;
 }
 
   /* 중간바 스타일 지정 */
@@ -370,17 +408,17 @@ ul {
  }
  .drop_down{
     margin-top: 5px;
-    width: 140px;
+    width: 153px;
     height: 22px;
     background-color: rgb(52, 54, 66);
     border: 1px solid black;
     box-shadow: 1px 1px 1px rgb(67, 69, 84) inset;
-
  }
 
  .drop_down2 {
     width: 106px;
-    margin-top: 7px;
+    height: 22px;
+    margin-top: 4px;
     margin-right: 3px;
     background-color: #323540;
     border: 1px solid black;
@@ -393,29 +431,39 @@ ul {
     color: white;
     margin-top: 4px;
     margin-right: 3px;
-    background-color: #323540;
+    background-color: rgb(52, 54, 66);
     border: 1px solid black;
+    box-shadow: 1px 1px 1px rgb(67, 69, 84) inset;
+    height: 22px;
 }
 
  .drop_down4 {
-    width: 65px;
+    width: 76px;
     margin-top: 4px;
     margin-right: 3px;
-    background-color: #323540;
+    background-color: rgb(52, 54, 66);
     border: 1px solid black;
+    box-shadow: 1px 1px 1px rgb(67, 69, 84) inset;
+    height: 22px;
 }
 .drop_down5 {
     width: 130px;
+    height: 22px;
     margin-top: 6px;
     margin-right: 3px;
-    background-color: #323540;
+    background-color: rgb(52, 54, 66);
     border: 1px solid black;
+    box-shadow: 1px 1px 1px rgb(67, 69, 84) inset;
 }
  .hoga{
-     width: 60px;
+     width: 80px;
      margin-top: 5px;
      background-color: #323540;
      border: 1px solid black;
+     height: 21px;
+     box-shadow: 1px 1px 1px rgb(67, 69, 84) inset;
+     font-size: 12px;
+     font-weight: 400;
  }
 .dis_flex{
      display: flex;
@@ -467,11 +515,11 @@ ul {
     font-weight: 100;
     text-align: center;
     vertical-align: top;
-    color: rgb(200, 198, 198);
-    background: #474a53;
+    color: rgb(164, 165, 167);
+    background: rgb(74, 77, 91);
     border-right: 1px solid black;
     margin: 20px 10px;
-    box-shadow: 1px 1px 3px 1px #5a5e69 inset;
+    box-shadow: 2px 2px 2px rgb(97 100 117) inset;
   }
   table.type20 tbody th {
     text-align: right;
@@ -489,6 +537,9 @@ ul {
     font-weight: 400;
     /* border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc; */
+  }
+  .table_footer{
+      color: rgb(185, 186, 184);
   }
   .back_gray{
       background-color: #474a53;
@@ -562,18 +613,18 @@ ul {
     font-weight: 400;
     text-align: center;
     vertical-align: top;
-    color: rgb(200, 198, 198);
-    background: #474a53;
-    border: 1px solid #393b3d;
+    color: rgb(163, 163, 165);
+    background: rgb(69, 73, 86);
+    border: 1px solid rgb(62, 68, 77);
     margin: 20px 10px;
-    box-shadow: 1px 0.5px 0.5px 0.5px #6c707c inset;
+    box-shadow: 1px 1px 3px rgb(97, 100, 117) inset;
   }
   table.type10 tbody th {
     text-align: left;
     font-size: 12px;
     font-weight: 400;
     background-color: #323540;
-    color: white;
+    color: rgb(236, 237, 237);
     border-right: 1px solid rgb(29, 29, 29);
     border-bottom: 1px solid rgb(39, 41, 49);
     border-top: 1px solid rgb(39, 41, 49);
@@ -626,24 +677,27 @@ ul {
     color: white;
     font-weight: 400;
     font-size: 12px;
-    padding: 1px;
-    margin-left: 10px;
-    margin-top: 7px;
-    background-color: #262931;
+    padding-top: 3px;
+    margin-left: 5px;
+    margin-top: 5px;
+    height: 18px;
+
+    background-color: #323540;
     border: 1px solid black;
-    height: 16px;
+    box-shadow: 1px 1px 1px 1px rgb(39, 38, 38) inset;
 }
 
 .searchIcon{
-    color: rgb(170, 169, 169);
+    color: rgb(187, 189, 204);
     font-size: 13px;
     margin-top: 5px;
     margin-left: 3px;
-    background-color: #5b5d68;
+    background-color: #474a53;
     border: 1px solid black;
     height: 19px;
     padding-right: 4px;
     padding-top: 1px;
+    box-shadow: 1px 3px 6px rgb(98 100 119) inset;
 }
 
 .search1{
@@ -672,6 +726,7 @@ ul {
     background-color: rgb(216, 154, 38);
     border: 1px solid black;
     box-shadow: 1px 1px 3px 1px rgb(251 202 111) inset;
+    border-radius: 12%;
 }
 
 .hyundae{
@@ -680,17 +735,17 @@ ul {
     font-size: 13px;
     font-weight: 400;
     margin-top: 5px;
-    margin-left: 2px;
-    background-color: #262931;
+    margin-left: 6px;
+    background-color: rgb(40, 42, 52);
 }
 .hyundae2{
-    padding: 5px 27px 5px 10px;
+    padding: 5px 24px 5px 10px;
     color: rgb(207, 0, 0);
     font-size: 12px;
     font-weight: 600;
     text-align: center;
-    margin-top: 6px;
-    background-color: #262931;
+    margin-top: 5px;
+    background-color: rgb(40, 42, 52);
 }
 
 .hyundae3{
@@ -724,7 +779,7 @@ ul {
     margin-left: 2px;
     background-color: #323540;
     border: 1px solid black;
-    box-shadow: 1px 1px 1px 1px rgb(39, 38, 38) inset;
+    box-shadow: 1px 1px 5px rgb(39, 38, 38) inset;
 }
 
 .small_box3{
@@ -749,18 +804,18 @@ ul {
     margin-left: 2px;
     background-color: #323540;
     border: 1px solid black;
-    box-shadow: 1px 1px 1px 1px rgb(39, 38, 38) inset;
+    box-shadow: 1px 1px 5px rgb(39, 38, 38) inset;
 }
 
 .increase{
-    padding: 4px 20px 4px 3px;
+    padding: 5px 20px 5px 3px;
     color: rgb(207, 0, 0);
     font-size: 12px;
     font-weight: 900;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 5px;
     margin-left: 2px;
-    background-color: #1e2025;
+    background-color: rgb(40, 42, 52);
 }
 
 #right_margin{
