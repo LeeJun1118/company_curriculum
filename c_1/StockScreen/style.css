@@ -269,6 +269,20 @@ ul {
     border-bottom: 1px solid rgb(255, 163, 16);
 }
 
+#bar_top2{
+    height: 20px;
+    padding: 1px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgb(255, 163, 16);
+}
+
+#bar_top3{
+    height: 20px;
+    padding: 1px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgb(255, 163, 16);
+}
+
 #bar_bottom{
     height: 20px;
     padding: 0;
