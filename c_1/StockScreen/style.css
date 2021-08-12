@@ -23,7 +23,6 @@ ul {
 /* 상단바 관심종목부터 왼쪽에서 정렬 */
 .horizontal_left{ 
     float: left;
-    padding-left: 3px;
 }
 .horizontal_right{
     float: right;
@@ -72,12 +71,21 @@ ul {
     font-weight: 900;
     color: rgb(80, 80, 80); /* 글자색 */
     background-color: rgb(249, 249, 252); /*바탕색*/
-    border: rgb(195, 193, 193) solid 1px;
+     
+    border-top: 1px solid rgb(195, 193, 193);
+    border-right: 1px solid rgb(195, 193, 193);
+    border-left: 1px solid rgb(195, 193, 193);
+    
+    border-bottom: 1px solid rgb(255, 163, 16);
     cursor: pointer;
 }
 
-.nav_btn:active{
-    box-shadow: 1px 1px 1px rgb(78, 77, 77) inset;
+.nav_btn:focus{
+    background-color: white;
+    border-top: 1px solid rgb(255, 163, 16);
+    border-bottom: 1px solid white;
+    border-right: 1px solid rgb(255, 163, 16);
+    border-left: 1px solid rgb(255, 163, 16);
 }
 
 .nav_blue_line{
@@ -305,7 +313,7 @@ ul {
   /* 상단바 스타일 지정 */
 #bar_top{
     height: 20px;
-    padding: 1px;
+    padding-bottom: 3px;
     margin-bottom: 5px;
     border-bottom: 1px solid rgb(255, 163, 16);
 }
