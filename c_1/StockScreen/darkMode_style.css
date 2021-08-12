@@ -49,7 +49,7 @@ ul {
     float: left;
     height: 27px;
     font-weight: 900;
-    margin: 0;
+    margin-left: 5px;
     padding-bottom: 1px;
     display: block;
     background-color: rgb(46, 48, 58);
@@ -84,10 +84,10 @@ ul {
     font-size: 13px;
     font-weight: 400;
     color: rgb(204, 204, 204);
-    background-color: rgb(58, 61, 73);
+    background-color: rgb(80, 46, 190);
     border: rgb(26, 25, 27) solid 1px;
     padding: 2px 8px 2px 8px;
-    box-shadow: 1px 1px 2px 0px #6c707c inset;
+    box-shadow: 1px 1px 2px 0px rgb(122, 77, 254) inset;
     border-radius: 5%;
 }
 
@@ -146,6 +146,9 @@ ul {
     margin-top: 4px;
     box-shadow: -3px 5px 4px rgb(67, 69, 77) inset;
 }
+.nextButton:active {
+    box-shadow: 1px 1px 1px gray inset;
+}
 
 .nextButton2 {
     font-size: 1px;
@@ -158,6 +161,9 @@ ul {
     width: 20px;
     margin-top: 4px;
     box-shadow: -4px 4px 7px rgb(94, 95, 113) inset;
+}
+.nextButton2:active {
+    box-shadow: 1px 1px 1px gray inset;
 }
 
 .nextPage {
@@ -239,6 +245,9 @@ ul {
     font-size: 13px;
     box-shadow: 1px 5px 4px rgb(244, 167, 17) inset;
 }
+.lookupButton:active{
+    box-shadow: 1px 1px 1px gray inset;
+}
 #lookupButton2{
     float: right;
     font-weight: 900;
@@ -270,6 +279,9 @@ ul {
     height: 21px;
     box-shadow: 1px 6px 10px rgb(98, 100, 119) inset;
 }
+.buttonRegist:active{
+    box-shadow: 1px 1px 1px gray inset;
+}
 
 /* 4개 박스로 나누기 */
 .wrap-box{
@@ -285,7 +297,7 @@ ul {
     float: right;
   }
 .top{
-    height: 100%;
+    height: 475px;
     background-color: rgb(46, 48, 58);
     border: 1px solid rgb(39, 41, 49);
 }
@@ -303,9 +315,10 @@ ul {
 
   /* 상단바 스타일 지정 */
 #bar_top{
+    width: 99.5%;
     height: 27px;
-    padding: 0;
-    margin-bottom: 4px;
+    margin-top: 20px;
+    margin-bottom: 7px;
     background-color: rgb(46, 48, 58);
 }
 
@@ -347,11 +360,11 @@ ul {
     height: 300px;
 }
 .interest{
-    width: 753px;
+    width: 98.5%;
     border: 1px solid rgb(39, 41, 49);
     height: 34px;
     line-height: 15px;
-
+    margin-left: 7px;
     background-color: rgb(46, 48, 58);
     box-shadow: 1px 1px 1px rgb(54, 57, 71) inset;
 }
@@ -527,6 +540,16 @@ ul {
     color: rgb(240, 240, 238);
 }
 
+.bord_word7 {
+    font-weight: 900;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-top: 1px;
+    margin-top: 4px;
+    color: rgb(240, 240, 238);
+}
+
  #big_middleBar{
     display: block;
     margin-top: 4px;
@@ -677,6 +700,7 @@ table#small_table td{
     line-height: 1.5;
     border-top: 1px solid black;
     margin-top: 10px;
+    margin-left: 5px;
   }
 
   table.type10 thead th {
@@ -947,4 +971,80 @@ table#small_table td{
     width:4px;
     height:4px;
     border-radius: 50%;
+  }
+
+  input[id="cb1"] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 10px 2px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+ /*radio 버튼 색상변경 */
+ input[type='radio'] {
+    -webkit-appearance:none;
+    width: 11px;
+    height: 11px;
+    border:1px solid rgb(143, 131, 124);
+     border-radius:50%;
+    outline:none;
+    background:white;
+    margin-top: 10px;
+  }
+  input[type='radio']:before {
+    content:'';
+    display:block;
+    width:60%;
+    height:60%;
+    margin: 20% auto;  
+    border-radius:50%;  
+  }
+  input[type='radio']:checked:before {
+  	background:orange;
+  }
+
+  input[type=text]{
+    border: 1px solid rgb(202, 202, 202);
+  }
+
+.text_box1{
+    font-size: 11px;
+    width: 73px;
+    height: 15px;
+  }
+
+.text_box2{
+    width: 60px;
+    height: 16px;
+    font-size: 11px;
+    margin-left: -3px;
+    margin-top : 3px;
+    margin-right: 2px;
+  }
+
+.text_box3{
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-right: 2px;
+    width: 125px;
+    height: 16px;
+    text-align: right;
+  }
+
+.password_box{
+    text-align: right;
+    color: rgb(82, 82, 82);
+    width: 45px;
+    height: 14px;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 5px;
+    margin-left: 0px;
+    background-color: white;
+    border: 1.6px solid rgb(237, 191, 106);
   }
