@@ -1011,9 +1011,13 @@ table#small_table td{
   }
 
 .text_box1{
+    margin-top: 5px;
     font-size: 11px;
     width: 73px;
-    height: 15px;
+    height: 16px;
+    background-color: #30323c;
+    box-shadow: 1px 1px 1px rgb(43, 44, 54) inset;
+    border: 1px solid black;
   }
 
 .text_box2{
