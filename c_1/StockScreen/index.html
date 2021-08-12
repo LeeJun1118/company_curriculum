@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Stock Screen</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="darkMode_style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="darkMode_style.css"> -->
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
         <div class="top">
             <div id="bar_top">
                 <ul class="top_nav">
-                    <li class="horizontal_left nav_btn current">관심종목</li>
+                    <li id="btn" class="horizontal_left nav_btn current">관심종목</li>
                     <li class="horizontal_left nav_btn">종목별투자</li>
                     <li class="horizontal_left nav_btn">순위정보</li>
                     <li class="horizontal_left nav_btn">매매상위</li>
@@ -221,14 +221,14 @@
                 <ul class="search1">
                     <li class="horizontal_left bord_word6">종목검색</li>
     
-                    <li class="horizontal_left white_box"><span class="pos_left">004020</span></li>
+                    <li class="horizontal_left"><input type="text" class="text_box1" value="004020"></input></li>
                     <li class="horizontal_left searchIcon"><i class="fas fa-search"></i></li>
                     <li class="horizontal_left interest3">관심</li>
                     <li class="horizontal_left hyundae">현대제철</li>
                     <li class="horizontal_left hyundae">[KOSPI200/철강,금속]</li>
                     <li class="horizontal_left hyundae2">증 30%</li>
                     <li class="horizontal_right">
-                        <button id="lookupButton2">조회</button>
+                        <button id="lookupButton2"><a>조회</a></button>
                     </li>
 
                 </ul>
@@ -240,7 +240,7 @@
                             <option>당일</option>
                         </select>
                     </li>
-                    <li class="horizontal_left bord_word">조건</li>
+                    <li class="horizontal_left bord_word7">조건</li>
                     <li class="horizontal_left">
                         <select class="drop_down4">
                             <option value="" selected="">TICK</option>
@@ -361,7 +361,7 @@
             
             <div id="bar_middle">
                 <ul class="interest2">    
-                    <li class="horizontal_left white_box"><span class="pos_left">004020</span></li>
+                    <li class="horizontal_left"><input type="text" class="text_box2" value="004020"></input></li>
                     <li class="horizontal_left searchIcon"><i class="fas fa-search"></i></li>
                     <li class="horizontal_left interest3">관심</li>
                     <li class="horizontal_left hyundae">현대제철</li>
@@ -573,7 +573,7 @@
         <div class="bottom">
             <div id="bar_top_blue">
                 <ul class="top_nav">
-                    <li class="horizontal_left nav_blue_line current_blue">매도</li>
+                    <li id="btn" class="horizontal_left nav_blue_line current_blue">매도</li>
                     <li class="horizontal_left nav_blue_line">매수</li>
                     <li class="horizontal_left nav_blue_line">정정</li>
                     <li class="horizontal_left nav_blue_line">취소</li>
@@ -595,8 +595,14 @@
                 <!-- 2 -->
                 <ul class="small_bar">
                     <li class="horizontal_left bord_word2">비밀번호</li>
-                    <li class="horizontal_left small_box2"></li>
-                    <li class="horizontal_left small_box3"></li>
+                    <li class="horizontal_left">
+                        <input type="password" class="password_box">
+                    </li>
+                    <!-- <li class="horizontal_left small_box2"></li> -->
+                    <li class="horizontal_left">
+                        <input type="checkbox" id="cb1">
+                    </li>
+
                     <li class="horizontal_left bord_word3">비밀번호 저장</li>
                 </ul>
                 
@@ -616,17 +622,20 @@
                             <option value="" selected="">지정가</option>
                         </select>
                     </li>
-                    <li class="horizontal_left small_box3"></li>
+                    <!-- <li class="horizontal_left small_box3"></li> -->
+                    <li class="horizontal_left"><input type="checkbox" id="cb1"></li>
                     <li class="horizontal_left bord_word4">시장가</li>
-                    <li class="horizontal_left bord_word4">
+                    <!-- <li class="horizontal_left bord_word4">
                         <div id="outcircle">
                             <div id="incircle"></div>
                       </div>
-                    </li>
+                    </li> -->
+                    <li class="horizontal_left"><input type="radio" name="selectRadio"></li>
                     <li class="horizontal_left bord_word4">현금</li>
-                    <li class="horizontal_left bord_word4">
+                    <!-- <li class="horizontal_left bord_word4">
                         <div id="outcircle"></div>
-                    </li>
+                    </li> -->
+                    <li class="horizontal_left"><input type="radio" name="selectRadio"></li>
                     <li class="horizontal_left bord_word4">신용</li>
                 </ul>
 
@@ -643,14 +652,18 @@
                 <!-- 6 -->
                 <ul class="small_bar">
                     <li class="horizontal_left bord_word2">매도수량</li>
-                    <li class="horizontal_left small_box4"><span id="text_right">0</span> </li>
+                    <li class="horizontal_left">
+                        <input type="text" class="text_box3" value="0">
+                    </li>
                     <li class="horizontal_left"><button class="possible_btn">가능</button></li>
                 </ul>
                 
                 <!-- 7 -->
                 <ul class="small_bar">
                     <li class="horizontal_left bord_word2">매도단가</li>
-                    <li class="horizontal_left small_box4"><span id="text_right">0</span> </li>
+                    <li class="horizontal_left">
+                        <input type="text" class="text_box3" value="0">
+                    </li>
                     <li class="horizontal_left bord_word5">원</li>
                 </ul>
 
