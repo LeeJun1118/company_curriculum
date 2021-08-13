@@ -81,6 +81,7 @@ ul {
 
     margin-top: 1px;
     cursor: pointer;
+    border-collapse: collapse;
 }
 
 
@@ -325,6 +326,7 @@ ul {
 .left-box {
     width: 65.7%;
     float: left;
+    margin-top: 2px;
   }
 .right-box {
     display: block;
@@ -342,21 +344,21 @@ ul {
 
   /* 상단바 스타일 지정 */
 #bar_top{
-    height: 20px;
+    height: 18px;
     padding-bottom: 3px;
     margin-bottom: 5px;
     border-bottom: 1px solid rgb(255, 163, 16);
 }
 
 #bar_top2{
-    height: 19px;
+    height: 18px;
     padding-bottom: 3px;
     margin-bottom: 5px;
     border-bottom: 1px solid rgb(255, 163, 16);
 }
 
 #bar_top3{
-    height: 20px;
+    height: 18px;
     padding-bottom: 3px;
     margin-bottom: 5px;
     border-bottom: 1px solid rgb(255, 163, 16);
