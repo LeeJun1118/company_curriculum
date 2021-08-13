@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Stock Screen</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="darkMode_style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="darkMode_style.css"> -->
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="nav_btn.js"> </script>
+
 </head>
 <body>
     <div id="wrap">
@@ -14,47 +16,14 @@
         <div class="top">
             <div id="bar_top">
                 <ul class="top_nav">
-                    <li id="btn" class="horizontal_left">
-                        <button id="clicked" class="nav_btn">
-                            관심종목
-                        </button>
-                    </li>
-
-                    <li id="btn" class="horizontal_left"> 
-                        <button class="nav_btn">
-                            종목별투자
-                        </button>
-                    </li>
-
-                    <li id="btn" class="horizontal_left">
-                        <button class="nav_btn">
-                            순위정보
-                        </button>
-                    </li>
-
-                    <li id="btn" class="horizontal_left">
-                        <button class="nav_btn">
-                            매매상위
-                        </button>
-                    </li>
-
-                    <li id="btn" class="horizontal_left">
-                        <button class="nav_btn">
-                            업종별종목
-                        </button>
-                    </li>
-
-                    <li id="btn" class="horizontal_left">
-                        <button class="nav_btn">
-                            투자자종합
-                        </button>
-                    </li>
-
-                    <li id="btn" class="horizontal_left">
-                        <button class="nav_btn">
-                            뉴스/공시
-                        </button>
-                    </li>
+                    <li id="btn1" class="horizontal_left getFocus" onclick="create_getFocus(1);">관심종목</li>
+                    <li id="btn2" class="horizontal_left nav_btn" onclick="create_getFocus(2);">종목별투자</li>
+                    <li id="btn3" class="horizontal_left nav_btn" onclick="create_getFocus(3)">순위정보</li>
+                    <li id="btn4" class="horizontal_left nav_btn" onclick="create_getFocus(4)">매매상위</li>
+                    <li id="btn5" class="horizontal_left nav_btn" onclick="create_getFocus(5)">업종별종목</li>
+                    <li id="btn6" class="horizontal_left nav_btn" onclick="create_getFocus(6)">투자자종합</li>
+                    <li id="btn7" class="horizontal_left nav_btn" onclick="create_getFocus(7)">뉴스/공시</li>
+                    <li id="btn8" class="horizontal_left nav_btn" onclick="create_getFocus(8)">관심종목</li>
                 </ul>
                 <ul class="top_nav rightBtn">
                     <li class="next"><button class="nextButton nextButton2">▶</button></li>

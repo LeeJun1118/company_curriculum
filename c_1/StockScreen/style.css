@@ -65,6 +65,7 @@ ul {
 .rightBtn{
     float: right;
 }
+
 .nav_btn{
     padding : 2px 8px 2px;
     font-size: 12px;
@@ -77,25 +78,29 @@ ul {
     border-left: 1px solid rgb(195, 193, 193);
     
     border-bottom: 1px solid rgb(255, 163, 16);
+
+    margin-top: 1px;
     cursor: pointer;
 }
 
-.nav_btn:focus{
-    background-color: white;
-    border-top: 2px solid rgb(255, 163, 16);
-    border-bottom: 1px solid white;
-    border-right: 1px solid rgb(255, 163, 16);
-    border-left: 1px solid rgb(255, 163, 16);
-}
 
+.getFocus{
+    padding : 2px 8px 2px;
+    font-size: 12px;
+    font-weight: 900;
+    color: rgb(80, 80, 80); /* 글자색 */
 
-.nav_btn2{
     background-color: white;
+
     border-top: 2px solid rgb(255, 163, 16);
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid white;
     border-right: 1px solid rgb(255, 163, 16);
     border-left: 1px solid rgb(255, 163, 16);    
+
+    cursor: pointer;
 }
+
+
 
 .nav_blue_line{
     padding : 3px 10px 2px;
@@ -1046,3 +1051,4 @@ table#small_table td{
     background-color: white;
     border: 1.6px solid rgb(237, 191, 106);
   }
+
