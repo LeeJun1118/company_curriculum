@@ -73,7 +73,7 @@ ul {
     font-weight: 400;
     color: rgb(204, 204, 204);
     background-color: rgb(58, 61, 73);
-    border: rgb(26, 25, 27) solid 1px;
+    border: 1px solid black;
     padding: 2px 8px 2px 8px;
     box-shadow: 1px 1px 2px 0px #6c707c inset;
     border-radius: 5%;
@@ -97,7 +97,7 @@ ul {
     font-weight: 400;
     color: rgb(204, 204, 204); /* 글자색 */
     background-color: rgb(58, 61, 73);
-    border: rgb(26, 25, 27) solid 1px;
+    border: 1px solid black;
 
     box-shadow: 1px 1px 3px #6c707c inset;
     border-radius: 5%;
