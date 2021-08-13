@@ -1024,6 +1024,16 @@ table#small_table td{
     text-align: right;
   }
 
+.text_box4 {
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-right: 2px;
+    width: 125px;
+    height: 16px;
+}
+
 .password_box{
     text-align: right;
     color: rgb(82, 82, 82);

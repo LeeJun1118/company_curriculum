@@ -25,7 +25,6 @@ ul {
 /* 상단바 관심종목부터 왼쪽에서 정렬 */
 .horizontal_left{ 
     float: left;
-    padding-left: 3px;
 }
 .horizontal_right{
     float: right;
@@ -78,6 +77,7 @@ ul {
     padding: 2px 8px 2px 8px;
     box-shadow: 1px 1px 2px 0px #6c707c inset;
     border-radius: 5%;
+    cursor: pointer;
 }
 
 .nav_btn:focus{
@@ -101,7 +101,15 @@ ul {
 
     box-shadow: 1px 1px 3px #6c707c inset;
     border-radius: 5%;
+    cursor: pointer;
 }
+.nav_blue_line:focus{
+    background-color: rgb(4, 64, 146);
+    box-shadow: 1px 1px 3px rgb(8, 83, 172) inset;
+    border-radius: 5%;
+}
+
+
 
 .next{
     margin: 1px;
@@ -117,6 +125,10 @@ ul {
     box-shadow: 1px 6px 10px rgb(97, 98, 117) inset;
     height: 24px;
     border-radius: 5%;
+    cursor: pointer;
+}
+.previous_btn:active{
+    box-shadow: 1px 1px 1px rgb(78, 77, 77) inset;
 }
 
 /* 상단바 클릭했을 때 나타나는 스타일*/
@@ -145,6 +157,7 @@ ul {
     width: 20px;
     margin-top: 4px;
     box-shadow: -3px 5px 4px rgb(67, 69, 77) inset;
+    cursor: pointer;
 }
 .nextButton:active {
     box-shadow: 1px 1px 1px gray inset;
@@ -185,6 +198,9 @@ ul {
     padding-top: 1px;
     border-radius: 5%;
 }
+.nextPage:active{
+    box-shadow: 1px 1px 1px gray inset;
+}
 
 .possible_btn {
     font-size: 12px;
@@ -203,8 +219,13 @@ ul {
     border-radius: 5%;
     box-shadow: 1px 2px 5px rgb(97 98 117) inset;
     border: 1px solid black;
+
+    cursor: pointer;
 }
 
+.possible_btn:active{
+    box-shadow: 1px 1px 1px gray inset;
+}
 .sell_btn{
     font-weight: 400;
     font-size: 13px;
@@ -218,6 +239,10 @@ ul {
     border: 1px solid black;
     box-shadow: 1px 2px 5px rgb(32, 131, 202) inset;
     border-radius: 8%;
+    cursor: pointer;
+}
+.sell_btn:active{
+    box-shadow: 1px 1px 1px gray inset;
 }
 .erase_btn{
     font-weight: 400;
@@ -230,6 +255,10 @@ ul {
     border: 1px solid black;
     box-shadow: 1px 2px 6px #6c707c inset;
     border-radius: 8%;
+    cursor: pointer;
+}
+.erase_btn:active{
+    box-shadow: 1px 1px 1px gray inset;
 }
 /* 조회 버튼 */
 .lookupButton{
@@ -244,6 +273,7 @@ ul {
     height: 22px;
     font-size: 13px;
     box-shadow: 1px 5px 4px rgb(244, 167, 17) inset;
+    cursor: pointer;
 }
 .lookupButton:active{
     box-shadow: 1px 1px 1px gray inset;
@@ -260,6 +290,10 @@ ul {
     color: black;
     border: 1px solid rgb(95, 66, 38);
     box-shadow: 1px 5px 4px rgb(244, 167, 17) inset;
+    cursor: pointer;
+}
+#lookupButton2:active{
+    box-shadow: 1px 1px 1px gray inset;
 }
 .button{
     padding: 1px;
@@ -278,6 +312,7 @@ ul {
     background-color: #474a53;
     height: 21px;
     box-shadow: 1px 6px 10px rgb(98, 100, 119) inset;
+    cursor: pointer;
 }
 .buttonRegist:active{
     box-shadow: 1px 1px 1px gray inset;
@@ -293,10 +328,11 @@ ul {
     float: left;
   }
 .right-box {
-    width: 33.4%;
+    width: 33.2%;
     float: right;
   }
 .top{
+    width: 99%;
     height: 475px;
     background-color: rgb(46, 48, 58);
     border: 1px solid rgb(39, 41, 49);
@@ -331,7 +367,8 @@ ul {
 #bar_top3{
     height: 20px;
     padding: 1px;
-    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 11px;
 }
 
 #bar_bottom{
@@ -455,6 +492,7 @@ ul {
     background-color: rgb(52, 54, 66);
     border: 1px solid black;
     box-shadow: 1px 1px 1px rgb(67, 69, 84) inset;
+    cursor: pointer;
  }
 
  .drop_down2 {
@@ -506,6 +544,7 @@ ul {
      box-shadow: 1px 1px 1px rgb(67, 69, 84) inset;
      font-size: 12px;
      font-weight: 400;
+     cursor: pointer;
  }
 .dis_flex{
      display: flex;
@@ -536,7 +575,7 @@ ul {
     padding-left: 10px;
     padding-right: 4px;
     padding-top: 1px;
-    margin-top: 5px;
+    margin-top: 7px;
     color: rgb(240, 240, 238);
 }
 
@@ -700,7 +739,6 @@ table#small_table td{
     line-height: 1.5;
     border-top: 1px solid black;
     margin-top: 10px;
-    margin-left: 5px;
   }
 
   table.type10 thead th {
@@ -786,15 +824,20 @@ table#small_table td{
 
 .searchIcon{
     color: rgb(187, 189, 204);
-    font-size: 13px;
-    margin-top: 5px;
-    margin-left: 3px;
     background-color: #474a53;
     border: 1px solid black;
-    height: 19px;
-    padding-right: 4px;
-    padding-top: 1px;
+    font-size: 13px;
+    margin-top: 6px;
+    margin-left: 3px;
+    height: 18px;
+    width: 18px;
+    padding-left: 4px;
+    padding-top: 2px;
     box-shadow: 1px 3px 6px rgb(98 100 119) inset;
+    cursor: pointer;
+}
+.searchIcon:active{
+    box-shadow: 1px 1px 1px gray inset;
 }
 
 .search1{
@@ -816,15 +859,19 @@ table#small_table td{
 }
 
 .interest3{
-    padding: 2px 4px 3px 3px;
+    padding: 2px 4px 2px 3px;
     color: black;
     font-size: 12px;
-    margin-top: 4px;
+    margin-top: 7px;
     margin-left: 3px;
     background-color: rgb(216, 154, 38);
     border: 1px solid black;
     box-shadow: 1px 1px 3px 1px rgb(251 202 111) inset;
     border-radius: 12%;
+    cursor: pointer;
+}
+.interest3:active{
+    box-shadow: 1px 1px 1px gray inset;
 }
 
 .hyundae{
@@ -832,17 +879,17 @@ table#small_table td{
     color: white;
     font-size: 13px;
     font-weight: 400;
-    margin-top: 4px;
+    margin-top: 5px;
     margin-left: 6px;
     background-color: rgb(40, 42, 52);
 }
 .hyundae2{
-    padding: 3px 24px 3px 10px;
+    padding: 4px 24px 3px 10px;
     color: rgb(207, 0, 0);
     font-size: 12px;
     font-weight: 600;
     text-align: center;
-    margin-top: 4px;
+    margin-top: 5px;
     background-color: rgb(40, 42, 52);
 }
 
@@ -855,6 +902,17 @@ table#small_table td{
     margin-left: 2px;
     background-color: #262931;
 }
+
+.hyunda4{
+    padding: 4px 7px 4px 7px;
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 6px;
+    margin-left: 6px;
+    background-color: rgb(40, 42, 52);
+}
+
 .small_box{
     padding: 1px 6px 3px 3px;
     color: rgb(82, 82, 82);
@@ -891,20 +949,6 @@ table#small_table td{
     background-color: #1e2025;
 }
 
-
-.small_box4{
-    color: white;
-    width: 127px;
-    height: 19px;
-    font-size: 11px;
-    font-weight: 300;
-    margin-top: 6px;
-    margin-left: 2px;
-    background-color: #323540;
-    border: 1px solid black;
-    box-shadow: 1px 1px 5px rgb(39, 38, 38) inset;
-}
-
 .increase{
     padding: 5px 20px 5px 3px;
     color: rgb(207, 0, 0);
@@ -932,7 +976,7 @@ table#small_table td{
 .bord_word3 {
     font-weight: 400;
     font-size: 11px;
-    padding-left: 7px;
+    padding-left: 3px;
     padding-right: 8px;
     padding-top: 6px;
     margin-top: 2px;
@@ -1006,30 +1050,34 @@ table#small_table td{
   	background:orange;
   }
 
-  input[type=text]{
-    border: 1px solid rgb(202, 202, 202);
-  }
+ 
 
 .text_box1{
-    margin-top: 5px;
+    margin-top: 8px;
     font-size: 11px;
     width: 73px;
     height: 16px;
+    color: rgb(240, 240, 238);
     background-color: #30323c;
-    box-shadow: 1px 1px 1px rgb(43, 44, 54) inset;
     border: 1px solid black;
+    box-shadow: 1px 1px 5px rgb(39 38 38) inset;
   }
 
 .text_box2{
     width: 60px;
     height: 16px;
+    color: rgb(240, 240, 238);
     font-size: 11px;
-    margin-left: -3px;
-    margin-top : 3px;
+    margin-left: 6px;
+    margin-top : 6px;
     margin-right: 2px;
+    background-color: #30323c;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px rgb(39 38 38) inset;
   }
 
 .text_box3{
+    color : rgb(240, 240, 238);
     font-size: 11px;
     font-weight: 400;
     margin-left: 0px;
@@ -1038,7 +1086,26 @@ table#small_table td{
     width: 125px;
     height: 16px;
     text-align: right;
+
+    background-color: #30323c;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px rgb(39 38 38) inset;
   }
+
+
+  .text_box4 {
+    color: rgb(240, 240, 238);
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-right: 2px;
+    width: 125px;
+    height: 16px;
+    background-color: #30323c;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px rgb(39 38 38) inset;
+}
 
 .password_box{
     text-align: right;
