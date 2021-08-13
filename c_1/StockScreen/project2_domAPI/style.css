@@ -57,3 +57,14 @@ ul{
     height: 20px;
     margin-top: 10px;
 }
+
+.search{
+    text-align: center;
+
+    width: 130px;
+    display: inline;
+    font-size: 13px;
+    float: left;
+
+    margin: auto;
+}
