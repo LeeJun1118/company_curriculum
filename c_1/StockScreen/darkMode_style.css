@@ -617,11 +617,11 @@ table#small_table thead th{
 table#small_table tbody th{
     border-collapse: collapse;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid rgb(39, 40, 48);
 }
 table#small_table td{
     width: 52%;
-    border : 1px solid black;
+    border : 1px solid rgb(39, 40, 48);
 }
 
 .pos_left{
