@@ -108,7 +108,7 @@ ul {
     font-size: 13px;
     font-weight: 400;
     color: white; /* 글자색 */
-
+    border: rgb(26, 25, 27) solid 1px;
     background-color: rgb(4, 64, 146);
     box-shadow: 1px 1px 3px rgb(8, 83, 172) inset;
     border-radius: 5%;
