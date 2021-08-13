@@ -80,10 +80,10 @@ ul {
     cursor: pointer;
 }
 
-.nav_btn:focus{
+.getFocus{
     font-size: 13px;
     font-weight: 400;
-    color: rgb(204, 204, 204);
+    color: white;
     background-color: rgb(80, 46, 190);
     border: rgb(26, 25, 27) solid 1px;
     padding: 2px 8px 2px 8px;
@@ -95,7 +95,7 @@ ul {
     padding : 3px 10px 2px;
     font-size: 13px;
     font-weight: 400;
-    color: white; /* 글자색 */
+    color: rgb(204, 204, 204); /* 글자색 */
     background-color: rgb(58, 61, 73);
     border: rgb(26, 25, 27) solid 1px;
 
@@ -103,7 +103,12 @@ ul {
     border-radius: 5%;
     cursor: pointer;
 }
-.nav_blue_line:focus{
+.getFocus_blue{
+    padding : 3px 10px 2px;
+    font-size: 13px;
+    font-weight: 400;
+    color: white; /* 글자색 */
+
     background-color: rgb(4, 64, 146);
     box-shadow: 1px 1px 3px rgb(8, 83, 172) inset;
     border-radius: 5%;
@@ -895,11 +900,11 @@ table#small_table td{
 }
 
 .hyundae3{
-    padding: 1px 6px 3px 3px;
+    padding: 3px 6px 3px 3px;
     color: white;
     font-size: 11px;
     font-weight: 400;
-    margin-top: 3px;
+    margin-top: 7px;
     margin-left: 2px;
     background-color: #262931;
 }
@@ -1117,6 +1122,7 @@ table#small_table td{
     font-weight: 800;
     margin-top: 5px;
     margin-left: 0px;
-    background-color: white;
-    border: 1.6px solid rgb(237, 191, 106);
+    background-color: #30323c;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px rgb(39 38 38) inset;
   }
