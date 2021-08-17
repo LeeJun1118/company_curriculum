@@ -1009,13 +1009,14 @@ table#small_table td{
   }
 
   input[type=text]{
-    border: 1px solid rgb(202, 202, 202);
+    /* border: 1px solid rgb(202, 202, 202); */
   }
 
 .text_box1{
     font-size: 11px;
     width: 73px;
     height: 15px;
+    border: 1px solid rgb(202, 202, 202);
   }
 
 .text_box2{
@@ -1025,6 +1026,7 @@ table#small_table td{
     margin-left: -3px;
     margin-top : 3px;
     margin-right: 2px;
+    border: 1px solid rgb(202, 202, 202);
   }
 
 .text_box3{
@@ -1036,6 +1038,7 @@ table#small_table td{
     width: 125px;
     height: 16px;
     text-align: right;
+    border: 1px solid rgb(202, 202, 202);
   }
 
 .text_box4 {
@@ -1046,6 +1049,7 @@ table#small_table td{
     margin-right: 2px;
     width: 125px;
     height: 16px;
+    border: 1px solid rgb(202, 202, 202);
 }
 
 .password_box{
@@ -1061,3 +1065,117 @@ table#small_table td{
     border: 1.6px solid rgb(237, 191, 106);
   }
 
+
+
+/* Search Javascript */
+#header_wrap{
+    display: block;
+    width: 550px;
+    height: 410px;
+    margin: auto;
+}
+
+#box{
+    display: block;
+    width: 100%;
+    height: 85%;
+    border-bottom: 3px solid rgb(66, 66, 66);
+    margin-top: 150px;
+}
+.bar{
+    float: left;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+}
+.subject{
+    width: 90px;
+    display: inline;
+    font-size: 17px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 45px;
+}
+
+.subject2{
+    display: block;
+    float: left;
+ 
+    width: 20px;
+    font-size: 17px;
+    
+    padding-left: 18px;
+    padding-right: 51px;
+
+    margin-top: 10px;
+    margin-left: 45px;
+}
+.searchBox{
+    display: block;
+    border: 1px solid black;
+}
+
+.textBox{
+    width: 230px;
+    height: 20px;
+    margin-top: 10px;
+
+    border: 2px solid rgb(38, 38, 38);
+}
+
+.search_js{
+    text-align: center;
+
+    width: 130px;
+    height: 30px;
+
+    display: inline;
+    font-size: 15px;
+    float: left;
+
+    margin-left: 120px;
+    margin-right: 5px;
+    margin-top: 50px;
+
+    color: rgb(21, 21, 21);
+    border: 2px solid rgb(74, 74, 74);
+    background-color: rgb(204, 204, 204);
+}
+
+.search_java{
+    text-align: center;
+
+    width: 90px;
+    height: 30px;
+
+    display: inline;
+    font-size: 15px;
+    float: left;
+
+    margin-right: 5px;
+    margin-top: 50px;
+
+    color: rgb(21, 21, 21);
+    border: 2px solid rgb(74, 74, 74);
+    background-color: rgb(204, 204, 204);
+}
+
+
+.search_jQuery{
+    text-align: center;
+
+    width: 110px;
+    height: 30px;
+
+    display: inline;
+    font-size: 15px;
+    float: left;
+
+    margin-right: 3px;
+    margin-top: 50px;
+
+    color: rgb(21, 21, 21);
+    border: 2px solid rgb(74, 74, 74);
+    background-color: rgb(204, 204, 204);
+}
