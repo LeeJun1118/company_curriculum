@@ -1134,6 +1134,11 @@ table#small_table td{
     color: rgb(21, 21, 21);
     border: 2px solid rgb(74, 74, 74);
     background-color: rgb(204, 204, 204);
+
+    cursor: pointer;
+}
+.search_js:active{
+    box-shadow: 1px 1px 1px rgb(78, 77, 77) inset;
 }
 
 .search_java{
@@ -1152,6 +1157,11 @@ table#small_table td{
     color: rgb(21, 21, 21);
     border: 2px solid rgb(74, 74, 74);
     background-color: rgb(204, 204, 204);
+
+    cursor: pointer;
+}
+.search_java:active{
+    box-shadow: 1px 1px 1px rgb(78, 77, 77) inset;
 }
 
 
@@ -1171,4 +1181,9 @@ table#small_table td{
     color: rgb(21, 21, 21);
     border: 2px solid rgb(74, 74, 74);
     background-color: rgb(204, 204, 204);
+
+    cursor: pointer;
+}
+.search_jQuery:active{
+    box-shadow: 1px 1px 1px rgb(78, 77, 77) inset;
 }

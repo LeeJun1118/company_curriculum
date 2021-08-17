@@ -7,35 +7,35 @@
     <!-- <link rel="stylesheet" href="darkMode_style.css"> -->
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <script src="nav_btn.js"> </script>
-
+    <script src="searchJS.js"></script>
 </head>
 <body>
     <div id="header_wrap">
         <div id="box">
             <ul class="bar">
                 <li class="subject2">id</li>
-                <input type="text" class="textBox">
+                <input id="searchID" type="text" class="textBox">
             </ul>
 
             <ul class="bar">
                 <li class="subject">노드명</li>
-                <input type="text" class="textBox">
+                <input id="searchNode" type="text" class="textBox">
             </ul>
 
             <ul class="bar">
                 <li class="subject">속성명</li>
-                <input type="text" class="textBox">
+                <input id="attName" type="text" class="textBox">
             </ul>
 
             <ul class="bar">
                 <li class="subject">속성값</li>
-                <input type="text" class="textBox">
+                <input id="attValue" type="text" class="textBox">
             </ul>
 
             <ul class="bar">
-                <button class="search_js">검색(Javascript)</li>
-                <button class="search_java">검색(Java)</li>
-                <button class="search_jQuery">검색(jQuery)</li>
+                <li><button class="search_js" onclick="nodeSearch()">검색(Javascript)</button></li>
+                <li><button class="search_java">검색(Java)</li>
+                <li><button class="search_jQuery">검색(jQuery)</li>
             </ul>
         </div>
         
