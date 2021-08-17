@@ -7,14 +7,16 @@ function nodeSearch() {
 
 
     //===================id 로 찾기===================
-    if (searchID == "") {
-        alert("없는 id 입니다.");
+    const id_list = document.querySelectorAll('#'+ searchID);
+    const id_list_length = id_list.length;
+    if (id_list_length == 0) {
+        alert("없는 id 입니다.")
     }
     else{
-        const div_list = document.querySelectorAll('#'+ searchID);
-        const div_list_length = div_list.length;
-        alert(div_list_length);
+        alert(id_list_length);
     }
+        
+    
     
     
     
