@@ -7,8 +7,9 @@
 function nodeSearch() {
     const searchID = document.getElementById('searchID').value;
     const searchNode = document.getElementById('searchNode').value;
-    // const attName = document.getElementById('attName');
-    // const attValue = document.getElementById("attValue");
+    const attName = document.getElementById('attName').value;
+    const attValue = document.getElementById("attValue").value;
+    document.getElementsByTagName
     
     
     //===================id 로 찾기===================
@@ -19,7 +20,7 @@ function nodeSearch() {
             alert("없는 id 입니다.")
         }
         else{
-            alert(id_list_length);
+            alert(searchID + " : "+ id_list_length);
          }
     }
         
@@ -31,35 +32,24 @@ function nodeSearch() {
             alert("없는 노드 입니다.")
         }
         else{
-            alert(node_list_length);
+            alert(searchNode + " : "+ node_list_length);
         }
     }
 
+    //===================속성으로 찾기===================
+    // hasAttribute 함수 사용
+    if (attName != '') {
+        console.log(attName)
+        var x = document.querySelector('input').hasAttribute(attName);
+        console.log(x)
+    }
+
+    // if (searchNode != '') {
+    //     var atts = document.querySelector('div').attributes;
+    //     console.log(atts);
+    //     for(var i = 0; i < atts.length; i++){
+    //         console.log(atts[i].nodeName + " = " + atts.nodeValue);
+    //     }
+    // }
     
-
-
-
-
-    
-    // serchID
-    // if (searchID == '') {
-    //     //console.log('공백입니다.')
-    // }
-    // else{
-    //     console.log('searchID : ' + searchID);
-
-    //     var id_length = searchID.length;
-
-    //     console.log('id_length : ' + id_length);
-    //     alert(id_length);
-    // }
-
-    // if (searchNode == '') {
-    //     console.log('공백입니다.')
-    // }
-    // else{
-    //     const node_list = searchNode.length;
-    //     console.log(node_list)
-    //     alert(searchNode.length)
-    // }
 }
