@@ -1008,10 +1008,6 @@ table#small_table td{
   	background:orange;
   }
 
-  input[type=text]{
-    /* border: 1px solid rgb(202, 202, 202); */
-  }
-
 .text_box1{
     font-size: 11px;
     width: 73px;
@@ -1069,18 +1065,15 @@ table#small_table td{
 
 /* Search Javascript */
 #header_wrap{
-    display: block;
     width: 550px;
     height: 410px;
     margin: auto;
 }
 
 #box{
-    display: block;
     width: 100%;
-    height: 85%;
+    height: 90%;
     border-bottom: 3px solid rgb(66, 66, 66);
-    margin-top: 150px;
 }
 .bar{
     float: left;
