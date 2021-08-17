@@ -1,3 +1,9 @@
+// id : id
+// 노드 : div, head, body 
+// 속성 : id class type style onclick 
+// 속성값 : text yellow 
+
+
 function nodeSearch() {
     const searchID = document.getElementById('searchID').value;
     // const searchNode = document.getElementsByClassName('searchNode');
