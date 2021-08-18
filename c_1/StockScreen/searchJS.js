@@ -41,7 +41,6 @@ function nodeSearch() {
     }
 
     //===================속성으로 찾기===================
-    // hasAttribute 함수 사용
     if (attName != '') {
         var count = 0;
         let nodeElements = [];
@@ -59,22 +58,28 @@ function nodeSearch() {
             }
         }
 
-        alert(count);
+        alert(attName + " : " + count);
     }
 
-    // //===================속성값으로 찾기===================
-    // if (attValue != '') {
-    //     var countValue = 0;
-    //     for(var i = 0; i < myHTML.length; i++){
-    //         if (document.querySelector(myHTML[i])) {
-    //             if (document.querySelector(myHTML[i]).getAttribute(attValue)) {
-    //                 lengthHTML[i] = document.querySelector(myHTML[i]).getAttribute(attValue).length;
-    //                 countValue = countValue + lengthHTML[i];
-    //             }               
-    //         }
-    //     }
-    //     alert(count);
-    // }
-
-
+    //===================속성값으로 찾기===================
+    if (attValue != '') {
+        var countValue = 0;
+        for(var i = 0; i < myHTML.length; i++){
+            var tagList = document.querySelectorAll(myHTML[i]);
+            // id class onclick .........
+            for(var j = 0; j < tagList.length; j++){
+                var className = tagList[j].getAttributeNames();
+                    for(var k = 0; k < className.length; k++){
+                        var confirm = tagList[j].getAttributeNode(className[k]).value.split(' ');
+                        for(var h = 0; h < confirm.length; h++){
+                            if (confirm[h] == attValue) {
+                                countValue++;
+                            }
+                        }
+                        
+                    }
+            }
+        }
+        alert(attValue + " : " + countValue);
+    }
 }
