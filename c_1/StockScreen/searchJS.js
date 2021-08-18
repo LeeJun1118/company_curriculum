@@ -86,6 +86,8 @@ function nodeSearch() {
     //     alert(attValue + " : " + countValue);
     // }
 
+
+
     //=================== 속성명 + 속성값으로 찾기 ===================
     // 속성명, 속성값 같이 입력하게
     // 속성명 빠졌을 때 속성명을 입력해주세요 
@@ -95,6 +97,23 @@ function nodeSearch() {
     }
     else if(attName == '' && attValue != ''){
         alert("속성명을 입력해주세요")
+    }
+    else if(attName != '' && attValue != ''){
+        var countAtt = 0;
+        for(var i = 0; i < myHTML.length; i++){
+            var tagList = document.querySelectorAll(myHTML[i]);
+            for(var j = 0; j < tagList.length; j++){
+                if (tagList[j].getAttributeNode(attName) != null) {
+                    var confirm = tagList[j].getAttributeNode(attName).value.split(' ');
+                    for(var h = 0; h < confirm.length; h++){
+                        if (confirm[h] == attValue) {
+                            countAtt++;
+                        }
+                    }
+                }  
+            }
+        }
+        alert(attName+", " + attValue + " : " + countAtt)
     }
 
 
