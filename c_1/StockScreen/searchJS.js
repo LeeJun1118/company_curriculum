@@ -5,8 +5,7 @@
 
 // To-Do-List
 // 1. id로 찾기 + 노드명으로 찾기
-// 2. 속성명 + 속성값으로 찾기
-// 3. id + 노드명 + 속성명 + 속성값 으로 찾기
+// 2. id + 노드명 + 속성명 + 속성값 으로 찾기
 
 function nodeSearch() {
     const searchID = document.getElementById('searchID').value;
