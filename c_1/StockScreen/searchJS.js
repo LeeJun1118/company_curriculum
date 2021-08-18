@@ -9,7 +9,6 @@ function nodeSearch() {
     const searchNode = document.getElementById('searchNode').value;
     const attName = document.getElementById('attName').value;
     const attValue = document.getElementById("attValue").value;
-    document.getElementsByTagName
     
     
     //===================id 로 찾기===================
@@ -39,17 +38,45 @@ function nodeSearch() {
     //===================속성으로 찾기===================
     // hasAttribute 함수 사용
     if (attName != '') {
-        console.log(attName)
-        var x = document.querySelector('input').hasAttribute(attName);
-        console.log(x)
+        let myHTML = ['html','head','div','ul','li'
+                     ,'input','button','select','option','table'
+                     ,'thead','tr','th','tbody','td'
+                     ,'span','svg','meta','link','script'];
+        var count = 0;
+        let nodeElements = [];
+        for(var i = 0; i < 20; i++){
+            // nodeElements[i] =  [id , class, onclick, ....]
+            nodeElements[i] = document.querySelector(myHTML[i]).getAttributeNames();
+            for(var j = 0; j < nodeElements[i].length; j++){
+                // x = id, class, onclick
+                var x = nodeElements[i];
+
+                //x[j]= 'class'   attName = 'class'
+                if (x[j] == attName) {
+                    count = count + document.querySelector(myHTML[i]).getAttribute(attName).length;
+                }
+            }
+        }
+
+        alert(count);
     }
 
-    // if (searchNode != '') {
-    //     var atts = document.querySelector('div').attributes;
-    //     console.log(atts);
-    //     for(var i = 0; i < atts.length; i++){
-    //         console.log(atts[i].nodeName + " = " + atts.nodeValue);
-    //     }
+
+    // HashMap = function(){
+    //     this.map = new Array();
     // }
     
+    // HashMap.prototype = {
+    //     put :function(key,value){
+    //         this.map[key] = value;
+    //     }
+    // }
+    // var map = new HashMap();
+    //===================속성값으로 찾기===================
+
+    if (searchNode != '') {
+
+    }
+
+
 }
