@@ -3,6 +3,10 @@
 // 속성 : id class type style onclick 
 // 속성값 : text yellow 
 
+// To-Do-List
+// 1. id로 찾기 + 노드명으로 찾기
+// 2. 속성명 + 속성값으로 찾기
+// 3. id + 노드명 + 속성명 + 속성값 으로 찾기
 
 function nodeSearch() {
     const searchID = document.getElementById('searchID').value;
@@ -40,46 +44,58 @@ function nodeSearch() {
         }
     }
 
-    //===================속성으로 찾기===================
-    if (attName != '') {
-        var count = 0;
-        let nodeElements = [];
-        for(var i = 0; i < myHTML.length; i++){
-            // nodeElements[i] =  [id , class, onclick, ....]
-            nodeElements[i] = document.querySelector(myHTML[i]).getAttributeNames();
-            for(var j = 0; j < nodeElements[i].length; j++){
-                // x = id, class, onclick
-                var x = nodeElements[i];
+    // //===================속성으로 찾기===================
+    // if (attName != '') {
+    //     var count = 0;
+    //     let nodeElements = [];
+    //     for(var i = 0; i < myHTML.length; i++){
+    //         // nodeElements[i] =  [id , class, onclick, ....]
+    //         nodeElements[i] = document.querySelector(myHTML[i]).getAttributeNames();
+    //         for(var j = 0; j < nodeElements[i].length; j++){
+    //             // x = id, class, onclick
+    //             var x = nodeElements[i];
 
-                //x[j]= 'class'   attName = 'class'
-                if (x[j] == attName) {
-                    count = count + document.querySelector(myHTML[i]).getAttribute(attName).length;
-                }
-            }
-        }
+    //             //x[j]= 'class'   attName = 'class'
+    //             if (x[j] == attName) {
+    //                 count = count + document.querySelector(myHTML[i]).getAttribute(attName).length;
+    //             }
+    //         }
+    //     }
+    //     alert(attName + " : " + count);
+    // }
 
-        alert(attName + " : " + count);
-    }
-
-    //===================속성값으로만 찾기===================
-    if (attValue != '') {
-        var countValue = 0;
-        for(var i = 0; i < myHTML.length; i++){
-            var tagList = document.querySelectorAll(myHTML[i]);
-            // id class onclick .........
-            for(var j = 0; j < tagList.length; j++){
-                var className = tagList[j].getAttributeNames();
-                    for(var k = 0; k < className.length; k++){
-                        var confirm = tagList[j].getAttributeNode(className[k]).value.split(' ');
-                        for(var h = 0; h < confirm.length; h++){
-                            if (confirm[h] == attValue) {
-                                countValue++;
-                            }
-                        }
+    // //===================속성값으로만 찾기===================
+    // if (attValue != '') {
+    //     var countValue = 0;
+    //     for(var i = 0; i < myHTML.length; i++){
+    //         var tagList = document.querySelectorAll(myHTML[i]);
+    //         // id class onclick .........
+    //         for(var j = 0; j < tagList.length; j++){
+    //             var className = tagList[j].getAttributeNames();
+    //                 for(var k = 0; k < className.length; k++){
+    //                     var confirm = tagList[j].getAttributeNode(className[k]).value.split(' ');
+    //                     for(var h = 0; h < confirm.length; h++){
+    //                         if (confirm[h] == attValue) {
+    //                             countValue++;
+    //                         }
+    //                     }
                         
-                    }
-            }
-        }
-        alert(attValue + " : " + countValue);
+    //                 }
+    //         }
+    //     }
+    //     alert(attValue + " : " + countValue);
+    // }
+
+    //=================== 속성명 + 속성값으로 찾기 ===================
+    // 속성명, 속성값 같이 입력하게
+    // 속성명 빠졌을 때 속성명을 입력해주세요 
+    // 속성값 빠졌을 때도 동일
+    if (attName != '' && attValue == '') {
+        alert("속성값을 입력해주세요")
     }
+    else if(attName == '' && attValue != ''){
+        alert("속성명을 입력해주세요")
+    }
+
+
 }
