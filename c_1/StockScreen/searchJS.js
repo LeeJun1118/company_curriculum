@@ -20,7 +20,7 @@ function nodeSearch() {
     
     
     //===================id 로 찾기===================
-    if (searchID != '') {
+    if (searchID != '' && searchNode == '') {
         const id_list = document.querySelectorAll('#'+ searchID);
         const id_list_length = id_list.length;
         if (id_list_length == 0) {
@@ -32,7 +32,7 @@ function nodeSearch() {
     }
     
     //===================노드명으로 찾기===================
-    if (searchNode != '') {
+    if (searchNode != '' && searchID == '') {
         const node_list = document.querySelectorAll(searchNode);
         const node_list_length = node_list.length;
         if (node_list_length == 0) {
@@ -41,6 +41,12 @@ function nodeSearch() {
         else{
             alert(searchNode + " : "+ node_list_length);
         }
+    }
+
+
+    //===================id + 노드명으로 찾기===================
+    if (searchNode != '' && searchID != '') {
+        
     }
 
     // //===================속성으로 찾기===================
