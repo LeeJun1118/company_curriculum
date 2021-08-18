@@ -9,6 +9,11 @@ function nodeSearch() {
     const searchNode = document.getElementById('searchNode').value;
     const attName = document.getElementById('attName').value;
     const attValue = document.getElementById("attValue").value;
+
+    let myHTML = ['html','head','div','ul','li'
+                     ,'input','button','select','option','table'
+                     ,'thead','tr','th','tbody','td'
+                     ,'span','svg','meta','link','script'];
     
     
     //===================id 로 찾기===================
@@ -38,13 +43,9 @@ function nodeSearch() {
     //===================속성으로 찾기===================
     // hasAttribute 함수 사용
     if (attName != '') {
-        let myHTML = ['html','head','div','ul','li'
-                     ,'input','button','select','option','table'
-                     ,'thead','tr','th','tbody','td'
-                     ,'span','svg','meta','link','script'];
         var count = 0;
         let nodeElements = [];
-        for(var i = 0; i < 20; i++){
+        for(var i = 0; i < myHTML.length; i++){
             // nodeElements[i] =  [id , class, onclick, ....]
             nodeElements[i] = document.querySelector(myHTML[i]).getAttributeNames();
             for(var j = 0; j < nodeElements[i].length; j++){
@@ -61,22 +62,19 @@ function nodeSearch() {
         alert(count);
     }
 
-
-    // HashMap = function(){
-    //     this.map = new Array();
-    // }
-    
-    // HashMap.prototype = {
-    //     put :function(key,value){
-    //         this.map[key] = value;
+    // //===================속성값으로 찾기===================
+    // if (attValue != '') {
+    //     var countValue = 0;
+    //     for(var i = 0; i < myHTML.length; i++){
+    //         if (document.querySelector(myHTML[i])) {
+    //             if (document.querySelector(myHTML[i]).getAttribute(attValue)) {
+    //                 lengthHTML[i] = document.querySelector(myHTML[i]).getAttribute(attValue).length;
+    //                 countValue = countValue + lengthHTML[i];
+    //             }               
+    //         }
     //     }
+    //     alert(count);
     // }
-    // var map = new HashMap();
-    //===================속성값으로 찾기===================
-
-    if (searchNode != '') {
-
-    }
 
 
 }
