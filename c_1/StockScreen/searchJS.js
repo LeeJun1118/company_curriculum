@@ -27,7 +27,7 @@ function nodeSearch() {
             alert(searchID + " : "+ id_list_length);
          }
     }
-        
+    
     //===================노드명으로 찾기===================
     if (searchNode != '') {
         const node_list = document.querySelectorAll(searchNode);
@@ -61,7 +61,7 @@ function nodeSearch() {
         alert(attName + " : " + count);
     }
 
-    //===================속성값으로 찾기===================
+    //===================속성값으로만 찾기===================
     if (attValue != '') {
         var countValue = 0;
         for(var i = 0; i < myHTML.length; i++){
