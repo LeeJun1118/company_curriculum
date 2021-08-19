@@ -164,7 +164,24 @@ function nodeSearch() {
 
     //========================노드명 + 속성명 + 속성값 으로 찾기=====================
     if (searchID == '' && searchNode != '' && attName != '' && attValue != '') {
-
+        var countValue = 0;
+        // th list
+        var tagList = document.querySelectorAll(searchNode);
+        // class
+        for (var j = 0; j < tagList.length; j++) {
+            //attName이 even 이라면
+            if (tagList[j].getAttribute(attName) != null) {
+                // class의 value가 여러개일 수 있으므로 split
+                var confirm = tagList[j].getAttributeNode(attName).value.split(' ');
+                for (var h = 0; h < confirm.length; h++) {
+                    //class의 값들 중 attValue 와 같은게 있으면
+                    if (confirm[h] == attValue) {
+                        countValue++;
+                    }
+                }
+            }
+        }
+        alert("노드명 : "+searchNode + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
     }
 
 
