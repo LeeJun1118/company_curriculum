@@ -19,14 +19,14 @@ function nodeSearch() {
     
     
     //===================id 로 찾기===================
-    if (searchID != '' && searchNode == '') {
+    if (searchID != '' && searchNode == '' && attName == '' && attValue == '') {
         const id_list = document.querySelectorAll('#'+ searchID);
         const id_list_length = id_list.length;
         alert(searchID + " : "+ id_list_length);
        }
     
     //===================노드명으로 찾기===================
-    if (searchNode != '' && searchID == '') {
+    if (searchNode != '' && searchID == '' && attName == '' && attValue == '') {
         const node_list = document.querySelectorAll(searchNode);
         const node_list_length = node_list.length;
         alert(searchNode + " : "+ node_list_length);
@@ -34,7 +34,7 @@ function nodeSearch() {
 
 
     //===================id + 노드명으로 찾기===================
-    if (searchNode != '' && searchID != '') {
+    if (searchNode != '' && searchID != '' && attName == '' && attValue == '') {
         var tagList = document.querySelectorAll(searchNode);
         var countNodeId = 0;
         for(var i = 0; i < tagList.length; i++){
@@ -93,13 +93,13 @@ function nodeSearch() {
     // 속성명, 속성값 같이 입력하게
     // 속성명 빠졌을 때 속성명을 입력해주세요 
     // 속성값 빠졌을 때도 동일
-    if (attName != '' && attValue == '') {
+    if (attName != '' && attValue == ''  /*&& searchNode == '' && searchID == '' */) {
         alert("속성값을 입력해주세요")
     }
-    else if(attName == '' && attValue != ''){
+    else if(attName == '' && attValue != '' /*&& searchNode == '' && searchID == '' */){
         alert("속성명을 입력해주세요")
     }
-    else if(attName != '' && attValue != ''){
+    else if(attName != '' && attValue != '' && searchNode == '' && searchID == '' ){
         var countAtt = 0;
         for(var i = 0; i < myHTML.length; i++){
             var tagList = document.querySelectorAll(myHTML[i]);
