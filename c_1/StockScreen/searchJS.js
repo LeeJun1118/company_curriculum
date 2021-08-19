@@ -12,24 +12,24 @@ function nodeSearch() {
     const attName = document.getElementById('attName').value;
     const attValue = document.getElementById('attValue').value;
 
-    let myHTML = ['html','head','div','ul','li'
-                     ,'input','button','select','option','table'
-                     ,'thead','tr','th','tbody','td'
-                     ,'span','svg','meta','link','script'];
-    
-    
+    let myHTML = ['html', 'head', 'div', 'ul', 'li'
+        , 'input', 'button', 'select', 'option', 'table'
+        , 'thead', 'tr', 'th', 'tbody', 'td'
+        , 'span', 'svg', 'meta', 'link', 'script'];
+
+
     //===================id 로 찾기===================
     if (searchID != '' && searchNode == '' && attName == '' && attValue == '') {
-        const id_list = document.querySelectorAll('#'+ searchID);
+        const id_list = document.querySelectorAll('#' + searchID);
         const id_list_length = id_list.length;
-        alert(searchID + " : "+ id_list_length);
-       }
-    
+        alert(searchID + " : " + id_list_length);
+    }
+
     //===================노드명으로 찾기===================
     if (searchNode != '' && searchID == '' && attName == '' && attValue == '') {
         const node_list = document.querySelectorAll(searchNode);
         const node_list_length = node_list.length;
-        alert(searchNode + " : "+ node_list_length);
+        alert(searchNode + " : " + node_list_length);
     }
 
 
@@ -37,7 +37,7 @@ function nodeSearch() {
     if (searchNode != '' && searchID != '' && attName == '' && attValue == '') {
         var tagList = document.querySelectorAll(searchNode);
         var countNodeId = 0;
-        for(var i = 0; i < tagList.length; i++){
+        for (var i = 0; i < tagList.length; i++) {
             if (tagList[i].getAttribute('id') != null && tagList[i].getAttribute('id') == searchID) {
                 countNodeId++;
             }
@@ -80,7 +80,7 @@ function nodeSearch() {
     //                             countValue++;
     //                         }
     //                     }
-                        
+
     //                 }
     //         }
     //     }
@@ -96,34 +96,34 @@ function nodeSearch() {
     if (attName != '' && attValue == ''  /*&& searchNode == '' && searchID == '' */) {
         alert("속성값을 입력해주세요")
     }
-    else if(attName == '' && attValue != '' /*&& searchNode == '' && searchID == '' */){
+    else if (attName == '' && attValue != '' /*&& searchNode == '' && searchID == '' */) {
         alert("속성명을 입력해주세요")
     }
-    else if(attName != '' && attValue != '' && searchNode == '' && searchID == '' ){
+    else if (attName != '' && attValue != '' && searchNode == '' && searchID == '') {
         var countAtt = 0;
-        for(var i = 0; i < myHTML.length; i++){
+        for (var i = 0; i < myHTML.length; i++) {
             var tagList = document.querySelectorAll(myHTML[i]);
-            for(var j = 0; j < tagList.length; j++){
+            for (var j = 0; j < tagList.length; j++) {
                 if (tagList[j].getAttributeNode(attName) != null) {
                     var confirm = tagList[j].getAttributeNode(attName).value.split(' ');
-                    for(var h = 0; h < confirm.length; h++){
+                    for (var h = 0; h < confirm.length; h++) {
                         if (confirm[h] == attValue) {
                             countAtt++;
                         }
                     }
-                }  
+                }
             }
         }
-        alert(attName+", " + attValue + " : " + countAtt)
+        alert(attName + ", " + attValue + " : " + countAtt)
     }
 
 
     //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
-    if (searchNode != '' && searchID != '' && attName != '' && attValue != '') {
+    if (searchID != '' && searchNode != '' && attName != '' && attValue != '') {
         // th 사용한 부분들 list
         var tagList = document.querySelectorAll(searchNode);
         var countAllCondition = 0;
-        for(var i = 0; i < tagList.length; i++){
+        for (var i = 0; i < tagList.length; i++) {
             // div li 등등 list 중에서 각 list에서  class id type의 값이 null 이 아니면
             if (tagList[i].getAttribute('id') != null && tagList[i].getAttribute(attName) != null) {
                 //console.log('searchID:' + searchID + '  ||  attName:' + attName);
@@ -135,4 +135,37 @@ function nodeSearch() {
         }
         alert(countAllCondition);
     }
+
+    //========================id + 속성명 + 속성값 으로 찾기========================
+    if (searchID != '' && searchNode == '' && attName != '' && attValue != '') {
+        var countValue = 0;
+        //
+        for (var i = 0; i < myHTML.length; i++) {
+            // th list
+            var tagList = document.querySelectorAll(myHTML[i]);
+            // id class onclick .........
+            for (var j = 0; j < tagList.length; j++) {
+                var className = tagList[j].getAttributeNames();
+                for (var k = 0; k < className.length; k++) {
+                    var confirm = tagList[j].getAttributeNode(className[k]).value.split(' ');
+                    for (var h = 0; h < confirm.length; h++) {
+                        if (confirm[h] == attValue) {
+                            countValue++;
+                        }
+                    }
+
+                }
+            }
+        }
+        alert(attValue + " : " + countValue);
+    }
+
+
+
+    //========================노드명 + 속성명 + 속성값 으로 찾기=====================
+    if (searchID == '' && searchNode != '' && attName != '' && attValue != '') {
+
+    }
+
+
 }
