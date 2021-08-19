@@ -42,7 +42,7 @@ function nodeSearch() {
                 countNodeId++;
             }
         }
-        alert(countNodeId);
+        alert("id : "+searchID + "    노드명 : "+searchNode + "    총 : " + countNodeId + "개");
     }
 
     // //===================속성으로 찾기===================
@@ -114,7 +114,7 @@ function nodeSearch() {
                 }
             }
         }
-        alert(attName + ", " + attValue + " : " + countAtt)
+        alert("속성명 : "+attName + "    속성값 : "+attValue + "    총 : " + countAtt + "개");
     }
 
 
@@ -133,7 +133,7 @@ function nodeSearch() {
                 }
             }
         }
-        alert(countAllCondition);
+        alert("id : "+searchID + "    노드명 : "+searchNode +  "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
     }
 
     //========================id + 속성명 + 속성값 으로 찾기========================
@@ -157,7 +157,7 @@ function nodeSearch() {
                 }
             }
         }
-        alert(attValue + " : " + countValue);
+        alert("id : "+searchID + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
     }
 
 
