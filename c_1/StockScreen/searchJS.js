@@ -42,7 +42,7 @@ function nodeSearch() {
                 countNodeId++;
             }
         }
-        alert("id : "+searchID + "    노드명 : "+searchNode + "    총 : " + countNodeId + "개");
+        alert("id : " + searchID + "    노드명 : " + searchNode + "    총 : " + countNodeId + "개");
     }
 
     // //===================속성으로 찾기===================
@@ -114,7 +114,7 @@ function nodeSearch() {
                 }
             }
         }
-        alert("속성명 : "+attName + "    속성값 : "+attValue + "    총 : " + countAtt + "개");
+        alert("속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countAtt + "개");
     }
 
     //========================id + 속성명 + 속성값 으로 찾기========================
@@ -138,7 +138,7 @@ function nodeSearch() {
                 }
             }
         }
-        alert("id : "+searchID + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
+        alert("id : " + searchID + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
     }
 
 
@@ -162,7 +162,7 @@ function nodeSearch() {
                 }
             }
         }
-        alert("노드명 : "+searchNode + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
+        alert("노드명 : " + searchNode + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
     }
 
 
@@ -174,14 +174,20 @@ function nodeSearch() {
         var countAllCondition = 0;
         for (var i = 0; i < tagList.length; i++) {
             // div li 등등 list 중에서 각 list에서  class id type의 값이 null 이 아니면
-            if (tagList[i].getAttribute('id') != null && tagList[i].getAttribute(attName) != null) {
-                //console.log('searchID:' + searchID + '  ||  attName:' + attName);
-                if (tagList[i].getAttribute('id') == searchID && tagList[i].getAttribute(attName) == attValue) {
-                    //console.log('attName:' + attName + "  ||  attValue:" + attValue + "  ||  count:" + countAllCondition);
-                    countAllCondition++;
+            //if (tagList[i].getAttribute('id') != null) {
+                // id가 searchID 라면
+                if (tagList[i].getAttribute('id') == searchID) {
+                    // class 의 value 가 여러개일 수 있으니 나눔
+                    var confirm = tagList[i].getAttributeNode(attName).value.split(' ');
+                    for (var h = 0; h < confirm.length; h++) {
+                        //class의 값들 중 attValue 와 같은게 있으면
+                        if (confirm[h] == attValue) {
+                            countAllCondition++;
+                        }
+                    }
                 }
-            }
+            //}
         }
-        alert("id : "+searchID + "    노드명 : "+searchNode +  "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
+        alert("id : " + searchID + "    노드명 : " + searchNode + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countAllCondition + "개");
     }
 }
