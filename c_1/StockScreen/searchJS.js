@@ -139,21 +139,21 @@ function nodeSearch() {
     //========================id + 속성명 + 속성값 으로 찾기========================
     if (searchID != '' && searchNode == '' && attName != '' && attValue != '') {
         var countValue = 0;
-        //
+        // th
         for (var i = 0; i < myHTML.length; i++) {
-            // th list
             var tagList = document.querySelectorAll(myHTML[i]);
-            // id class onclick .........
+            // class
             for (var j = 0; j < tagList.length; j++) {
-                var className = tagList[j].getAttributeNames();
-                for (var k = 0; k < className.length; k++) {
-                    var confirm = tagList[j].getAttributeNode(className[k]).value.split(' ');
+                // id가 SearchID 이고 attName이 even 이라면
+                if (tagList[j].getAttribute('id') == searchID && tagList[j].getAttribute(attName) != null) {
+                    // class의 value가 여러개일 수 있으므로 split
+                    var confirm = tagList[j].getAttributeNode(attName).value.split(' ');
                     for (var h = 0; h < confirm.length; h++) {
+                        //class의 값들 중 attValue 와 같은게 있으면
                         if (confirm[h] == attValue) {
                             countValue++;
                         }
                     }
-
                 }
             }
         }
