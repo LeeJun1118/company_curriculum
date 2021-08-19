@@ -46,7 +46,14 @@ function nodeSearch() {
 
     //===================id + 노드명으로 찾기===================
     if (searchNode != '' && searchID != '') {
-        
+        var tagList = document.querySelectorAll(searchNode);
+        var countNodeId = 0;
+        for(var i = 0; i < tagList.length; i++){
+            if (tagList[i].getAttribute('id') != null && tagList[i].getAttribute('id') == searchID) {
+                countNodeId++;
+            }
+        }
+        alert(countNodeId);
     }
 
     // //===================속성으로 찾기===================
