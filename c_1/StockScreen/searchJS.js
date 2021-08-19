@@ -117,25 +117,6 @@ function nodeSearch() {
         alert("속성명 : "+attName + "    속성값 : "+attValue + "    총 : " + countAtt + "개");
     }
 
-
-    //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
-    if (searchID != '' && searchNode != '' && attName != '' && attValue != '') {
-        // th 사용한 부분들 list
-        var tagList = document.querySelectorAll(searchNode);
-        var countAllCondition = 0;
-        for (var i = 0; i < tagList.length; i++) {
-            // div li 등등 list 중에서 각 list에서  class id type의 값이 null 이 아니면
-            if (tagList[i].getAttribute('id') != null && tagList[i].getAttribute(attName) != null) {
-                //console.log('searchID:' + searchID + '  ||  attName:' + attName);
-                if (tagList[i].getAttribute('id') == searchID && tagList[i].getAttribute(attName) == attValue) {
-                    //console.log('attName:' + attName + "  ||  attValue:" + attValue + "  ||  count:" + countAllCondition);
-                    countAllCondition++;
-                }
-            }
-        }
-        alert("id : "+searchID + "    노드명 : "+searchNode +  "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
-    }
-
     //========================id + 속성명 + 속성값 으로 찾기========================
     if (searchID != '' && searchNode == '' && attName != '' && attValue != '') {
         var countValue = 0;
@@ -185,4 +166,22 @@ function nodeSearch() {
     }
 
 
+
+    //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
+    if (searchID != '' && searchNode != '' && attName != '' && attValue != '') {
+        // th 사용한 부분들 list
+        var tagList = document.querySelectorAll(searchNode);
+        var countAllCondition = 0;
+        for (var i = 0; i < tagList.length; i++) {
+            // div li 등등 list 중에서 각 list에서  class id type의 값이 null 이 아니면
+            if (tagList[i].getAttribute('id') != null && tagList[i].getAttribute(attName) != null) {
+                //console.log('searchID:' + searchID + '  ||  attName:' + attName);
+                if (tagList[i].getAttribute('id') == searchID && tagList[i].getAttribute(attName) == attValue) {
+                    //console.log('attName:' + attName + "  ||  attValue:" + attValue + "  ||  count:" + countAllCondition);
+                    countAllCondition++;
+                }
+            }
+        }
+        alert("id : "+searchID + "    노드명 : "+searchNode +  "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
+    }
 }
