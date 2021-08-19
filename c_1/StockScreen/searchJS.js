@@ -4,14 +4,13 @@
 // 속성값 : text yellow 
 
 // To-Do-List
-// 1. id로 찾기 + 노드명으로 찾기
-// 2. id + 노드명 + 속성명 + 속성값 으로 찾기
+// 1. id + 노드명 + 속성명 + 속성값 으로 찾기
 
 function nodeSearch() {
     const searchID = document.getElementById('searchID').value;
     const searchNode = document.getElementById('searchNode').value;
     const attName = document.getElementById('attName').value;
-    const attValue = document.getElementById("attValue").value;
+    const attValue = document.getElementById('attValue').value;
 
     let myHTML = ['html','head','div','ul','li'
                      ,'input','button','select','option','table'
@@ -23,24 +22,14 @@ function nodeSearch() {
     if (searchID != '' && searchNode == '') {
         const id_list = document.querySelectorAll('#'+ searchID);
         const id_list_length = id_list.length;
-        if (id_list_length == 0) {
-            alert("없는 id 입니다.")
-        }
-        else{
-            alert(searchID + " : "+ id_list_length);
-         }
-    }
+        alert(searchID + " : "+ id_list_length);
+       }
     
     //===================노드명으로 찾기===================
     if (searchNode != '' && searchID == '') {
         const node_list = document.querySelectorAll(searchNode);
         const node_list_length = node_list.length;
-        if (node_list_length == 0) {
-            alert("없는 노드 입니다.")
-        }
-        else{
-            alert(searchNode + " : "+ node_list_length);
-        }
+        alert(searchNode + " : "+ node_list_length);
     }
 
 
@@ -129,4 +118,21 @@ function nodeSearch() {
     }
 
 
+    //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
+    if (searchNode != '' && searchID != '' && attName != '' && attValue != '') {
+        // th 사용한 부분들 list
+        var tagList = document.querySelectorAll(searchNode);
+        var countAllCondition = 0;
+        for(var i = 0; i < tagList.length; i++){
+            // div li 등등 list 중에서 각 list에서  class id type의 값이 null 이 아니면
+            if (tagList[i].getAttribute('id') != null && tagList[i].getAttribute(attName) != null) {
+                //console.log('searchID:' + searchID + '  ||  attName:' + attName);
+                if (tagList[i].getAttribute('id') == searchID && tagList[i].getAttribute(attName) == attValue) {
+                    //console.log('attName:' + attName + "  ||  attValue:" + attValue + "  ||  count:" + countAllCondition);
+                    countAllCondition++;
+                }
+            }
+        }
+        alert(countAllCondition);
+    }
 }
