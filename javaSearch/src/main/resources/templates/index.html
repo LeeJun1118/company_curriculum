@@ -11,39 +11,30 @@
 <body>
 <div id="header_wrap">
     <div id="box">
+        <form method="post" action="/java"></form>
         <ul class="bar">
             <li class="subject2">id</li>
-            <input id="searchID" type="text" class="textBox" placeholder="id 값 입력 ex) btn1 btn2 등"/>
+            <input id="searchID" type="text" class="textBox" placeholder="id 값 입력 ex) btn1 btn2 등" name="searchId"/>
         </ul>
-
         <ul class="bar">
             <li class="subject">노드명</li>
-            <input id="searchNode" type="text" class="textBox" placeholder="div, body, head 등"/>
+            <input id="searchNode" type="text" class="textBox" placeholder="div, body, head 등" name="searchNode"/>
         </ul>
-
         <ul class="bar">
             <li class="subject">속성명</li>
-            <input id="attName" type="text" class="textBox" placeholder="id, class, type, onclick 등"/>
+            <input id="attName" type="text" class="textBox" placeholder="id, class, type, onclick 등" name="attName"/>
         </ul>
-
         <ul class="bar">
             <li class="subject">속성값</li>
-            <input id="attValue" type="text" class="textBox" placeholder="text, yellow 등"/>
+            <input id="attValue" type="text" class="textBox" placeholder="text, yellow 등" name="attValue"/>
         </ul>
-
         <ul class="bar">
-            <li>
-                <button class="search_js" onclick="nodeSearch()">검색(Javascript)</button>
-            </li>
-            <li>
-                <button class="search_java">검색(Java)</button>
-            </li>
-            <li>
-                <button class="search_jQuery">검색(jQuery)</button>
-            </li>
+            <li><button class="search_js" onclick="nodeSearch()">검색(Javascript)</button></li>
+            <li><button class="search_java" type="submit">검색(Java)</button></li>
+            <li><button class="search_jQuery">검색(jQuery)</button></li>
         </ul>
-    </div>
 
+    </div>
 </div>
 
 <div id="wrap">

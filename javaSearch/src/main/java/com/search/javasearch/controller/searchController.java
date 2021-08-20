@@ -11,12 +11,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class searchController {
 
-//    @GetMapping("/")
-//    ModelAndView search(ModelAndView modelAndView){
-//
-//        modelAndView.addObject("data", new message("총 : "+" 개", "/"));
-//        //modelAndView.setViewName("message");
-//
-//        return modelAndView;
-//    }
+    @PostMapping("/java")
+    ModelAndView search(ModelAndView modelAndView){
+
+        //modelAndView.addObject("data", new message("총 : "+" 개", "/"));
+        //modelAndView.setViewName("message");
+
+        return modelAndView;
+    }
 }
