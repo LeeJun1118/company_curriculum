@@ -1,48 +1,59 @@
 <!DOCTYPE html>
-<!--<!DOCTYPE root-name PUBLIC "InvoiceId" "C:\mydtds\Invoice.dtd">-->
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">-->
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<!DOCTYPE html SYSTEM "-//W3C//DTD XHTML 1.0 Strict//EN" "file:///C:\WorkSapce\curriculum\searchJava\src\resources\index.html">-->
+<!--<!DOCTYPE html SYSTEM "file:///C:\WorkSapce\curriculum\searchJava\src\resources\index.html">-->
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">-->
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Stock Screen</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"/>
     <!-- <link rel="stylesheet" href="darkMode_style.css"> -->
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-    <script src="nav_btn.js"> </script>
+    <script src="nav_btn.js"></script>
     <script src="searchJS.js"></script>
 </head>
 <body>
-    <div id="header_wrap">
-        <div id="box">
-            <ul class="bar">
-                <li class="subject2">id</li>
-                <input id="searchID" type="text" class="textBox" placeholder="id 값 입력 ex) btn1 btn2 등">
-            </ul>
+<div id="header_wrap">
+    <div id="box">
+        <ul class="bar">
+            <li class="subject2">id</li>
+            <input id="searchID" type="text" class="textBox" placeholder="id 값 입력 ex) btn1 btn2 등"/>
+        </ul>
 
-            <ul class="bar">
-                <li class="subject">노드명</li>
-                <input id="searchNode" type="text" class="textBox" placeholder="div, body, head 등">
-            </ul>
+        <ul class="bar">
+            <li class="subject">노드명</li>
+            <input id="searchNode" type="text" class="textBox" placeholder="div, body, head 등"/>
+        </ul>
 
-            <ul class="bar">
-                <li class="subject">속성명</li>
-                <input id="attName" type="text" class="textBox" placeholder="id, class, type, onclick 등">
-            </ul>
+        <ul class="bar">
+            <li class="subject">속성명</li>
+            <input id="attName" type="text" class="textBox" placeholder="id, class, type, onclick 등"/>
+        </ul>
 
-            <ul class="bar">
-                <li class="subject">속성값</li>
-                <input id="attValue" type="text" class="textBox" placeholder="text, yellow 등">
-            </ul>
+        <ul class="bar">
+            <li class="subject">속성값</li>
+            <input id="attValue" type="text" class="textBox" placeholder="text, yellow 등"/>
+        </ul>
 
-            <ul class="bar">
-                <li><button class="search_js" onclick="nodeSearch()">검색(Javascript)</button></li>
-                <li><button class="search_java">검색(Java)</li>
-                <li><button class="search_jQuery">검색(jQuery)</li>
-            </ul>
-        </div>
-        
-    </div>    
-   
-    <div id="wrap">
+        <ul class="bar">
+            <li>
+                <button class="search_js" onclick="nodeSearch()">검색(Javascript)</button>
+            </li>
+            <li>
+                <button class="search_java">검색(Java)</button>
+            </li>
+            <li>
+                <button class="search_jQuery">검색(jQuery)</button>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="wrap">
     <!-- 왼쪽 박스 -->
     <div class="left-box">
         <div class="top">
@@ -58,18 +69,22 @@
                     <li id="btn8" class="horizontal_left nav_btn" onclick="create_getFocus(8)">손익</li>
                 </ul>
                 <ul class="top_nav rightBtn">
-                    <li class="next"><button class="nextButton nextButton2">▶</button></li>
-                    <li class="next"><button class="nextButton">◀</button></li>
+                    <li class="next">
+                        <button class="nextButton nextButton2">▶</button>
+                    </li>
+                    <li class="next">
+                        <button class="nextButton">◀</button>
+                    </li>
                 </ul>
             </div>
             <!-- 관심 그룹 조회 -->
             <div id="bar_middle">
                 <ul class="interest">
                     <li class="horizontal_left bord_word">관심그룹</li>
-    
+
                     <li class="horizontal_left">
                         <select class="drop_down">
-                            <option value="" selected>00 00</option>
+                            <option value="">00 00</option>
                         </select>
                     </li>
                     <li class="horizontal_left">
@@ -78,7 +93,7 @@
                     <li class="horizontal_left bord_word">구분</li>
                     <li class="horizontal_left">
                         <select class="hoga">
-                            <option value="" selected>호가</option>
+                            <option value="">호가</option>
                         </select>
                     </li>
                     <li class="horizontal_right">
@@ -90,149 +105,195 @@
             <table class="type10">
                 <thead>
                 <tr>
-                  <th id="item_name">종목명</th>
-                  <th>현재가</th>
-                  <th>전일비</th>
-                  <th>등락률</th>
-                  <th>매도호가</th>
-                  <th>매수호가</th>
-                  <th>체결량</th>
-                  <th>거래량</th>
+                    <th id="item_name">종목명</th>
+                    <th>현재가</th>
+                    <th>전일비</th>
+                    <th>등락률</th>
+                    <th>매도호가</th>
+                    <th>매수호가</th>
+                    <th>체결량</th>
+                    <th>거래량</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <th><span class="pos_left">기산텔레콤</span></th>
-                  <td><span class="up">2,320</span></td>
-                  <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">30</span></div></td>
-                  <td><span class="up">1.31</span></td>
-                  <td><span class="up">2,330</span></td>
-                  <td><span class="up">2,320</span></td>
-                  <td><span class="down">300</span></td>
-                  <td><span class="white">53,212</span></td>
+                    <th><span class="pos_left">기산텔레콤</span></th>
+                    <td><span class="up">2,320</span></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">30</span></div>
+                    </td>
+                    <td><span class="up">1.31</span></td>
+                    <td><span class="up">2,330</span></td>
+                    <td><span class="up">2,320</span></td>
+                    <td><span class="down">300</span></td>
+                    <td><span class="white">53,212</span></td>
                 </tr>
                 <tr>
-                  <th class="even"><span class="pos_left">국제디와이</span></th>
-                  <td class="even"><span class="down">180</span></td>
-                  <td class="even dis_flex"><div class="edge_left"><span class="down">▼</span></div><div class="edge_right"><span class="down">4</span></div></td>
-                  <td class="even"><span class="down">-2.17</span></td>
-                  <td class="even"><span class="down">181</span></td>
-                  <td class="even"><span class="down">180</span></td>
-                  <td class="even"><span class="down">500</span></td>
-                  <td class="even"><span class="white">1,836,270</span></td>
+                    <th class="even"><span class="pos_left">국제디와이</span></th>
+                    <td class="even"><span class="down">180</span></td>
+                    <td class="even dis_flex">
+                        <div class="edge_left"><span class="down">▼</span></div>
+                        <div class="edge_right"><span class="down">4</span></div>
+                    </td>
+                    <td class="even"><span class="down">-2.17</span></td>
+                    <td class="even"><span class="down">181</span></td>
+                    <td class="even"><span class="down">180</span></td>
+                    <td class="even"><span class="down">500</span></td>
+                    <td class="even"><span class="white">1,836,270</span></td>
                 </tr>
                 <tr>
-                  <th><span class="pos_left">완리</span></th>
-                  <td><span class="up">2,985</span></td>
-                  <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">105</span></div></td>
-                  <td><span class="up">3.65</span></td>
-                  <td><span class="up">2,990</span></td>
-                  <td><span class="up">2,980</span></td>
-                  <td><span class="up">66</span></td>
-                  <td><span class="white">213,841</span></td>
+                    <th><span class="pos_left">완리</span></th>
+                    <td><span class="up">2,985</span></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">105</span></div>
+                    </td>
+                    <td><span class="up">3.65</span></td>
+                    <td><span class="up">2,990</span></td>
+                    <td><span class="up">2,980</span></td>
+                    <td><span class="up">66</span></td>
+                    <td><span class="white">213,841</span></td>
                 </tr>
-                
+
                 <tr>
                     <th class="even"><span class="pos_left">SK하이닉스</span></th>
                     <td class="even"><span class="up">48,350</span></td>
-                    <td class="even dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">850</span></div></td>
+                    <td class="even dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">850</span></div>
+                    </td>
                     <td class="even"><span class="up">1.79</span></td>
                     <td class="even"><span class="up">48,350</span></td>
                     <td class="even"><span class="up">48,300</span></td>
                     <td class="even"><span class="up">1</span></td>
                     <td class="even"><span class="white">1,992,739</span></td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <th><span class="pos_left">현대차</span></th>
                     <td><span class="down">227,500</span></td>
-                    <td class="dis_flex"><div class="edge_left"><span class="down">▼</span></div><div class="edge_right"><span class="down">2,500</span></div></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="down">▼</span></div>
+                        <div class="edge_right"><span class="down">2,500</span></div>
+                    </td>
                     <td><span class="down">-1.09</span></td>
                     <td><span class="up">228,500</span></td>
                     <td><span class="up">228,000</span></td>
                     <td><span class="up">32</span></td>
                     <td><span class="white">155,743</span></td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <th class="even"><span class="pos_left">삼성물산</span></th>
                     <td class="even"><span class="up">74,400</span></td>
-                    <td class="even dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">700</span></div></td>
+                    <td class="even dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">700</span></div>
+                    </td>
                     <td class="even"><span class="down">0.95</span></td>
                     <td class="even"><span class="up">74,500</span></td>
                     <td class="even"><span class="white">74,400</span></td>
                     <td class="even"><span class="down">1</span></td>
                     <td class="even"><span class="white">212,777</span></td>
-                  </tr>
-                  <tr>
-                    <th ><span class="pos_left">현대제철</span></th>
+                </tr>
+                <tr>
+                    <th><span class="pos_left">현대제철</span></th>
                     <td><span class="up">74,100</span></td>
-                    <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">300</span></div></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">300</span></div>
+                    </td>
                     <td><span class="up">0.41</span></td>
                     <td><span class="up">74,200</span></td>
                     <td><span class="white">74,100</span></td>
                     <td><span class="down">1</span></td>
                     <td><span class="white">146,585</span></td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <th class="even"><span class="pos_left">SK이노베이션</span></th>
                     <td class="even"><span class="white">113,000</span></td>
-                    <td class="even dis_flex"><div class="edge_left"><span></span></div><div class="edge_right"><span class="white">0</span></div></td>
+                    <td class="even dis_flex">
+                        <div class="edge_left"><span></span></div>
+                        <div class="edge_right"><span class="white">0</span></div>
+                    </td>
                     <td class="even"><span class="white">0.00</span></td>
                     <td class="even"><span class="white">113,000</span></td>
                     <td class="even"><span class="white">112,500</span></td>
                     <td class="even"><span class="up">9</span></td>
                     <td class="even"><span class="white">218,472</span></td>
-                  <tr>
+                </tr>
+
+                <tr>
                     <th><span class="pos_left">기아차</span></th>
                     <td><span class="down">56,400</span></td>
-                    <td class="dis_flex"><div class="edge_left"><span class="down">▼</span></div><div class="edge_right"><span class="down">300</span></div></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="down">▼</span></div>
+                        <div class="edge_right"><span class="down">300</span></div>
+                    </td>
                     <td><span class="down">-0.53</span></td>
                     <td><span class="white">56,400</span></td>
                     <td><span class="down">56,300</span></td>
                     <td><span class="up">14</span></td>
                     <td><span class="white">385,901</span></td>
-                  </tr>
-                  <tr>
+                </tr>
+
+                <tr>
                     <th class="even"><span class="pos_left">한일이화</span></th>
-                    <td class="even"><span class="white" >21,150</span></td>
-                    <td class="even dis_flex"><div class="edge_left"><span></span></div><div class="edge_right"><span class="white">0</span></div></td>
+                    <td class="even"><span class="white">21,150</span></td>
+                    <td class="even dis_flex">
+                        <div class="edge_left"><span></span></div>
+                        <div class="edge_right"><span class="white">0</span></div>
+                    </td>
                     <td class="even"><span class="white">0</span></td>
                     <td class="even"><span class="white">0.00</span></td>
                     <td class="even"><span class="white">0</span></td>
                     <td class="even"><span class="white">0</span></td>
                     <td class="even"><span class="white">0</span></td>
-                  </tr>
-                  <tr>
+                </tr>
+
+                <tr>
                     <th><span class="pos_left">삼성전자</span></th>
                     <td><span class="up">1,319,000</span></td>
-                    <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">8,000</span></div></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">8,000</span></div>
+                    </td>
                     <td><span class="up">0.61</span></td>
                     <td><span class="white">1,319,000</span></td>
                     <td><span class="down">1,319,000</span></td>
                     <td><span class="up">6</span></td>
                     <td><span class="white">75,900</span></td>
-                  </tr>
-                  <tr>
-                    <th  class="even"><span class="pos_left">한화케미칼</span></th>
+                </tr>
+
+                <tr>
+                    <th class="even"><span class="pos_left">한화케미칼</span></th>
                     <td class="even"><span class="up">18,300</span></td>
-                    <td class="even dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">300</span></div></td>
+                    <td class="even dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">300</span></div>
+                    </td>
                     <td class="even"><span class="up">1.67</span></td>
                     <td class="even"><span class="up">18,350</span></td>
                     <td class="even"><span class="up">18,300</span></td>
                     <td class="even"><span class="down">2</span></td>
                     <td class="even"><span class="white">513,447</span></td>
-                  </tr>
-                  <tr>
-                    <th ><span class="pos_left">골프존</span></th>
+                </tr>
+
+                <tr>
+                    <th><span class="pos_left">골프존</span></th>
                     <td><span class="up">19,350</span></td>
-                    <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">50</span></div></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">50</span></div>
+                    </td>
                     <td><span class="up">0.26</span></td>
                     <td><span class="white">19,350</span></td>
                     <td><span class="down">19,300</span></td>
                     <td><span class="up">22</span></td>
                     <td><span class="white">24,742</span></td>
-                  </tr>
+                </tr>
+
                 </tbody>
-              </table>
+            </table>
         </div>
 
         <div class="bottom">
@@ -247,14 +308,14 @@
                     <li id="btn_2_7" class="horizontal_left nav_btn" onclick="create_getFocus2(7)">주문가능</li>
                     <li id="btn_2_8" class="horizontal_left nav_btn" onclick="create_getFocus2(8)">손익</li>
                 </ul>
-                
+
             </div>
             <!-- 관심 그룹 조회 -->
             <div id="bar_middle2">
                 <ul class="search1">
                     <li class="horizontal_left bord_word6">종목검색</li>
-    
-                    <li class="horizontal_left"><input type="text" class="text_box1" value="004020"></input></li>
+
+                    <li class="horizontal_left"><input type="text" class="text_box1" value="004020"/></li>
                     <li class="horizontal_left searchIcon"><i class="fas fa-search"></i></li>
                     <li class="horizontal_left interest3">관심</li>
                     <li class="horizontal_left hyundae">현대제철</li>
@@ -280,36 +341,42 @@
                         </select>
                     </li>
                 </ul>
-           
+
             </div>
 
             <table id="big_middleBar" class="type10">
                 <thead>
                 <tr>
-                  <th>시간</th>
-                  <th>체결가</th>
-                  <th>대비</th>
-                  <th>등락률</th>
-                  <th>체결량</th>
-                  <th>체결강도</th>
-                  <th>거래량</th>
+                    <th>시간</th>
+                    <th>체결가</th>
+                    <th>대비</th>
+                    <th>등락률</th>
+                    <th>체결량</th>
+                    <th>체결강도</th>
+                    <th>거래량</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <th id="text_center">12:45:38</th>
-                  <td><span class="up">74,100</span></td>
-                  <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">300</span></div></td>
-                  <td><span class="up">0.41</span></td>
-                  <td><span class="down">1</span></td>
-                  <td>74.65</td>
-                  <td>146,585</td>
+                    <th id="text_center">12:45:38</th>
+                    <td><span class="up">74,100</span></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">300</span></div>
+                    </td>
+                    <td><span class="up">0.41</span></td>
+                    <td><span class="down">1</span></td>
+                    <td>74.65</td>
+                    <td>146,585</td>
                 </tr>
 
                 <tr>
                     <th id="text_center" class="even">12:45:07</th>
                     <td class="even"><span class="up">74,100</span></td>
-                    <td class="dis_flex even"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">300</span></div></td>
+                    <td class="dis_flex even">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">300</span></div>
+                    </td>
                     <td class="even"><span class="up">0.41</span></td>
                     <td class="even"><span class="down">1</span></td>
                     <td class="even">74.65</td>
@@ -319,7 +386,10 @@
                 <tr>
                     <th id="text_center">12:45:02</th>
                     <td><span class="up">74,100</span></td>
-                    <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">300</span></div></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">300</span></div>
+                    </td>
                     <td><span class="up">0.41</span></td>
                     <td><span class="down">1</span></td>
                     <td>74.65</td>
@@ -329,7 +399,10 @@
                 <tr>
                     <th id="text_center" class="even">12:44:47</th>
                     <td class="even"><span class="up">74,100</span></td>
-                    <td class="dis_flex even"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">300</span></div></td>
+                    <td class="dis_flex even">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">300</span></div>
+                    </td>
                     <td class="even"><span class="up">0.41</span></td>
                     <td class="even"><span class="down">1</span></td>
                     <td class="even">74.65</td>
@@ -339,7 +412,10 @@
                 <tr>
                     <th id="text_center">12:44:43</th>
                     <td><span class="up">74,200</span></td>
-                    <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">400</span></div></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">400</span></div>
+                    </td>
                     <td><span class="up">0.54</span></td>
                     <td><span class="up">5</span></td>
                     <td>74.65</td>
@@ -349,7 +425,10 @@
                 <tr>
                     <th id="text_center" class="even">12:44:42</th>
                     <td class="even"><span class="up">74,200</span></td>
-                    <td class="dis_flex even"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">400</span></div></td>
+                    <td class="dis_flex even">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">400</span></div>
+                    </td>
                     <td class="even"><span class="up">0.54</span></td>
                     <td class="even"><span class="up">8</span></td>
                     <td class="even">74.65</td>
@@ -359,27 +438,34 @@
                 <tr>
                     <th id="text_center">12:44:42</th>
                     <td><span class="up">74,200</span></td>
-                    <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">400</span></div></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">400</span></div>
+                    </td>
                     <td><span class="up">0.54</span></td>
                     <td><span class="up">33</span></td>
                     <td>74.64</td>
                     <td>146,568</td>
-                </tr>                
+                </tr>
                 </tbody>
-              </table>
+            </table>
 
-              <div id="bar_bottom">
-                  <ul class="bottom_nav"><span class = "up">정상처리 되었습니다.</span></ul>
-                  <ul class="top_nav rightBtn">
-                    <li class="next"><button class="nextPage">다음</button></li>
-                    <li class="next"><button class="previous_btn">첫페이지</button></li>   
+            <div id="bar_bottom">
+                <ul class="bottom_nav"><span class="up">정상처리 되었습니다.</span></ul>
+                <ul class="top_nav rightBtn">
+                    <li class="next">
+                        <button class="nextPage">다음</button>
+                    </li>
+                    <li class="next">
+                        <button class="previous_btn">첫페이지</button>
+                    </li>
                 </ul>
-                </div>
+            </div>
 
         </div>
-        
+
     </div>
-    
+
     <!-- 오른쪽 박스 -->
     <div class="right-box">
         <div class="top">
@@ -391,10 +477,10 @@
                     <li id="btn_3_4" class="horizontal_left nav_btn" onclick="create_getFocus3(4)">정보</li>
                 </ul>
             </div>
-            
+
             <div id="bar_middle">
-                <ul class="interest2">    
-                    <li class="horizontal_left"><input type="text" class="text_box2" value="004020"></input></li>
+                <ul class="interest2">
+                    <li class="horizontal_left"><input type="text" class="text_box2" value="004020"/></li>
                     <li class="horizontal_left searchIcon"><i class="fas fa-search"></i></li>
                     <li class="horizontal_left interest3">관심</li>
                     <li class="horizontal_left hyunda4 hyundae">현대제철</li>
@@ -402,85 +488,96 @@
 
                 </ul>
             </div>
-            
+
 
             <table class="type10">
                 <thead>
                 <tr>
-                  <th>현재가</th>
-                  <th>전일대비</th>
-                  <th>등락률</th>
-                  <th>거래량</th>
+                    <th>현재가</th>
+                    <th>전일대비</th>
+                    <th>등락률</th>
+                    <th>거래량</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td><span class="up">2,320</span></td>
-                  <td class="dis_flex"><div class="edge_left"><span class="up">▲</span></div><div class="edge_right"><span class="up">300</span></div></td>
-                  <td><span class="up">0.41%</span></td>
-                  <td>146,642</td>
+                    <td><span class="up">2,320</span></td>
+                    <td class="dis_flex">
+                        <div class="edge_left"><span class="up">▲</span></div>
+                        <div class="edge_right"><span class="up">300</span></div>
+                    </td>
+                    <td><span class="up">0.41%</span></td>
+                    <td>146,642</td>
                 </tr>
-               
-                </tbody>
-              </table>
 
-              <table id="small_middleBar" class="type20">
+                </tbody>
+            </table>
+
+            <table id="small_middleBar" class="type20">
                 <thead>
                 <tr>
-                  <th>매도증감</th>
-                  <th>매도잔량</th>
-                  <th>12:45:38</th>
-                  <th>매수잔량</th>
-                  <th>매수증감</th>
+                    <th>매도증감</th>
+                    <th>매도잔량</th>
+                    <th>12:45:38</th>
+                    <th>매수잔량</th>
+                    <th>매수증감</th>
                 </tr>
                 </thead>
 
                 <tbody>
 
                 <tr>
-                  <th  class="back_blue1">0</th>
-                  
-                  <td class="back_blue1"><span>74,872</span></td>
-                  <td class="back_blue1"><span class="up">74,600</span></td>
-                  <td rowspan="5" colspan="2">
-                    <table id="small_table">
-                        <tr>
-                            <td id="text_center" ><div class="back_gray2"><span>상한</span></div></td>
-                            <td class="pos_right"><span class="up">84,800</span></td>
-                        </tr>
+                    <th class="back_blue1">0</th>
 
-                        <tr>
-                            <td id="text_center" ><div class="back_gray2"><span>하한</span></div></td>
-                            <td class="pos_right"><span class="down">62,800</span></td>
-                        </tr>
+                    <td class="back_blue1"><span>74,872</span></td>
+                    <td class="back_blue1"><span class="up">74,600</span></td>
+                    <td rowspan="5" colspan="2">
+                        <table id="small_table">
+                            <tr>
+                                <td id="text_center">
+                                    <div class="back_gray2"><span>상한</span></div>
+                                </td>
+                                <td class="pos_right"><span class="up">84,800</span></td>
+                            </tr>
 
-                        <tr>
-                            <td id="text_center" ><div class="back_gray2"><span>시가</span></div></td>
-                            <td class="pos_right"><span class="up">74,100</span></td>
-                        </tr>
+                            <tr>
+                                <td id="text_center">
+                                    <div class="back_gray2"><span>하한</span></div>
+                                </td>
+                                <td class="pos_right"><span class="down">62,800</span></td>
+                            </tr>
 
-                        <tr>
-                            <td id="text_center" ><div class="back_gray2"><span>고가</span></div></td>
-                            <td class="pos_right"><span class="up">74,900</span></td>
-                        </tr>
+                            <tr>
+                                <td id="text_center">
+                                    <div class="back_gray2"><span>시가</span></div>
+                                </td>
+                                <td class="pos_right"><span class="up">74,100</span></td>
+                            </tr>
 
-                        <tr>
-                            <td id="text_center" ><div class="back_gray2"><span>저가</span></div></td>
-                            <td class="pos_right"><span class="up">74,100</span></td>
-                        </tr>
+                            <tr>
+                                <td id="text_center">
+                                    <div class="back_gray2"><span>고가</span></div>
+                                </td>
+                                <td class="pos_right"><span class="up">74,900</span></td>
+                            </tr>
+
+                            <tr>
+                                <td id="text_center">
+                                    <div class="back_gray2"><span>저가</span></div>
+                                </td>
+                                <td class="pos_right"><span class="up">74,100</span></td>
+                            </tr>
 
 
-                    </table>
-                </td> 
-                    
+                        </table>
+                    </td>
+
                 </tr>
 
                 <tr>
                     <th class="back_blue2">0</th>
                     <td class="back_blue2"><span>8,066</span></td>
-                    
-                    </td>
-                    <td class="back_blue2"><span class="up">74,500</span></td>                   
+                    <td class="back_blue2"><span class="up">74,500</span></td>
                 </tr>
 
                 <tr>
@@ -492,7 +589,7 @@
                 <tr>
                     <th class="back_blue4">0</th>
                     <td class="back_blue4"><span>856</span></td>
-                    <td class="back_blue4"><span class="up">74,300</span></td>                   
+                    <td class="back_blue4"><span class="up">74,300</span></td>
                 </tr>
 
                 <tr>
@@ -501,83 +598,84 @@
                     <td class="back_blue5"><span class="up">74,200</span></td>
                 </tr>
 
-                
-                 
+
                 <tr>
                     <td rowspan="4" colspan="2">
                         <table id="small_table">
                             <tr>
-                                <th id="text_center"><div class="back_gray2"><span>액면가</span></div></th>
+                                <th id="text_center">
+                                    <div class="back_gray2"><span>액면가</span></div>
+                                </th>
                                 <td class="pos_right"><span class="t_center">5,000</span></td>
                             </tr>
 
                             <tr>
-                                <th id="text_center"><div class="back_gray2"><span>PER</span></div></th>
+                                <th id="text_center">
+                                    <div class="back_gray2"><span>PER</span></div>
+                                </th>
                                 <td class="pos_right"><span class="t_center">9.04</span></td>
                             </tr>
 
                             <tr>
-                                <th id="text_center"><div class="back_gray2"><span>자본금</span></div></th>
+                                <th id="text_center">
+                                    <div class="back_gray2"><span>자본금</span></div>
+                                </th>
                                 <td class="pos_right"><span class="t_center">5,827 억</span></td>
                             </tr>
                         </table>
                     </td>
                 </tr>
-               
-                
-                
-                
+
 
                 <tr>
-                    <td id ="back_red"><span >74,100</span></td>
+                    <td id="back_red"><span>74,100</span></td>
                     <td id="text_center" class="back_red2">3,103</td>
                     <td class="back_red2">-1</td>
-          
-                    
-                  </tr>
-  
-                  <tr>
-                      <td class="back_red3"><span class="up">74,000</span></td>
-                      <td id="text_center" class="back_red3">2,324</td>
-                      <td class="back_red3">0</td>
-                     
-                  </tr>
-  
-                  <tr>
-                      <td class="back_red5"><span class="up">73,900</span></td>
-                      <td id="text_center" class="back_red5">1,717</td>
-                      <td class="back_red5">0</td>
-                  </tr>
-  
-                  <tr>
-                      <td colspan="2"></td>
-                      <td class="back_red6">74,800</td>
-                      <td id="text_center" class="back_red6">2,943</td>
-                      <td class="back_red6">0</td>
-                     
-                  </tr>
-  
-                  <tr>
-                    <td colspan="2"></td>
-                      <td class="back_red7"><span class="down">73,700</span></td>
-                      <td id="text_center" class="back_red7"><span>1,044</span></td>
-                      <td  class="back_red7">0</td>
-                      <td></td>
-                  </tr>
 
-                  <tr class="back_gray">
+
+                </tr>
+
+                <tr>
+                    <td class="back_red3"><span class="up">74,000</span></td>
+                    <td id="text_center" class="back_red3">2,324</td>
+                    <td class="back_red3">0</td>
+
+                </tr>
+
+                <tr>
+                    <td class="back_red5"><span class="up">73,900</span></td>
+                    <td id="text_center" class="back_red5">1,717</td>
+                    <td class="back_red5">0</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"></td>
+                    <td class="back_red6">74,800</td>
+                    <td id="text_center" class="back_red6">2,943</td>
+                    <td class="back_red6">0</td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="2"></td>
+                    <td class="back_red7"><span class="down">73,700</span></td>
+                    <td id="text_center" class="back_red7"><span>1,044</span></td>
+                    <td class="back_red7">0</td>
+                    <td></td>
+                </tr>
+
+                <tr class="back_gray">
                     <th></th>
                     <td><span class="table_footer">100,835</span></td>
                     <td id="text_center"><span class="table_footer">잔량합계</span></td>
                     <td id="text_center"><span class="table_footer">17,829</span></td>
                     <td><span></span></td>
                 </tr>
-                
+
                 </tbody>
-              </table>
+            </table>
         </div>
 
-        
 
         <!-- 파란 박스 -->
         <div class="bottom">
@@ -606,20 +704,20 @@
                 <ul class="small_bar">
                     <li class="horizontal_left bord_word2">비밀번호</li>
                     <li class="horizontal_left">
-                        <input type="password" class="password_box">
+                        <input type="password" class="password_box"/>
                     </li>
                     <li class="horizontal_left">
-                        <input type="checkbox" id="cb1">
+                        <input type="checkbox" id="cb1"/>
                     </li>
 
                     <li class="horizontal_left bord_word3">비밀번호 저장</li>
                 </ul>
-                
+
                 <!-- 3 -->
                 <ul class="small_bar">
                     <li class="horizontal_left bord_word2">종목코드</li>
                     <li class="horizontal_left">
-                        <input type="text" class="text_box4" value="004020">
+                        <input type="text" class="text_box4" value="004020"/>
                     </li>
                     <li class="horizontal_left searchIcon"><i class="fas fa-search"></i></li>
                     <li class="horizontal_left hyundae3">현대제철</li>
@@ -633,11 +731,11 @@
                             <option value="" selected="">지정가</option>
                         </select>
                     </li>
-                    <li class="horizontal_left"><input type="checkbox" id="cb1"></li>
+                    <li class="horizontal_left"><input type="checkbox" id="cb1"/></li>
                     <li class="horizontal_left bord_word4">시장가</li>
-                    <li class="horizontal_left"><input type="radio" name="selectRadio"></li>
+                    <li class="horizontal_left"><input type="radio" name="selectRadio"/></li>
                     <li class="horizontal_left bord_word4">현금</li>
-                    <li class="horizontal_left"><input type="radio" name="selectRadio"></li>
+                    <li class="horizontal_left"><input type="radio" name="selectRadio"/></li>
                     <li class="horizontal_left bord_word4">신용</li>
                 </ul>
 
@@ -655,24 +753,30 @@
                 <ul class="small_bar">
                     <li class="horizontal_left bord_word2">매도수량</li>
                     <li class="horizontal_left">
-                        <input type="text" class="text_box3" value="0">
+                        <input type="text" class="text_box3" value="0"/>
                     </li>
-                    <li class="horizontal_left"><button class="possible_btn">가능</button></li>
+                    <li class="horizontal_left">
+                        <button class="possible_btn">가능</button>
+                    </li>
                 </ul>
-                
+
                 <!-- 7 -->
                 <ul class="small_bar">
                     <li class="horizontal_left bord_word2">매도단가</li>
                     <li class="horizontal_left">
-                        <input type="text" class="text_box3" value="0">
+                        <input type="text" class="text_box3" value="0"/>
                     </li>
                     <li class="horizontal_left bord_word5">원</li>
                 </ul>
 
-                 <!-- 8 -->
-                 <ul class="small_bar">
-                    <li class="horizontal_left"><button class="sell_btn">현금매도</button></li>
-                    <li class="horizontal_left"><button class="erase_btn">지움</button></li>
+                <!-- 8 -->
+                <ul class="small_bar">
+                    <li class="horizontal_left">
+                        <button class="sell_btn">현금매도</button>
+                    </li>
+                    <li class="horizontal_left">
+                        <button class="erase_btn">지움</button>
+                    </li>
                 </ul>
             </div>
         </div>
