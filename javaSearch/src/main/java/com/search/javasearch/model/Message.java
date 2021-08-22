@@ -7,12 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class message {
-    String message = "";
+public class Message {
+    String message = "오류 없음";
     String href = "";
 
-    /*public message(String message, String href){
+    public Message(String message, String href){
         this.message = message;
         this.href = href;
-    }*/
+    }
 }
