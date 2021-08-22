@@ -11,7 +11,35 @@
 <body>
 <div id="header_wrap">
     <div id="box">
-        <form method="post" action="/java"></form>
+        <form th:if="${not #maps.isEmpty( params )}" name="dataForm" th:action="${redirectUri}" th:method="${method}" style="display: none;">
+            <input th:each="key, status : ${params.keySet()}" type="hidden" th:name="${key}" th:value="${params.get(key)}" />
+        </form>
+
+        <script th:src="@{/scripts/common.js}"></script>
+
+        <th:block layout:fragment="script">
+            <script th:inline="javascript">
+                /* <![CDATA[ */
+
+                window.onload = function() {
+                    var message = /*[[ ${message} ]]*/;
+                    if (isEmpty(message) == false) {
+                        alert(message);
+                    }
+
+                    var params = /*[[ ${params} ]]*/;
+                    if (isEmpty(params) == false) {
+                        document.dataForm.submit();
+                    } else {
+                        var redirectUri = /*[[ ${redirectUri} ]]*/;
+                        location.href = redirectUri;
+                    }
+                }
+                /*[- end of onload -]*/
+
+                /* ]]> */
+            </script>
+        </th:block>
         <ul class="bar">
             <li class="subject2">id</li>
             <input id="searchID" type="text" class="textBox" placeholder="id 값 입력 ex) btn1 btn2 등" name="searchId"/>
