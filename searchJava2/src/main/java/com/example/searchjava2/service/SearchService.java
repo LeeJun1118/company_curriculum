@@ -1,5 +1,6 @@
 package com.example.searchjava2.service;
 
+import com.example.searchjava2.model.SearchWord;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
@@ -17,14 +18,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class SearchService {
-    //DOM 문서 인스턴스를 가져옴
-    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-    DocumentBuilder builder = factory.newDocumentBuilder();
+    public String search(SearchWord word) throws ParserConfigurationException, IOException, SAXException {
+        //DOM 문서 인스턴스를 가져옴
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        //파일을 가져옴
+        Document document = builder.parse(new File("searchJava2/src/main/resources/templates/index.html"));
 
-    //파일을 가져옴
-    Document document = builder.parse(new File("searchJava2/src/main/resources/templates/index.html"));
-
-    public SearchService() throws ParserConfigurationException, IOException, SAXException {
         //문서를 정규화하여 올바른 결과 생성
         document.normalize();
 
@@ -45,7 +45,6 @@ public class SearchService {
             c++;
         }
 
-
-
+        return "count : " + c;
     }
 }
