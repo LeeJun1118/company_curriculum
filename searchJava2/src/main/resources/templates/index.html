@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <title>Stock Screen</title>
@@ -9,19 +9,16 @@
     <script src="/js/searchJS.js"></script>
 </head>
 <body>
-<p th:text="${msg}">wait.</p>
-<form method="post" action="/">
-    <input type="text" name="id1" th:value="${id2}"/>
-    <input type="submit" value="Click" />
-</form>
+
 <div id="header_wrap">
     <div id="box">
-        <form  action="/" method="get" >
+        <p th:text="${msg}">wait.</p>
+        <form method="post" action="/">
             <ul class="bar">
                 <li class="subject2">id</li>
-                <input id="searchID" type="text" class="textBox" placeholder="id 값 입력 ex) btn1 btn2 등" name="searchId"
-                       th:value="${nodeId}"/>
+                <input id="searchID" type="text" class="textBox" placeholder="id 값 입력 ex) btn1 btn2 등" name="searchId" th:value="${nodeId}"/>
             </ul>
+
             <ul class="bar">
                 <li class="subject">노드명</li>
                 <input id="searchNode" type="text" class="textBox" placeholder="div, body, head 등" name="searchNode"
@@ -38,22 +35,22 @@
                        th:value="${attributeValue}"/>
             </ul>
 
+
             <ul class="bar">
                 <li>
                     <button class="search_js" onclick="nodeSearch()">검색(Javascript)</button>
                 </li>
                 <li>
-                    <input type="submit" class="search_java" value="검색(Java)" th:onclick="'alert(\'' + ${msg} + '\');'"></input>
+                    <input type="submit" class="search_java" value="검색(Java)"></input>
                 </li>
                 <li>
                     <button class="search_jQuery">검색(jQuery)</button>
                 </li>
             </ul>
-
         </form>
     </div>
-</div>
 
+</div>
 <div id="wrap">
     <!-- 왼쪽 박스 -->
     <div class="left-box">

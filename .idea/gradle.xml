@@ -15,6 +15,15 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/searchJava2" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/searchJava2" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
