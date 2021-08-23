@@ -1,6 +1,9 @@
 package com.search.javasearch;
 
 import org.w3c.dom.*;
+import org.w3c.dom.traversal.DocumentTraversal;
+import org.w3c.dom.traversal.NodeFilter;
+import org.w3c.dom.traversal.NodeIterator;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -23,7 +26,28 @@ public class javaDom {
         //문서의 루트 요소를 얻음
         System.out.println("루트 요소 : " + document.getDocumentElement().getNodeName());
 
-        NodeList nodeList = document.getElementsByTagName("div");
+        // Node Name List : html head meta tittle link div 등등
+        DocumentTraversal trav = (DocumentTraversal) document;
+        NodeIterator it = trav.createNodeIterator(document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
+        int c = 1;
+        for (Node node = it.nextNode(); node != null; node = it.nextNode()) {
+            String name = node.getNodeName();
+            NamedNodeMap all = node.getAttributes();
+            System.out.print("node name : " + name);
+            for (int i = 0; i < all.getLength(); i++) {
+                //id ,class onclick
+                String nodeName = all.item(i).getNodeName();
+                System.out.println("     " +
+                        ((Attr) all.item(i)).getName() + "=" + ((Attr) all.item(i)).getValue()
+                       /*+ "   getNodeValue : " + (all.item(i)).getNodeValue()*/);
+                all.item(i).getNodeType();
+            }
+
+            //System.out.printf("\n===================================================%d %s%n", c , name);
+            c++;
+        }
+
+        /*NodeList nodeList = document.getElementsByTagName("div");
         int count = 0;
         String uid = null;
         for (int i = 0; i < nodeList.getLength(); i++) {
@@ -41,16 +65,8 @@ public class javaDom {
             }
         }
         System.out.println("count : " + count);
-        /*DocumentTraversal trav = (DocumentTraversal) document;
+        */
 
 
-        NodeIterator it = trav.createNodeIterator(document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
-        int c = 1;
-        for (Node node = it.nextNode(); node !=  null; node = it.nextNode()){
-            String name = node.getNodeName();
-            NamedNodeMap all = node.getAttributes();
-            System.out.printf("%d %s%n", c , name);
-            c++;
-        }*/
     }
 }
