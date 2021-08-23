@@ -31,19 +31,15 @@ public class javaDom {
         NodeIterator it = trav.createNodeIterator(document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
         int c = 1;
         for (Node node = it.nextNode(); node != null; node = it.nextNode()) {
-            String name = node.getNodeName();
+            String nodeName = node.getNodeName();
             NamedNodeMap all = node.getAttributes();
-            System.out.print("node name : " + name);
+            // div ul li 등등
+            System.out.print("node name : " + nodeName);
             for (int i = 0; i < all.getLength(); i++) {
-                //id ,class onclick
-                String nodeName = all.item(i).getNodeName();
                 System.out.println("     " +
-                        ((Attr) all.item(i)).getName() + "=" + ((Attr) all.item(i)).getValue()
-                       /*+ "   getNodeValue : " + (all.item(i)).getNodeValue()*/);
-                all.item(i).getNodeType();
+                        //class 이름                              그 안의 다른 요소들 :name=attName type=text 등등
+                        ((Attr) all.item(i)).getName() + "=" + ((Attr) all.item(i)).getValue());
             }
-
-            //System.out.printf("\n===================================================%d %s%n", c , name);
             c++;
         }
 
