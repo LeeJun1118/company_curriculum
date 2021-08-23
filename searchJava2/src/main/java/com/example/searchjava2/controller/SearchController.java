@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class TetstController {
+public class SearchController {
     @RequestMapping(value = "/")
     public String index(Model model) {
         model.addAttribute("msg", "input your id");
