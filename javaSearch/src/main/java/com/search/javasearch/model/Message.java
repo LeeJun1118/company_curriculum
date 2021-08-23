@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Message {
     String message = "오류 없음";
-    String href = "";
+    String href = "/";
 
     public Message(String message, String href){
         this.message = message;

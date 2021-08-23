@@ -28,20 +28,15 @@
             <input id="attValue" type="text" class="textBox" placeholder="text, yellow 등" name="attValue"/>
         </ul>
         <ul class="bar">
-            <li><button class="search_js" onclick="nodeSearch()">검색(Javascript)</button></li>
-            <li><button class="search_java" type="submit">검색(Java)
-                <th:block th:if="${#strings.length(data.message) != 0}">
-                    <script>
-                        top.alert("[[${data.message}]]");
-                    </script>
-                </th:block>
-                <th:block th:if="${#strings.length(data.message) == 0}">
-                    <script>
-                        top.alert("data 없음");
-                    </script>
-                </th:block>
-            </button></li>
-            <li><button class="search_jQuery">검색(jQuery)</button></li>
+            <li>
+                <button class="search_js" onclick="nodeSearch()">검색(Javascript)</button>
+            </li>
+            <li th:onclick="'alert(\'' + [[${data}]] + '  c\');'">
+                <button class="search_java" type="submit" >검색(Java)</button>
+            </li>
+            <li>
+                <button class="search_jQuery">검색(jQuery)</button>
+            </li>
         </ul>
 
     </div>
