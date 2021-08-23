@@ -11,7 +11,7 @@
 <body>
 <div id="header_wrap">
     <div id="box">
-        <form  action="/">
+        <form  action="/" method="get" >
             <ul class="bar">
                 <li class="subject2">id</li>
                 <input id="searchID" type="text" class="textBox" placeholder="id 값 입력 ex) btn1 btn2 등" name="searchId"
@@ -38,7 +38,7 @@
                     <button class="search_js" onclick="nodeSearch()">검색(Javascript)</button>
                 </li>
                 <li>
-                    <input type="submit" class="search_java" value="검색(Java)" ></input>
+                    <input type="submit" class="search_java" value="검색(Java)" th:onclick="'alert(\'' + ${msg} + '\');'"></input>
                 </li>
                 <li>
                     <button class="search_jQuery">검색(jQuery)</button>
