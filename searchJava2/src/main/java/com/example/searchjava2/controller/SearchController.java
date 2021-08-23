@@ -20,7 +20,6 @@ public class SearchController {
                        @RequestParam("attName") String attributeName,
                        @RequestParam("attValue") String attributeValue,
                        Model model) {
-        model.addAttribute("nodeId", nodeId);
         model.addAttribute("msg",
                 "nodeId : " + nodeId + "   node name  : " + nodeName +
                         "   attributeName  : " + attributeName +
