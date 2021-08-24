@@ -11,5 +11,8 @@
         <module name="searchJava2.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="javaSearch" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
