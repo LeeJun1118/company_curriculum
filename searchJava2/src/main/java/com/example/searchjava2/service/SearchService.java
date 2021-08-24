@@ -1,14 +1,8 @@
 package com.example.searchjava2.service;
 
 import com.example.searchjava2.model.SearchWord;
-import org.springframework.stereotype.Service;
-import org.w3c.dom.Attr;
+import com.example.searchjava2.service.search.NodeSearch;
 import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.traversal.DocumentTraversal;
-import org.w3c.dom.traversal.NodeFilter;
-import org.w3c.dom.traversal.NodeIterator;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -28,23 +22,12 @@ public class SearchService {
         //문서를 정규화하여 올바른 결과 생성
         document.normalize();
 
-        // Node Name List : html head meta tittle link div 등등
-        DocumentTraversal trav = (DocumentTraversal) document;
-        NodeIterator it = trav.createNodeIterator(document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
-        int c = 1;
-        for (Node node = it.nextNode(); node != null; node = it.nextNode()) {
-            String nodeName = node.getNodeName();
-            NamedNodeMap all = node.getAttributes();
-            // div ul li 등등
-            System.out.print("node name : " + nodeName);
-            for (int i = 0; i < all.getLength(); i++) {
-                System.out.println("     " +
-                        //class 이름                              그 안의 다른 요소들 :name=attName type=text 등등
-                        ((Attr) all.item(i)).getName() + "=" + ((Attr) all.item(i)).getValue());
-            }
-            c++;
-        }
+        //NodeSearch 객체 생성
+        NodeSearch nodeSearch = new NodeSearch();
 
-        return "count : " + c;
+        // html에서 뽑아온 list 와 SearchController에서 받아온 word 값 NodeSearch 에 넘겨줌
+        String result = nodeSearch.search(document, word);
+
+        return "" + result;
     }
 }

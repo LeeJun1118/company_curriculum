@@ -30,16 +30,38 @@ public class javaDom {
         DocumentTraversal trav = (DocumentTraversal) document;
         NodeIterator it = trav.createNodeIterator(document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
         int c = 1;
+        int nodeNameCount = 0;
         for (Node node = it.nextNode(); node != null; node = it.nextNode()) {
             String nodeName = node.getNodeName();
             NamedNodeMap all = node.getAttributes();
             // div ul li 등등
-            System.out.print("node name : " + nodeName);
-            for (int i = 0; i < all.getLength(); i++) {
-                System.out.println("     " +
-                        //class 이름                              그 안의 다른 요소들 :name=attName type=text 등등
-                        ((Attr) all.item(i)).getName() + "=" + ((Attr) all.item(i)).getValue());
+            System.out.println("node name : " + nodeName);
+            if (nodeName == "li"){
+                nodeNameCount++;
+                for (int i = 0; i < all.getLength(); i++) {
+                    String nodes = ((Attr) all.item(i)).getName();
+                    String nodes2 = ((Attr) all.item(i)).getValue();
+                    System.out.println("div nodes GetName = "+nodes);
+//                    System.out.println("div nodes GetValue = "+nodes2);
+                }
             }
+
+            System.out.println(nodeNameCount);
+            /*
+            for (int i = 0; i < all.getLength(); i++) {
+                *//*System.out.println("     " +
+                        //class 이름                              그 안의 다른 요소들 :name=attName type=text 등등
+                        ((Attr) all.item(i)).getName() + "=" + ((Attr) all.item(i)).getValue());*//*
+
+                // class id name type 등등이 나옴
+                *//*String nodes = ((Attr) all.item(i)).getName();
+                System.out.println(nodes);*//*
+
+               *//* //class id name type 등의 값 : text yellow 등
+                String nodes2 = ((Attr) all.item(i)).getValue();
+                System.out.println(nodes2);*//*
+
+            }*/
             c++;
         }
 
