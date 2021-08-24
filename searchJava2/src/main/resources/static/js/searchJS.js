@@ -124,7 +124,7 @@ function nodeSearch() {
 
 
     //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
-    if (searchID != '' && searchNode != '' && attName != '' && attValue != '') {
+    if (searchID !== '' && searchNode != '' && attName != '' && attValue != '') {
         // th 사용한 부분들 list
         var tagList = document.querySelectorAll(searchNode);
         var countAllCondition = 0;

@@ -1188,3 +1188,12 @@ table#small_table td{
 .search_jQuery:active{
     box-shadow: 1px 1px 1px rgb(78, 77, 77) inset;
 }
+
+.result1{
+    border: 1px;
+    margin-left: 10px;
+}
+.result2{
+    border: 1px;
+    margin-left: 10px;
+}

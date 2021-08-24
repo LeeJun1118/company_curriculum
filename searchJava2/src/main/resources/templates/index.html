@@ -14,12 +14,12 @@
     <div>
         <ul class="bar">
             <li class="horizontal_left">JavaScript : </li>
-            <li class="horizontal_left" />
+            <input readonly="readonly" type="text" class="horizontal_left result1" id="inJs"/>
         </ul>
 
         <ul class="bar">
             <li class="horizontal_left">Java : </li>
-            <li class="horizontal_left" th:text="${msg}"></li>
+            <li class="horizontal_left result2" th:text="${msg}"></li>
         </ul>
 
         <ul class="bar">
@@ -58,7 +58,7 @@
                     <button class="search_js" onclick="nodeSearch()">검색(Javascript)</button>
                 </li>
                 <li>
-                    <input type="submit" class="search_java" value="검색(Java)"></input>
+                    <input type="submit" class="search_java" value="검색(Java)"/>
                 </li>
                 <li>
                     <button class="search_jQuery">검색(jQuery)</button>

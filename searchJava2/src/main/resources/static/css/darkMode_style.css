@@ -1242,3 +1242,12 @@ table#small_table td{
 
     cursor: pointer;
 }
+
+.result1{
+    border: 1px;
+    margin-left: 10px;
+}
+.result2{
+    border: 1px;
+    margin-left: 10px;
+}
