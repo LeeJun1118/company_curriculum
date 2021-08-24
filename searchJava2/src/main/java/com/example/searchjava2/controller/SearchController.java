@@ -50,11 +50,12 @@ public class SearchController {
         System.out.println("node name : " + word.getNName());
         System.out.println("Att Name : " + word.getAtName());
         System.out.println("Att Value : " + word.getAtValue());
+/*
 
-        /*if (word.getNId()=="")
-            System.out.println("data type");*/
+        *//*if (word.getNId()=="")
+            System.out.println("data type");*//*
 
-        System.out.println("Controller Result : "+result);
+        System.out.println("Controller Result : "+result);*/
         model.addAttribute("msg",result);
         return "index";
     }
