@@ -80,9 +80,10 @@ public class javaDom {
         }*/
 
         for (Node node = it.nextNode(); node != null; node = it.nextNode()) {
-//            String nodeName = node.getNodeName();
+            String nodeName = node.getNodeName();
 //            NamedNodeMap all = node.getAttributes();
 
+            System.out.println("node Name : "+nodeName);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element e = (Element) node;
 //                String nodeName = e.getNodeName();
