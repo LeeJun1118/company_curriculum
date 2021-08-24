@@ -16,7 +16,7 @@ import java.io.IOException;
 public class SearchController {
     @RequestMapping(value = "/")
     public String index(Model model) {
-        model.addAttribute("msg", "[Java Count]");
+        model.addAttribute("msg", "");
         return "index";
     }
 

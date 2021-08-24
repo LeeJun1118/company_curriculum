@@ -4,15 +4,31 @@
     <meta charset="UTF-8"/>
     <title>Stock Screen</title>
     <link rel="stylesheet" href="/css/style.css"/>
+<!--    <link rel="stylesheet" href="/css/darkMode_style.css"/>-->
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <script src="/js/nav_btn.js"></script>
     <script src="/js/searchJS.js"></script>
 </head>
 <body>
-
 <div id="header_wrap">
+    <div>
+        <ul class="bar">
+            <li class="horizontal_left">JavaScript : </li>
+            <li class="horizontal_left" />
+        </ul>
+
+        <ul class="bar">
+            <li class="horizontal_left">Java : </li>
+            <li class="horizontal_left" th:text="${msg}"></li>
+        </ul>
+
+        <ul class="bar">
+            <li class="horizontal_left">JQuery : </li>
+            <li class="horizontal_left" />
+        </ul>
+    </div>
+
     <div id="box">
-        <p th:text="${msg}">wait.</p>
         <form method="post" action="/">
             <ul class="bar">
                 <li class="subject2">id</li>

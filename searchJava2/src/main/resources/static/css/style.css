@@ -19,6 +19,7 @@ ul {
 #wrap{
     margin: 0px auto;
     width: 1150px;
+    height: 900px;
 }
 /* 상단바 관심종목부터 왼쪽에서 정렬 */
 .horizontal_left{ 
@@ -1066,7 +1067,7 @@ table#small_table td{
 /* Search Javascript */
 #header_wrap{
     width: 550px;
-    height: 410px;
+    height: 550px;
     margin: auto;
 }
 
