@@ -38,19 +38,19 @@ public class javaDom {
             NamedNodeMap all = node.getAttributes();
             // div ul li 등등
             System.out.println("node name : " + nodeName);
-//            if (nodeName == "div") {
+//            if (nodeName == "th") {
                 nodeNameCount++;
                 for (int i = 0; i < all.getLength(); i++) {
                     String nodes = ((Attr) all.item(i)).getName();
                     String nodes2 = ((Attr) all.item(i)).getValue();
 //                    System.out.println("div nodes GetName = "+nodes);
                     System.out.println("div nodes GetValue = " + nodes2);
-                    if (Objects.equals(nodes2, "bar_middle")) {
+                    if (Objects.equals(nodes2, "text_center")&& nodeName.equals("th")) {
                         idCount++;
                     }
                 }
 //            }
-            System.out.println("btn id " + idCount);
+            System.out.println("text_center" + idCount);
 
 //            System.out.println(nodeNameCount);
             /*

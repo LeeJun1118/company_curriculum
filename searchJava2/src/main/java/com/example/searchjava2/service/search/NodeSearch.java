@@ -2,6 +2,7 @@ package com.example.searchjava2.service.search;
 
 import com.example.searchjava2.model.SearchWord;
 import com.example.searchjava2.service.search.functions.SearchId;
+import com.example.searchjava2.service.search.functions.SearchIdNodeName;
 import com.example.searchjava2.service.search.functions.SearchNodeName;
 import org.w3c.dom.Document;
 import org.w3c.dom.traversal.DocumentTraversal;
@@ -27,8 +28,8 @@ public class NodeSearch {
 
         //===================id + 노드명으로 찾기===================
         if (word.getNId() != "" && word.getNName() != "" && word.getAtName() == "" && word.getAtValue() == "") {
-
-            return "id + node name";
+            SearchIdNodeName searchIdNodeName = new SearchIdNodeName();
+            return searchIdNodeName.search(it,word);
         }
 
         //=================== 속성명 + 속성값으로 찾기 ===================
