@@ -26,16 +26,6 @@ public class SearchController {
                        @RequestParam("attName") String attributeName,
                        @RequestParam("attValue") String attributeValue,
                        Model model) throws ParserConfigurationException, IOException, SAXException {
-        /*
-        model.addAttribute("msg",
-                "nodeId : " + nodeId + "   node name  : " + nodeName +
-                        "   attributeName  : " + attributeName +
-                        "   attributeValue  : " + attributeValue);
-*/
-       /* System.out.println(nodeId);
-        System.out.println(nodeName);
-        System.out.println(attributeName);
-        System.out.println(attributeValue);*/
 
         SearchWord word = new SearchWord();
         word.setNId(nodeId);
@@ -46,16 +36,6 @@ public class SearchController {
         SearchService searchService = new SearchService();
         String result = searchService.search(word);
 
-        System.out.println("id" + word.getNId());
-        System.out.println("node name : " + word.getNName());
-        System.out.println("Att Name : " + word.getAtName());
-        System.out.println("Att Value : " + word.getAtValue());
-/*
-
-        *//*if (word.getNId()=="")
-            System.out.println("data type");*//*
-
-        System.out.println("Controller Result : "+result);*/
         model.addAttribute("msg",result);
         return "index";
     }
