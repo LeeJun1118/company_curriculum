@@ -56,11 +56,9 @@ public class NodeSearch {
 
         //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
         if (word.getNId() != "" && word.getNName() != "" && word.getAtName() != "" && word.getAtValue() != "") {
-
-            return "id + 노드명 + 속성명 + 속성값";
+            SearchAll searchAll = new SearchAll();
+            return searchAll.search(it,word);
         }
-
-
-        return "해당 없음 : 오류";
+        return "0";
     }
 }
