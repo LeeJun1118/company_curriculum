@@ -11,6 +11,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class javaDom {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
@@ -31,22 +32,27 @@ public class javaDom {
         NodeIterator it = trav.createNodeIterator(document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
         int c = 1;
         int nodeNameCount = 0;
+        int idCount =0 ;
         for (Node node = it.nextNode(); node != null; node = it.nextNode()) {
             String nodeName = node.getNodeName();
             NamedNodeMap all = node.getAttributes();
             // div ul li 등등
             System.out.println("node name : " + nodeName);
-            if (nodeName == "li"){
+//            if (nodeName == "div") {
                 nodeNameCount++;
                 for (int i = 0; i < all.getLength(); i++) {
                     String nodes = ((Attr) all.item(i)).getName();
                     String nodes2 = ((Attr) all.item(i)).getValue();
-                    System.out.println("div nodes GetName = "+nodes);
-//                    System.out.println("div nodes GetValue = "+nodes2);
+//                    System.out.println("div nodes GetName = "+nodes);
+                    System.out.println("div nodes GetValue = " + nodes2);
+                    if (Objects.equals(nodes2, "bar_middle")) {
+                        idCount++;
+                    }
                 }
-            }
+//            }
+            System.out.println("btn id " + idCount);
 
-            System.out.println(nodeNameCount);
+//            System.out.println(nodeNameCount);
             /*
             for (int i = 0; i < all.getLength(); i++) {
                 *//*System.out.println("     " +
@@ -57,7 +63,7 @@ public class javaDom {
                 *//*String nodes = ((Attr) all.item(i)).getName();
                 System.out.println(nodes);*//*
 
-               *//* //class id name type 등의 값 : text yellow 등
+             *//* //class id name type 등의 값 : text yellow 등
                 String nodes2 = ((Attr) all.item(i)).getValue();
                 System.out.println(nodes2);*//*
 

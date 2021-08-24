@@ -10,22 +10,19 @@ import org.w3c.dom.traversal.NodeIterator;
 
 public class NodeSearch {
     public String search(Document document, SearchWord word) {
-        DocumentTraversal trav = (DocumentTraversal) document;
-        NodeIterator it = trav.createNodeIterator(document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
+        DocumentTraversal travel = (DocumentTraversal) document;
+        NodeIterator it = travel.createNodeIterator(document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
 
         //===================id 로 찾기===================
         if (word.getNId() != "" && word.getNName() == "" && word.getAtName() == "" && word.getAtValue() == "") {
             SearchId searchId = new SearchId();
-
-//            return searchId.search(it,word);
-            return "id";
+            return searchId.search(it,word);
         }
+
         //===================노드명으로 찾기===================
         if (word.getNId() == "" && word.getNName() != "" && word.getAtName() == "" && word.getAtValue() == "") {
             SearchNodeName nodeName = new SearchNodeName();
             return nodeName.search(it,word);
-//            result = nodeName.search(it,word);
-//            return result;
         }
 
         //===================id + 노드명으로 찾기===================
