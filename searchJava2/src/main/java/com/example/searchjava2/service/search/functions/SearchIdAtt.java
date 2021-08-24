@@ -14,9 +14,11 @@ public class SearchIdAtt {
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element e = (Element) node;
                 String id = e.getAttribute("id");
-                String nodeName = e.getAttribute(word.getAtName());
-                if (Objects.equals(word.getNId(), id) && Objects.equals(word.getAtValue(), nodeName)) {
-                    count++;
+                String attName[] = e.getAttribute(word.getAtName()).split(" ");
+                for (int i = 0; i < attName.length; i++) {
+                    if (Objects.equals(word.getNId(), id) && Objects.equals(word.getAtValue(), attName[i])) {
+                        count++;
+                    }
                 }
             }
         }
