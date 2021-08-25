@@ -1243,11 +1243,17 @@ table#small_table td{
     cursor: pointer;
 }
 
-.result1{
+#inJs{
     border: 1px;
-    margin-left: 10px;
+    height: 23px;
+    font-size: 15px;
+    width: 295px;
+    text-align: center;
 }
-.result2{
+#inJava{
     border: 1px;
     margin-left: 10px;
+    height: 23px;
+    font-size: 15px;
+    width: 400px;
 }

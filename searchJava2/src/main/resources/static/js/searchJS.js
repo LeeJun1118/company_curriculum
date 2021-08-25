@@ -1,11 +1,3 @@
-// id : id
-// 노드 : div, head, body 
-// 속성 : id class type style onclick 
-// 속성값 : text yellow 
-
-// To-Do-List
-// 1. id + 노드명 + 속성명 + 속성값 으로 찾기
-
 function nodeSearch() {
     const searchID = document.getElementById('searchID').value;
     const searchNode = document.getElementById('searchNode').value;
@@ -20,16 +12,12 @@ function nodeSearch() {
 
     //===================id 로 찾기===================
     if (searchID != '' && searchNode == '' && attName == '' && attValue == '') {
-        const id_list = document.querySelectorAll('#' + searchID);
-        const id_list_length = id_list.length;
-        alert(searchID + " : " + id_list_length);
+        document.getElementById("inJs").value = document.querySelectorAll('#' + searchID).length;
     }
 
     //===================노드명으로 찾기===================
     if (searchNode != '' && searchID == '' && attName == '' && attValue == '') {
-        const node_list = document.querySelectorAll(searchNode);
-        const node_list_length = node_list.length;
-        alert(searchNode + " : " + node_list_length);
+        document.getElementById("inJs").value = document.querySelectorAll(searchNode).length;
     }
 
 
@@ -42,20 +30,17 @@ function nodeSearch() {
                 countNodeId++;
             }
         }
-        alert("id : " + searchID + "    노드명 : " + searchNode + "    총 : " + countNodeId + "개");
+        document.getElementById("inJs").value = countNodeId;
     }
 
     //=================== 속성명 + 속성값으로 찾기 ===================
-    // 속성명, 속성값 같이 입력하게
-    // 속성명 빠졌을 때 속성명을 입력해주세요
-    // 속성값 빠졌을 때도 동일
-    if (attName != '' && attValue == ''  /*&& searchNode == '' && searchID == '' */) {
-        alert("속성값을 입력해주세요")
-    }
-    else if (attName == '' && attValue != '' /*&& searchNode == '' && searchID == '' */) {
-        alert("속성명을 입력해주세요")
-    }
-    else if (attName != '' && attValue != '' && searchNode == '' && searchID == '') {
+    if (attName != '' && attValue == '') {
+        // alert("속성값을 입력해주세요")
+        document.getElementById("inJs").value = "속성값을 입력해주세요";
+    } else if (attName == '' && attValue != '' ) {
+        // alert("속성명을 입력해주세요")
+        document.getElementById("inJs").value = "속성명을 입력해주세요";
+    } else if (attName != '' && attValue != '' && searchNode == '' && searchID == '') {
         var countAtt = 0;
         for (var i = 0; i < myHTML.length; i++) {
             var tagList = document.querySelectorAll(myHTML[i]);
@@ -70,7 +55,7 @@ function nodeSearch() {
                 }
             }
         }
-        alert("속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countAtt + "개");
+        document.getElementById("inJs").value = countAtt;
     }
 
     //========================id + 속성명 + 속성값 으로 찾기========================
@@ -94,9 +79,8 @@ function nodeSearch() {
                 }
             }
         }
-        alert("id : " + searchID + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
+        document.getElementById("inJs").value = countValue;
     }
-
 
 
     //========================노드명 + 속성명 + 속성값 으로 찾기=====================
@@ -118,9 +102,8 @@ function nodeSearch() {
                 }
             }
         }
-        alert("노드명 : " + searchNode + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countValue + "개");
+        document.getElementById("inJs").value = countValue ;
     }
-
 
 
     //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
@@ -142,9 +125,8 @@ function nodeSearch() {
                     }
                 }
             }
-            //}
         }
-        alert("id : " + searchID + "    노드명 : " + searchNode + "    속성명 : " + attName + "    속성값 : " + attValue + "    총 : " + countAllCondition + "개");
+        document.getElementById("inJs").value = countAllCondition;
     }
 
     // //===================속성으로 찾기===================

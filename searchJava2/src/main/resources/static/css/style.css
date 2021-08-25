@@ -1146,7 +1146,7 @@ table#small_table td{
     text-align: center;
 
     width: 90px;
-    height: 30px;
+    height: 36px;
 
     display: inline;
     font-size: 15px;
@@ -1189,11 +1189,17 @@ table#small_table td{
     box-shadow: 1px 1px 1px rgb(78, 77, 77) inset;
 }
 
-.result1{
+#inJs{
     border: 1px;
-    margin-left: 10px;
+    height: 23px;
+    font-size: 15px;
+    width: 295px;
+    text-align: center;
 }
-.result2{
+#inJava{
     border: 1px;
     margin-left: 10px;
+    height: 23px;
+    font-size: 15px;
+    width: 400px;
 }

@@ -13,17 +13,17 @@
 <div id="header_wrap">
     <div>
         <ul class="bar">
-            <li class="horizontal_left">JavaScript : </li>
-            <input readonly="readonly" type="text" class="horizontal_left result1" id="inJs"/>
+            <li class="horizontal_left">JavaScript</li>
+            <input  id="inJs" class="horizontal_left result1" readonly="readonly" value=""/>
         </ul>
 
         <ul class="bar">
-            <li class="horizontal_left">Java : </li>
-            <li class="horizontal_left result2" th:text="${msg}"></li>
+            <li class="horizontal_left">Java</li>
+            <div id="inJava" th:text="${msg}"/>
         </ul>
 
         <ul class="bar">
-            <li class="horizontal_left">JQuery : </li>
+            <li class="horizontal_left">JQuery </li>
             <li class="horizontal_left" />
         </ul>
     </div>
@@ -55,13 +55,13 @@
 
             <ul class="bar">
                 <li>
-                    <button class="search_js" onclick="nodeSearch()">검색(Javascript)</button>
+                    <input class="search_js" onclick="nodeSearch()" value="검색(Javascript)"/>
                 </li>
                 <li>
                     <input type="submit" class="search_java" value="검색(Java)"/>
                 </li>
                 <li>
-                    <button class="search_jQuery">검색(jQuery)</button>
+                    <input class="search_jQuery" value="검색(jQuery)"/>
                 </li>
             </ul>
         </form>
