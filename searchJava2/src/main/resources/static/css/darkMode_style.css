@@ -22,6 +22,12 @@ ul {
     margin: 0px auto;
     background-color: rgb(46, 48, 58);
 }
+#wrap2{
+    width: 1150px;
+    height: 850px;
+    margin: 0px auto;
+    background-color: rgb(46, 48, 58);
+}
 /* 상단바 관심종목부터 왼쪽에서 정렬 */
 .horizontal_left{ 
     float: left;
@@ -399,6 +405,10 @@ ul {
     border: 1px solid rgb(39, 41, 49);
     box-shadow: 1px 1px 4px rgb(61, 64, 78) inset;
 }
+#bar_middle3{
+    height: 30px;
+    padding: 0;
+}
 #bar_blue{
     height: 300px;
 }
@@ -624,6 +634,25 @@ table#small_table td{
     border : 1px solid rgb(39, 40, 48);
 }
 
+table#small_table2{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+table#small_table2 thead th{
+    border : 1px solid black;
+}
+
+table#small_table2 tbody th{
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid rgb(39, 40, 48);
+}
+table#small_table2 td{
+    width: 52%;
+    border : 1px solid rgb(39, 40, 48);
+}
 .pos_left{
     position: relative;
     left: 4px
@@ -1032,7 +1061,15 @@ table#small_table td{
     padding: initial;
     border: initial;
 }
-
+input[id="cb2"] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 10px 2px 3px 4px;
+    padding: initial;
+    border: initial;
+}
  /*radio 버튼 색상변경 */
  input[type='radio'] {
     -webkit-appearance:none;
@@ -1256,4 +1293,76 @@ table#small_table td{
     height: 23px;
     font-size: 15px;
     width: 400px;
+}
+#inJQuery{
+    border: 1px;
+    height: 23px;
+    font-size: 15px;
+    width: 340px;
+    text-align: center;
+}
+#text_center2{
+    text-align: center;
+}
+
+#text_center3{
+    text-align: center;
+}
+
+#text_center4{
+    text-align: center;
+}
+#text_center5{
+    text-align: center;
+}
+#text_center6{
+    text-align: center;
+}
+#text_center6{
+    text-align: center;
+}
+#text_center8{
+    text-align: center;
+}
+#text_center9{
+    text-align: center;
+}
+#text_center10{
+    text-align: center;
+}
+#text_center11{
+    text-align: center;
+}
+#text_center12{
+    text-align: center;
+}
+#text_center13{
+    text-align: center;
+}
+#text_center14{
+    text-align: center;
+}
+#text_center15{
+    text-align: center;
+}
+#text_center16{
+    text-align: center;
+}
+#text_center17{
+    text-align: center;
+}
+#text_center18{
+    text-align: center;
+}
+#text_center19{
+    text-align: center;
+}
+#text_center20{
+    text-align: center;
+}
+#text_center21{
+    text-align: center;
+}
+#text_center22{
+    text-align: center;
 }

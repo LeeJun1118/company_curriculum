@@ -8,6 +8,8 @@
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <script src="/js/nav_btn.js"></script>
     <script src="/js/searchJS.js"></script>
+    <script src="/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="/jQuery/searchJQuery.js"></script>
 </head>
 <body>
 <div id="header_wrap">
@@ -24,7 +26,7 @@
 
         <ul class="bar">
             <li class="horizontal_left">JQuery </li>
-            <li class="horizontal_left" />
+            <input  id="inJQuery" class="horizontal_left result1" readonly="readonly" value=""/>
         </ul>
     </div>
 
@@ -55,20 +57,20 @@
 
             <ul class="bar">
                 <li>
-                    <input class="search_js" onclick="nodeSearch()" value="검색(Javascript)"/>
+                    <input class="search_js" onclick="nodeSearch()" readonly="readonly" value="검색(Javascript)"/>
                 </li>
                 <li>
                     <input type="submit" class="search_java" value="검색(Java)"/>
                 </li>
                 <li>
-                    <input class="search_jQuery" value="검색(jQuery)"/>
+                    <input id="jQuery" class="search_jQuery" readonly="readonly" value="검색(jQuery)"/>
                 </li>
             </ul>
         </form>
     </div>
 
 </div>
-<div id="wrap">
+<div id="wrap2">
     <!-- 왼쪽 박스 -->
     <div class="left-box">
         <div class="top">
@@ -373,7 +375,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <th id="text_center">12:45:38</th>
+                    <th id="text_center16">12:45:38</th>
                     <td><span class="up">74,100</span></td>
                     <td class="dis_flex">
                         <div class="edge_left"><span class="up">▲</span></div>
@@ -386,7 +388,7 @@
                 </tr>
 
                 <tr>
-                    <th id="text_center" class="even">12:45:07</th>
+                    <th id="text_center17" class="even">12:45:07</th>
                     <td class="even"><span class="up">74,100</span></td>
                     <td class="dis_flex even">
                         <div class="edge_left"><span class="up">▲</span></div>
@@ -399,7 +401,7 @@
                 </tr>
 
                 <tr>
-                    <th id="text_center">12:45:02</th>
+                    <th id="text_center18">12:45:02</th>
                     <td><span class="up">74,100</span></td>
                     <td class="dis_flex">
                         <div class="edge_left"><span class="up">▲</span></div>
@@ -412,7 +414,7 @@
                 </tr>
 
                 <tr>
-                    <th id="text_center" class="even">12:44:47</th>
+                    <th id="text_center19" class="even">12:44:47</th>
                     <td class="even"><span class="up">74,100</span></td>
                     <td class="dis_flex even">
                         <div class="edge_left"><span class="up">▲</span></div>
@@ -425,7 +427,7 @@
                 </tr>
 
                 <tr>
-                    <th id="text_center">12:44:43</th>
+                    <th id="text_center20">12:44:43</th>
                     <td><span class="up">74,200</span></td>
                     <td class="dis_flex">
                         <div class="edge_left"><span class="up">▲</span></div>
@@ -438,7 +440,7 @@
                 </tr>
 
                 <tr>
-                    <th id="text_center" class="even">12:44:42</th>
+                    <th id="text_center21" class="even">12:44:42</th>
                     <td class="even"><span class="up">74,200</span></td>
                     <td class="dis_flex even">
                         <div class="edge_left"><span class="up">▲</span></div>
@@ -451,7 +453,7 @@
                 </tr>
 
                 <tr>
-                    <th id="text_center">12:44:42</th>
+                    <th id="text_center22">12:44:42</th>
                     <td><span class="up">74,200</span></td>
                     <td class="dis_flex">
                         <div class="edge_left"><span class="up">▲</span></div>
@@ -493,7 +495,7 @@
                 </ul>
             </div>
 
-            <div id="bar_middle">
+            <div id="bar_middle3">
                 <ul class="interest2">
                     <li class="horizontal_left"><input type="text" class="text_box2" value="004020"/></li>
                     <li class="horizontal_left searchIcon"><i class="fas fa-search"></i></li>
@@ -556,28 +558,28 @@
                             </tr>
 
                             <tr>
-                                <td id="text_center">
+                                <td id="text_center2">
                                     <div class="back_gray2"><span>하한</span></div>
                                 </td>
                                 <td class="pos_right"><span class="down">62,800</span></td>
                             </tr>
 
                             <tr>
-                                <td id="text_center">
+                                <td id="text_center3">
                                     <div class="back_gray2"><span>시가</span></div>
                                 </td>
                                 <td class="pos_right"><span class="up">74,100</span></td>
                             </tr>
 
                             <tr>
-                                <td id="text_center">
+                                <td id="text_center4">
                                     <div class="back_gray2"><span>고가</span></div>
                                 </td>
                                 <td class="pos_right"><span class="up">74,900</span></td>
                             </tr>
 
                             <tr>
-                                <td id="text_center">
+                                <td id="text_center5">
                                     <div class="back_gray2"><span>저가</span></div>
                                 </td>
                                 <td class="pos_right"><span class="up">74,100</span></td>
@@ -616,23 +618,23 @@
 
                 <tr>
                     <td rowspan="4" colspan="2">
-                        <table id="small_table">
+                        <table id="small_table2">
                             <tr>
-                                <th id="text_center">
+                                <th id="text_center6">
                                     <div class="back_gray2"><span>액면가</span></div>
                                 </th>
                                 <td class="pos_right"><span class="t_center">5,000</span></td>
                             </tr>
 
                             <tr>
-                                <th id="text_center">
+                                <th id="text_center7">
                                     <div class="back_gray2"><span>PER</span></div>
                                 </th>
                                 <td class="pos_right"><span class="t_center">9.04</span></td>
                             </tr>
 
                             <tr>
-                                <th id="text_center">
+                                <th id="text_center8">
                                     <div class="back_gray2"><span>자본금</span></div>
                                 </th>
                                 <td class="pos_right"><span class="t_center">5,827 억</span></td>
@@ -644,7 +646,7 @@
 
                 <tr>
                     <td id="back_red"><span>74,100</span></td>
-                    <td id="text_center" class="back_red2">3,103</td>
+                    <td id="text_center9" class="back_red2">3,103</td>
                     <td class="back_red2">-1</td>
 
 
@@ -652,21 +654,21 @@
 
                 <tr>
                     <td class="back_red3"><span class="up">74,000</span></td>
-                    <td id="text_center" class="back_red3">2,324</td>
+                    <td id="text_center10" class="back_red3">2,324</td>
                     <td class="back_red3">0</td>
 
                 </tr>
 
                 <tr>
                     <td class="back_red5"><span class="up">73,900</span></td>
-                    <td id="text_center" class="back_red5">1,717</td>
+                    <td id="text_center11" class="back_red5">1,717</td>
                     <td class="back_red5">0</td>
                 </tr>
 
                 <tr>
                     <td colspan="2"></td>
                     <td class="back_red6">74,800</td>
-                    <td id="text_center" class="back_red6">2,943</td>
+                    <td id="text_center12" class="back_red6">2,943</td>
                     <td class="back_red6">0</td>
 
                 </tr>
@@ -674,7 +676,7 @@
                 <tr>
                     <td colspan="2"></td>
                     <td class="back_red7"><span class="down">73,700</span></td>
-                    <td id="text_center" class="back_red7"><span>1,044</span></td>
+                    <td id="text_center13" class="back_red7"><span>1,044</span></td>
                     <td class="back_red7">0</td>
                     <td></td>
                 </tr>
@@ -682,8 +684,8 @@
                 <tr class="back_gray">
                     <th></th>
                     <td><span class="table_footer">100,835</span></td>
-                    <td id="text_center"><span class="table_footer">잔량합계</span></td>
-                    <td id="text_center"><span class="table_footer">17,829</span></td>
+                    <td id="text_center14"><span class="table_footer">잔량합계</span></td>
+                    <td id="text_center15"><span class="table_footer">17,829</span></td>
                     <td><span></span></td>
                 </tr>
 
@@ -746,7 +748,7 @@
                             <option value="" selected="">지정가</option>
                         </select>
                     </li>
-                    <li class="horizontal_left"><input type="checkbox" id="cb1"/></li>
+                    <li class="horizontal_left"><input type="checkbox" id="cb2"/></li>
                     <li class="horizontal_left bord_word4">시장가</li>
                     <li class="horizontal_left"><input type="radio" name="selectRadio"/></li>
                     <li class="horizontal_left bord_word4">현금</li>
