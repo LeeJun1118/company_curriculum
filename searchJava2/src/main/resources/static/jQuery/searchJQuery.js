@@ -45,7 +45,11 @@ $(document).ready(function () {
 
         //========================노드명 + 속성명 + 속성값 으로 찾기=====================
         if (search_id == '' && node != '' && att_name != '' && att_value != '') {
-            $("#inJQuery").val($(node).filter('[' + att_name + '=' + att_value + ']').length);
+            if (att_name == "class")
+                $("#inJQuery").val($(node).filter($('.' + att_value)).length);
+
+            else
+                $("#inJQuery").val($(node).filter('[' + att_name + '=' + att_value + ']').length);
         }
 
     })
