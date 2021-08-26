@@ -20,6 +20,17 @@ $(document).ready(function () {
             //출력
             $("#inJQuery").val($(node).filter('[id' + '='+ search_id + ']').length);
         }
+        //=================== 속성명 + 속성값으로 찾기 ===================
+        if (att_name != '' && att_value == '') {
+            // alert("속성값을 입력해주세요")
+            $("#inJQuery").val("속성값을 입력해주세요");
+        } else if (att_name == '' && att_value != '' ) {
+            // alert("속성명을 입력해주세요")
+            $("#inJQuery").val("속성명을 입력해주세요");
+        } else if (att_name != '' && att_value != '' && search_id == '' && node == '') {
+            console.log($('['+att_name + '='+ att_value + ']'))
+            $("#inJQuery").val($('['+att_name + '='+ att_value + ']').length);
+        }
 
 
     })
