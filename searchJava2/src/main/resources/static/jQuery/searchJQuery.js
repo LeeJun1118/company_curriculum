@@ -36,5 +36,10 @@ $(document).ready(function () {
             $("#inJQuery").val($('['+att_name + '='+ att_value + ']').filter('[id' + '='+ search_id + ']').length);
         }
 
+        //========================노드명 + 속성명 + 속성값 으로 찾기=====================
+        if (search_id == '' && node != '' && att_name != '' && att_value != '') {
+            $("#inJQuery").val($(node).filter('['+att_name + '='+ att_value + ']').length);
+        }
+
     })
 });
