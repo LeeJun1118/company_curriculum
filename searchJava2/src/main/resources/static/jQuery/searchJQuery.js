@@ -11,5 +11,10 @@ $(document).ready(function () {
         if (search_id != '' && node == '' && att_name == '' && att_value == '') {
             $("#inJQuery").val($('[id' + '='+ search_id + ']').length);
         }
+        //===================node명으로 찾기===================
+        if (search_id == '' && node != '' && att_name == '' && att_value == '') {
+            $("#inJQuery").val($(node).length);
+        }
+
     })
 });
