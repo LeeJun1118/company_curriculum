@@ -15,6 +15,12 @@ $(document).ready(function () {
         if (search_id == '' && node != '' && att_name == '' && att_value == '') {
             $("#inJQuery").val($(node).length);
         }
+        //===================id + node명으로 찾기===================
+        if (search_id != '' && node != '' && att_name == '' && att_value == '') {
+            //출력
+            $("#inJQuery").val($(node).filter('[id' + '='+ search_id + ']').length);
+        }
+
 
     })
 });
