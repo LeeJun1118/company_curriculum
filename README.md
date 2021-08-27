@@ -1,5 +1,5 @@
 # Company Curriculum
-### 간략한 설명
+### 폴더별 설명
 * c_1 폴더
   * Opentutorials 폴더 : 생활코딩 HTML/CSS 학습
   * StockScreen 폴더
@@ -12,6 +12,16 @@
     * Java
       * Java version : java 11.0.12 2021-07-20 LTS
       * Gradle version : gradle-7.1.1
+* JavaEEBoard 폴더
+  * 과제 1-3 게시판 작성
+    * Java/JSP 개발
+    * MVC 기반 
+    * To-Do-List
+      - [ ] 게시판 CRUD 기본 기능 작성
+      - [ ] 답글 기능
+      - [ ] 게시물 페이징 기능
+      - [ ] 검색 기능
+      - [ ] 파일 업로드
   
 
  
