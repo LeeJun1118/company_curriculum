@@ -1,16 +1,16 @@
 package com.example.javaeeboard.Model;
 
 public class Board {
-    private int id;
+    private int id_board;
     private String title;
     private String content;
 
-    public int getId() {
-        return id;
+    public int getId_board() {
+        return id_board;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_board(int id_board) {
+        this.id_board = id_board;
     }
 
     public String getTitle() {

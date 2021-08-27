@@ -3,10 +3,29 @@
 <html>
     <head>
         <title>Java EE Board</title>
+        <%
+            int number = 1;
+            String id = request.getParameter("id");
+            String title = request.getParameter("title");
+        %>
     </head>
     <body>
         <h1><%= "게시판" %></h1>
-        <br/>
-        <a href="/board/create">글 쓰기</a>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+<%--                <th>글번호</th>--%>
+            </tr>
+
+            <tr>
+                <td><%=number%></td>
+                <td><%=title%></td>
+<%--                <td><%=id%></td>--%>
+           </tr>
+        </table>
+
+
+        <a href="write.jsp">글 쓰기</a>
     </body>
 </html>
