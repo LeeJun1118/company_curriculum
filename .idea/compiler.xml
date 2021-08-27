@@ -19,6 +19,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="javaSearch" target="11" />
+      <module name="javaSearch.main" target="11" />
+      <module name="javaSearch.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
