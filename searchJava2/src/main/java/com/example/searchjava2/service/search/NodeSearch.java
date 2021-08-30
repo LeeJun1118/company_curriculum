@@ -71,7 +71,9 @@ public class NodeSearch {
         //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
         if (word.getNId() != "" && word.getNName() != "" && word.getAtName() != "" && word.getAtValue() != "") {
             SearchAll searchAll = new SearchAll();
-            return searchAll.search(it,word);
+            int count = 0;
+            return searchAll.search(it,word, it.nextNode(),count);
+//            return searchAll.search(it,word);
         }
         return "0";
     }
