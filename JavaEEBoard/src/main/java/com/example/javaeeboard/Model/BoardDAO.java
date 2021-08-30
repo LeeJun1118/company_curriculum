@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static java.lang.System.out;
+
 public class BoardDAO {
     private Connection connection;
     private PreparedStatement preparedStatement;
@@ -17,6 +19,7 @@ public class BoardDAO {
             String dbPassword = "board";
             Class.forName("oracle.jdbc.driver.OracleDriver");
             connection = DriverManager.getConnection(dbURL, dbID, dbPassword);
+            out.println("Oracle DB에 접속 완료");
         }catch (Exception e) {
             e.printStackTrace();
         }

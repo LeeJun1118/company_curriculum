@@ -9,7 +9,7 @@ public class BoardList extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "게시글 작성";
+        message = "Board 작성";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
