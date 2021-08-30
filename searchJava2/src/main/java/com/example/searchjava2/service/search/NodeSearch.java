@@ -24,8 +24,9 @@ public class NodeSearch {
 
         //===================노드명으로 찾기===================
         if (word.getNId() == "" && word.getNName() != "" && word.getAtName() == "" && word.getAtValue() == "") {
-            SearchNodeName nodeName = new SearchNodeName();
-            return nodeName.search(it,word);
+            SearchNodeName nodeName = new SearchNodeName();int count = 0;
+            return nodeName.search(it,word, it.nextNode(),count);
+//            return nodeName.search(it,word);
         }
 
         //===================id + 노드명으로 찾기===================
