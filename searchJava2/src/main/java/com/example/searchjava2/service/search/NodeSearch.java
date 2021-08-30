@@ -60,7 +60,9 @@ public class NodeSearch {
         //========================노드명 + 속성명 + 속성값 으로 찾기=====================
         if (word.getNId() == "" && word.getNName() != "" && word.getAtName() != "" && word.getAtValue() != "") {
             SearchNodeAttribute searchNodeAttribute = new SearchNodeAttribute();
-            return searchNodeAttribute.search(it,word);
+            int count = 0;
+            return searchNodeAttribute.search(it,word, it.nextNode(),count);
+//            return searchNodeAttribute.search(it,word);
         }
 
         //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
