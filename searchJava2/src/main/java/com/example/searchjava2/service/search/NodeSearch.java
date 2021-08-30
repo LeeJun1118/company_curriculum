@@ -43,7 +43,9 @@ public class NodeSearch {
         }
         else if (word.getAtName() != "" && word.getAtValue() != "" && word.getNId() == "" && word.getNName() == "") {
             SearchAttribute attribute = new SearchAttribute();
-            return attribute.search(it,word);
+            int count = 0;
+            return attribute.search(it,word, it.nextNode(),count);
+//            return attribute.search(it,word);
         }
 
         //========================id + 속성명 + 속성값 으로 찾기========================
