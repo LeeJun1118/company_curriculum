@@ -33,7 +33,7 @@
                 while (rs.next()) {
                     out.println("<tr>");
                     out.println("<td>" + rs.getString("id_board") + "</td>");
-                    out.println("<td>" + rs.getString("title") + "</td>");
+                    out.println("<td><a href='content.jsp?id_board= " + rs.getString("id_board")+"'>" + rs.getString("title") +"</a></td>");
                     out.println("</tr>");
                 }
             %>
