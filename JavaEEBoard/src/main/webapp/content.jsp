@@ -1,12 +1,12 @@
 <%@ page import="java.util.regex.Pattern"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-         pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+         pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content= "text/html" charset="EUC-KR">
-        <title>°Ô½Ã±Û</title>
+        <meta http-equiv="Content-Type" content= "text/html" charset="utf-8">
+        <title>ê²Œì‹œê¸€</title>
 
 
     </head>
@@ -32,24 +32,24 @@
 
     %>
     <body>
-        <h1>°Ô½Ã±Û</h1>
+        <h1>ê²Œì‹œê¸€</h1>
         <table>
             <tr>
-                <th>±Û¹øÈ£</th>
+                <th>ê¸€ë²ˆí˜¸</th>
                 <td><%=rs.getString("id_board") %></td>
             </tr>
             <tr>
-                <th colspan="2">Á¦¸ñ</th>
+                <th colspan="2">ì œëª©</th>
                 <td colspan="6"><%=rs.getString("title") %></td>
             </tr>
             <tr>
-                <th colspan="2">³»¿ë</th>
+                <th colspan="2">ë‚´ìš©</th>
                 <td colspan="6"><%=rs.getString("content") %></td>
             </tr>
         </table>
-        <a href = "delete.jsp?id_board=<%=rs.getString("id_board") %>">±Û »èÁ¦</a>
-        <a href = "modify_write.jsp?id_board=<%=rs.getString("id_board") %>">±Û ¼öÁ¤</a>
-        <a href = "index.jsp">¸ñ·ÏÀ¸·Î </a>
+        <a href = "delete.jsp?id_board=<%=rs.getString("id_board") %>">ê¸€ ì‚­ì œ</a>
+        <a href = "modify_write.jsp?id_board=<%=rs.getString("id_board") %>">ê¸€ ìˆ˜ì •</a>
+        <a href = "index.jsp">ëª©ë¡ìœ¼ë¡œ </a>
 
         <%
                 }

@@ -1,12 +1,12 @@
 <%@ page import="java.util.regex.Pattern"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-         pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+         pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content= "text/html" charset="EUC-KR">
-        <title>°Ô½ÃÆÇÀ» Áö¿ì±â</title>
+        <meta http-equiv="Content-Type" content= "text/html" charset="utf-8">
+        <title>ê²Œì‹œê¸€ ì§€ìš°ê¸°</title>
     </head>
 
     <%
@@ -29,7 +29,7 @@
             con.close();
     %>
     <script>
-        alert("»èÁ¦µÇ¾ú½À´Ï´Ù.");
+        alert("ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
         location.href="redirect.jsp";
     </script>
 
@@ -38,7 +38,7 @@
         // out.println("Oracle Database Connection Problem <hr>");
     %>
     <script>
-        alert("»èÁ¦°¡ ¾ÈµÇ¾ú¾î¿ä.");
+        alert("ì‚­ì œê°€ ì•ˆë˜ì—ˆì–´ìš”.");
         location.href("redirect.jsp");
     </script>
     <%
