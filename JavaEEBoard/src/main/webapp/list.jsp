@@ -16,16 +16,18 @@
     <body>
 
         <h1>게시글 리스트</h1>
-        <table>
+        <table class="table">
             <tr>
-                <th>번호</th>
+                <th>#</th>
                 <th>제목</th>
+                <th>번호</th>
             </tr>
 
-            <c:forEach items="${boardList}" var="board">
+            <c:forEach items="${boardList}" var="board" varStatus="status">
                 <tr>
-                    <td>${board.id_board}</td>
+                    <td>${status.count}</td>
                     <td><a href='content.jsp?id_board=${board.id_board}'>${board.title}</a></td>
+                    <td>${board.id_board}</td>
                 </tr>
             </c:forEach>
 
