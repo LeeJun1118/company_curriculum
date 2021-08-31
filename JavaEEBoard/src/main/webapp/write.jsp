@@ -21,7 +21,7 @@
         </script>
     </head>
     <body>
-      <form action="index.jsp" method="post" onsubmit="return formCheck();">
+      <form action="insert.jsp" method="post" onsubmit="return formCheck();">
         제목 : <input type="text" name="title"/><br/>
         내용 : <input type="text" name="content"/><br/>
         <input type="submit">
