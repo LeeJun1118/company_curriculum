@@ -8,6 +8,7 @@
     <head>
         <title>Java EE Board</title>
         <%
+            request.setCharacterEncoding("utf-8");
             try {
                 String driverName = "oracle.jdbc.driver.OracleDriver";
                 String url = "jdbc:oracle:thin:@localhost:1521:XE";

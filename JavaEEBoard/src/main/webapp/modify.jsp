@@ -9,9 +9,8 @@
     <title>게시글 수정</title>
   </head>
   <%
-    String id_board = request.getParameter("id_board");
-
     request.setCharacterEncoding("utf-8");
+    String id_board = request.getParameter("id_board");
 
     String title = request.getParameter("title");
     String content = request.getParameter("content");

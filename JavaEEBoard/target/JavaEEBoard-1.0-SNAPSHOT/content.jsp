@@ -12,6 +12,7 @@
     </head>
 
     <%
+        request.setCharacterEncoding("utf-8");
         String id_board = request.getParameter("id_board");
 
         try{

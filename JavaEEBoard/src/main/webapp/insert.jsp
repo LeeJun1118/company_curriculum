@@ -10,6 +10,7 @@
     </head>
   <%
     request.setCharacterEncoding("utf-8");
+      String id_board = request.getParameter("id_board");
 
     int in = 1;
     String title = request.getParameter("title");
@@ -33,6 +34,10 @@
         out.println("Oracle 디비 접속에 문제 발생 <hr>");
         out.println(e.getMessage());
         e.printStackTrace();
+    }finally{
+        out.println("<script>alert(\"추가 되었습니다.\");\n" +
+                "        location.href=\"redirect.jsp\";\n" +
+                "    </script>");
     }
   %>
 </html>
