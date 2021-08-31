@@ -25,7 +25,7 @@
         Statement stmt = con.createStatement();
         String sql = "INSERT INTO BOARD" +
                 "(ID_BOARD,TITLE,CONTENT)" +
-                "VALUES("+3+",'"+title+"','"+content+"')";
+                "VALUES(BOARD_SEQ.nextval,'"+title+"','"+content+"')";
         stmt.executeUpdate(sql);
         con.close();
     }
