@@ -42,8 +42,12 @@ function nodeSearch() {
         document.getElementById("inJs").value = "속성명을 입력해주세요";
     } else if (attName != '' && attValue != '' && searchNode == '' && searchID == '') {
         var countAtt = 0;
-        for (var i = 0; i < myHTML.length; i++) {
-            var tagList = document.querySelectorAll(myHTML[i]);
+        if (attName == "class")
+            countAtt = document.getElementsByClassName(attValue).length;
+        else
+            countAtt = document.querySelectorAll('['+attName+'='+attValue+']').length;
+
+        /*for (var i = 0; i < myHTML.length; i++) {
             for (var j = 0; j < tagList.length; j++) {
                 if (tagList[j].getAttributeNode(attName) != null) {
                     var confirm = tagList[j].getAttributeNode(attName).value.split(' ');
@@ -54,15 +58,21 @@ function nodeSearch() {
                     }
                 }
             }
-        }
+        }*/
+
         document.getElementById("inJs").value = countAtt;
     }
 
     //========================id + 속성명 + 속성값 으로 찾기========================
     if (searchID != '' && searchNode == '' && attName != '' && attValue != '') {
         var countValue = 0;
+        var values = document.getElementById(searchID).getAttribute(attName).split(" ");
+        for (let i = 0; i < values.length; i++) {
+            if (values[i] == attValue)
+                countValue++;
+        }
         // th
-        for (var i = 0; i < myHTML.length; i++) {
+       /* for (var i = 0; i < myHTML.length; i++) {
             var tagList = document.querySelectorAll(myHTML[i]);
             // class
             for (var j = 0; j < tagList.length; j++) {
@@ -78,7 +88,7 @@ function nodeSearch() {
                     }
                 }
             }
-        }
+        }*/
         document.getElementById("inJs").value = countValue;
     }
 
@@ -171,3 +181,21 @@ function nodeSearch() {
     //     alert(attValue + " : " + countValue);
     // }
 }
+
+
+/*function recursive(len,tag,count,index) {
+    if (index == tagList.length)
+        return count;
+    else{
+        if (tag.getAttributeNode(attName) != null) {
+            console.log(tag.getAttributeNode(attName).length)
+            var confirm = tag.getAttributeNode(attName).value.split(' ');
+            for (var h = 0; h < confirm.length; h++) {
+                if (confirm[h] == attValue) {
+                    count++;
+                }
+            }
+        }
+        return recursive(tagList,tagList[index],count,index++);
+    }
+}*/
