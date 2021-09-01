@@ -26,7 +26,7 @@
             <c:forEach items="${boardList}" var="board" varStatus="status">
                 <tr>
                     <td>${status.count}</td>
-                    <td><a href='content.jsp?id_board=${board.id_board}'>${board.title}</a></td>
+                    <td><a href='content.do?id_board=${board.id_board}'>${board.title}</a></td>
                     <td>${board.id_board}</td>
                 </tr>
             </c:forEach>
