@@ -123,7 +123,20 @@ function nodeSearch() {
 
     //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
     if (searchID !== '' && searchNode != '' && attName != '' && attValue != '') {
-        // th 사용한 부분들 list
+        var countAllCondition = 0;
+        var tagList = [];
+        if (attName == "class")
+            tagList = document.getElementsByClassName(attValue);
+        else
+            tagList = document.querySelectorAll('[' + attName + '=' + attValue + ']');
+
+        for (let i = 0; i < tagList.length; i++) {
+            console.log(tagList.item(i).nodeName)
+            if (tagList.item(i).nodeName.toUpperCase() == searchNode.toUpperCase() && tagList.item(i).getAttribute("id") == searchID)
+                countAllCondition++;
+        }
+
+        /*// th 사용한 부분들 list
         var tagList = document.querySelectorAll(searchNode);
         var countAllCondition = 0;
         for (var i = 0; i < tagList.length; i++) {
@@ -140,67 +153,7 @@ function nodeSearch() {
                     }
                 }
             }
-        }
+        }*/
         document.getElementById("inJs").value = countAllCondition;
     }
-
-    // //===================속성으로 찾기===================
-    // if (attName != '') {
-    //     var count = 0;
-    //     let nodeElements = [];
-    //     for(var i = 0; i < myHTML.length; i++){
-    //         // nodeElements[i] =  [id , class, onclick, ....]
-    //         nodeElements[i] = document.querySelector(myHTML[i]).getAttributeNames();
-    //         for(var j = 0; j < nodeElements[i].length; j++){
-    //             // x = id, class, onclick
-    //             var x = nodeElements[i];
-
-    //             //x[j]= 'class'   attName = 'class'
-    //             if (x[j] == attName) {
-    //                 count = count + document.querySelector(myHTML[i]).getAttribute(attName).length;
-    //             }
-    //         }
-    //     }
-    //     alert(attName + " : " + count);
-    // }
-
-    // //===================속성값으로만 찾기===================
-    // if (attValue != '') {
-    //     var countValue = 0;
-    //     for(var i = 0; i < myHTML.length; i++){
-    //         var tagList = document.querySelectorAll(myHTML[i]);
-    //         // id class onclick .........
-    //         for(var j = 0; j < tagList.length; j++){
-    //             var className = tagList[j].getAttributeNames();
-    //                 for(var k = 0; k < className.length; k++){
-    //                     var confirm = tagList[j].getAttributeNode(className[k]).value.split(' ');
-    //                     for(var h = 0; h < confirm.length; h++){
-    //                         if (confirm[h] == attValue) {
-    //                             countValue++;
-    //                         }
-    //                     }
-
-    //                 }
-    //         }
-    //     }
-    //     alert(attValue + " : " + countValue);
-    // }
 }
-
-
-/*function recursive(len,tag,count,index) {
-    if (index == tagList.length)
-        return count;
-    else{
-        if (tag.getAttributeNode(attName) != null) {
-            console.log(tag.getAttributeNode(attName).length)
-            var confirm = tag.getAttributeNode(attName).value.split(' ');
-            for (var h = 0; h < confirm.length; h++) {
-                if (confirm[h] == attValue) {
-                    count++;
-                }
-            }
-        }
-        return recursive(tagList,tagList[index],count,index++);
-    }
-}*/
