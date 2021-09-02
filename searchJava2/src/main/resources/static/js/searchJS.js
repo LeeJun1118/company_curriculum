@@ -21,7 +21,6 @@ function nodeSearch() {
         // var countNodeId = 0;
         var count = 0, index = 0;
         var countNodeId = recursiveIdNode(tagList, count, index, searchID);
-
         /*for (var i = 0; i < tagList.length; i++) {
             if (tagList[i].getAttribute('id') != null && tagList[i].getAttribute('id') == searchID) {
                 countNodeId++;
@@ -31,12 +30,11 @@ function nodeSearch() {
     }
 
     function recursiveIdNode(tagList, count, index, searchID) {
-        if (index >= tagList.length - 1)
+        if (index >= tagList.length)
             return count;
         else
             return (tagList[index].getAttribute('id') != null && tagList[index].getAttribute('id') == searchID)
                 ? recursiveIdNode(tagList, count + 1, index + 1, searchID) : recursiveIdNode(tagList, count, index + 1, searchID);
-
     }
 
     //=================== 속성명 + 속성값으로 찾기 ===================
@@ -109,7 +107,6 @@ function nodeSearch() {
             tagList = document.querySelectorAll('[' + attName + '=' + attValue + ']');
 
         for (let i = 0; i < tagList.length; i++) {
-            console.log(tagList.item(i).nodeName)
             if (tagList.item(i).nodeName.toUpperCase() == searchNode.toUpperCase())
                 countValue++;
         }
