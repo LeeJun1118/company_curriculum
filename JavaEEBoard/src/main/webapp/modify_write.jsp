@@ -7,14 +7,13 @@
         <title>게시글 수정</title>
     </head>
     <%
-        request.setCharacterEncoding("utf-8");
         String id_board = request.getParameter("id_board");
     %>
     <body>
 
 
         <h1> 게시글 수정 </h1>
-        <form action="modify.jsp?id_board=<%=id_board%>" method="post" onsubmit="return formCheck();">
+        <form action="modify.do?id_board=<%=id_board%>" method="post" onsubmit="return formCheck();">
 
             제목 : <input type="text" name="title" /> <br/>
             내용 : <textarea rows="10" cols="20" name="content"/></textarea> <br/>

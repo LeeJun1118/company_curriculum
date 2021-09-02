@@ -30,4 +30,8 @@
 		VALUES (board_seq.nextval, #title#, #content#)
 	</insert>
 
+	<update id="updateBoard" parameterClass="board">
+		update board set title = #title#, content = #content# where id_board = #id_board#
+	</update>
+
 </sqlMap>

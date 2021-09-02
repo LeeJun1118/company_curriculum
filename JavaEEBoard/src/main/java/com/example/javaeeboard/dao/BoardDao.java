@@ -31,4 +31,9 @@ public class BoardDao extends CommonDao {
         GetDB().insert("insertBoard",board);
         return;
     }
+
+    public void updateBoard(board board) throws SQLException{
+        GetDB().update("updateBoard",board);
+        return;
+    }
 }
