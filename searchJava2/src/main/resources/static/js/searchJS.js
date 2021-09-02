@@ -32,16 +32,6 @@ function nodeSearch() {
         document.getElementById("inJs").value = countNodeId;
     }
 
-    //===================재귀: id + 노드명으로 찾기===================
-    function recursiveIdNode(tagList, count, index, searchID) {
-        if (index >= tagList.length)
-            return count;
-        else
-            return (tagList[index].getAttribute('id') != null && tagList[index].getAttribute('id') == searchID)
-                ? recursiveIdNode(tagList, count + 1, index + 1, searchID) : recursiveIdNode(tagList, count, index + 1, searchID);
-    }
-
-
     //=================== 속성명 + 속성값으로 찾기 ===================
     if (attName != '' && attValue == '') {
         // alert("속성값을 입력해주세요")
@@ -99,17 +89,6 @@ function nodeSearch() {
         document.getElementById("inJs").value = countValue;
     }
 
-    //========================재귀 : id + 속성명 + 속성값 으로 찾기========================
-    function recursiveIdAtt(values, attValue, count, index) {
-        if (index >= values.length)
-            return count;
-        else
-            return values[index] == attValue ?
-                recursiveIdAtt(values, attValue, count + 1, index + 1) :
-                recursiveIdAtt(values, attValue, count, index + 1);
-    }
-
-
     //========================노드명 + 속성명 + 속성값 으로 찾기=====================
     if (searchID == '' && searchNode != '' && attName != '' && attValue != '') {
         var countValue = 0, index = 0;
@@ -144,16 +123,6 @@ function nodeSearch() {
                 }
         */
         document.getElementById("inJs").value = countValue;
-    }
-
-    //========================재귀 : id + 속성명 + 속성값 으로 찾기========================
-    function recursiveNodeAtt(tagList, searchNode, count, index) {
-        if (index >= tagList.length)
-            return count;
-        else
-            return tagList.item(index).nodeName.toUpperCase() == searchNode.toUpperCase() ?
-                recursiveNodeAtt(tagList, searchNode, count + 1, index + 1) :
-                recursiveNodeAtt(tagList, searchNode, count, index + 1);
     }
 
 
@@ -195,13 +164,43 @@ function nodeSearch() {
         }*/
         document.getElementById("inJs").value = countAllCondition;
     }
-    //========================재귀 : id + 노드명 + 속성명 + 속성값 으로 찾기========================
-    function recursiveAll(tagList, searchNode, searchID, count, index) {
-        if (index >= tagList.length)
-            return count;
-        else
-            return tagList.item(index).nodeName.toUpperCase() == searchNode.toUpperCase() && tagList.item(index).getAttribute("id") == searchID ?
-                recursiveAll(tagList, searchNode, searchID, count + 1, index + 1) :
-                recursiveAll(tagList, searchNode, searchID, count, index + 1);
-    }
+
+}
+//===================재귀: id + 노드명으로 찾기===================
+function recursiveIdNode(tagList, count, index, searchID) {
+    if (index >= tagList.length)
+        return count;
+    else
+        return (tagList[index].getAttribute('id') != null && tagList[index].getAttribute('id') == searchID)
+            ? recursiveIdNode(tagList, count + 1, index + 1, searchID) : recursiveIdNode(tagList, count, index + 1, searchID);
+}
+
+//========================재귀 : id + 속성명 + 속성값 으로 찾기========================
+function recursiveIdAtt(values, attValue, count, index) {
+    if (index >= values.length)
+        return count;
+    else
+        return values[index] == attValue ?
+            recursiveIdAtt(values, attValue, count + 1, index + 1) :
+            recursiveIdAtt(values, attValue, count, index + 1);
+}
+
+//========================재귀 : id + 속성명 + 속성값 으로 찾기========================
+function recursiveNodeAtt(tagList, searchNode, count, index) {
+    if (index >= tagList.length)
+        return count;
+    else
+        return tagList.item(index).nodeName.toUpperCase() == searchNode.toUpperCase() ?
+            recursiveNodeAtt(tagList, searchNode, count + 1, index + 1) :
+            recursiveNodeAtt(tagList, searchNode, count, index + 1);
+}
+
+//========================재귀 : id + 노드명 + 속성명 + 속성값 으로 찾기========================
+function recursiveAll(tagList, searchNode, searchID, count, index) {
+    if (index >= tagList.length)
+        return count;
+    else
+        return tagList.item(index).nodeName.toUpperCase() == searchNode.toUpperCase() && tagList.item(index).getAttribute("id") == searchID ?
+            recursiveAll(tagList, searchNode, searchID, count + 1, index + 1) :
+            recursiveAll(tagList, searchNode, searchID, count, index + 1);
 }
