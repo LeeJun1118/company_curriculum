@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+ 
+ 
+ 
+<sqlMap namespace="Board">
+	<typeAlias alias="map" type="java.util.Map" />
+	<typeAlias alias="str" type="java.lang.String" />
+	<typeAlias alias="int" type="java.lang.Integer" />
+	<typeAlias alias="board" type="com.example.javaeeboard.beans.board" />
+
+	<select id="getBoardList" resultClass="board">
+		select * from board order by id_board desc
+	</select>
+	
+	<select id="getBoard" parameterClass="int" resultClass="board">
+		select * from board where id_board = #value#
+	</select>
+	
+<!--	<delete id="deleteArticle" parameterClass="int">
+		delete from board where idx = #value#
+	</delete>
+	<update id="updateArticle" parameterClass="board">
+		update board set title = #title#, writer = #writer#, regdate = sysdate, count = #count#, content = #content# where idx = #idx#
+	</update>
+	
+	<insert id="insertArticle" parameterClass="board">
+		INSERT INTO BOARD 
+		           (IDX, TITLE, WRITER, REGDATE, COUNT, CONTENT, REGIP)
+			VALUES (board_seq.nextval, #title#, #writer# , sysdate, #count#, #content#, #regip#)
+	</insert>
+	
+	<update id="setArticleCount" parameterClass="board">
+		update board set count = #count# where idx = #idx#
+	</update>-->
+</sqlMap>

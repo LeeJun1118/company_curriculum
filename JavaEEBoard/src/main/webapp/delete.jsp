@@ -9,7 +9,7 @@
         <title>게시글 지우기</title>
     </head>
 
-    <%
+    <%--<%
         request.setCharacterEncoding("utf-8");
         String id_board = request.getParameter("id_board");
 
@@ -28,25 +28,25 @@
             rs = stmt.executeQuery(sql);
 
             con.close();
-    %>
+    %>--%>
     <script>
         alert("삭제되었습니다.");
         location.href="redirect.jsp";
     </script>
 
-    <%
+    <%--<%
     }catch(Exception e){
         // out.println("Oracle Database Connection Problem <hr>");
-    %>
+    %>--%>
     <script>
         alert("삭제가 안되었어요.");
         location.href("redirect.jsp");
     </script>
-    <%
+    <%--<%
             out.println(e.getMessage());
             e.printStackTrace();
         }
-    %>
+    %>--%>
 
 
 

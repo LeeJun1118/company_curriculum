@@ -27,11 +27,11 @@
             </tr>
             <tr>
                 <th colspan="2">내용</th>
-                <td colspan="6">${board.content}</td>
+                <td colspan="6">${board.content}</td>`
             </tr>
         </table>
-        <a class="btn btn-default" href="delete.jsp?id_board=${board.id_board}">글 삭제</a>
-        <a class="btn btn-default" href="modify_write.jsp?id_board=${board.id_board}">글 수정</a>
+        <a class="btn btn-default" href='delete.do?id_board=${board.id_board}'>글 삭제</a>
+        <a class="btn btn-default" href='modify_write.jsp?id_board=${board.id_board}'>글 수정</a>
         <a class="btn btn-default" href="list.do">목록으로 </a>
     </body>
 </html>
