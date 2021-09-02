@@ -4,12 +4,6 @@ function nodeSearch() {
     const attName = document.getElementById('attName').value;
     const attValue = document.getElementById('attValue').value;
 
-    let myHTML = ['html', 'head', 'div', 'ul', 'li'
-        , 'input', 'button', 'select', 'option', 'table'
-        , 'thead', 'tr', 'th', 'tbody', 'td'
-        , 'span', 'svg', 'meta', 'link', 'script'];
-
-
     //===================id 로 찾기===================
     if (searchID != '' && searchNode == '' && attName == '' && attValue == '') {
         document.getElementById("inJs").value = document.querySelectorAll('#' + searchID).length;
@@ -37,7 +31,7 @@ function nodeSearch() {
     if (attName != '' && attValue == '') {
         // alert("속성값을 입력해주세요")
         document.getElementById("inJs").value = "속성값을 입력해주세요";
-    } else if (attName == '' && attValue != '' ) {
+    } else if (attName == '' && attValue != '') {
         // alert("속성명을 입력해주세요")
         document.getElementById("inJs").value = "속성명을 입력해주세요";
     } else if (attName != '' && attValue != '' && searchNode == '' && searchID == '') {
@@ -45,7 +39,7 @@ function nodeSearch() {
         if (attName == "class")
             countAtt = document.getElementsByClassName(attValue).length;
         else
-            countAtt = document.querySelectorAll('['+attName+'='+attValue+']').length;
+            countAtt = document.querySelectorAll('[' + attName + '=' + attValue + ']').length;
 
         /*for (var i = 0; i < myHTML.length; i++) {
             for (var j = 0; j < tagList.length; j++) {
@@ -72,23 +66,23 @@ function nodeSearch() {
                 countValue++;
         }
         // th
-       /* for (var i = 0; i < myHTML.length; i++) {
-            var tagList = document.querySelectorAll(myHTML[i]);
-            // class
-            for (var j = 0; j < tagList.length; j++) {
-                // id가 SearchID 이고 attName이 even 이라면
-                if (tagList[j].getAttribute('id') == searchID && tagList[j].getAttribute(attName) != null) {
-                    // class의 value가 여러개일 수 있으므로 split
-                    var confirm = tagList[j].getAttributeNode(attName).value.split(' ');
-                    for (var h = 0; h < confirm.length; h++) {
-                        //class의 값들 중 attValue 와 같은게 있으면
-                        if (confirm[h] == attValue) {
-                            countValue++;
-                        }
-                    }
-                }
-            }
-        }*/
+        /* for (var i = 0; i < myHTML.length; i++) {
+             var tagList = document.querySelectorAll(myHTML[i]);
+             // class
+             for (var j = 0; j < tagList.length; j++) {
+                 // id가 SearchID 이고 attName이 even 이라면
+                 if (tagList[j].getAttribute('id') == searchID && tagList[j].getAttribute(attName) != null) {
+                     // class의 value가 여러개일 수 있으므로 split
+                     var confirm = tagList[j].getAttributeNode(attName).value.split(' ');
+                     for (var h = 0; h < confirm.length; h++) {
+                         //class의 값들 중 attValue 와 같은게 있으면
+                         if (confirm[h] == attValue) {
+                             countValue++;
+                         }
+                     }
+                 }
+             }
+         }*/
         document.getElementById("inJs").value = countValue;
     }
 
@@ -96,23 +90,34 @@ function nodeSearch() {
     //========================노드명 + 속성명 + 속성값 으로 찾기=====================
     if (searchID == '' && searchNode != '' && attName != '' && attValue != '') {
         var countValue = 0;
-        // th list
-        var tagList = document.querySelectorAll(searchNode);
+        var tagList = [];
+        if (attName == "class")
+            tagList = document.getElementsByClassName(attValue);
+        else
+            tagList = document.querySelectorAll('[' + attName + '=' + attValue + ']');
+
+        for (let i = 0; i < tagList.length; i++) {
+            console.log(tagList.item(i).nodeName)
+            if (tagList.item(i).nodeName.toUpperCase() == searchNode.toUpperCase())
+                countValue++;
+        }
         // class
-        for (var j = 0; j < tagList.length; j++) {
-            //attName이 even 이라면
-            if (tagList[j].getAttribute(attName) != null) {
-                // class의 value가 여러개일 수 있으므로 split
-                var confirm = tagList[j].getAttributeNode(attName).value.split(' ');
-                for (var h = 0; h < confirm.length; h++) {
-                    //class의 값들 중 attValue 와 같은게 있으면
-                    if (confirm[h] == attValue) {
-                        countValue++;
+        /*
+                for (var j = 0; j < tagList.length; j++) {
+                    //attName이 even 이라면
+                    if (tagList[j].getAttribute(attName) != null) {
+                        // class의 value가 여러개일 수 있으므로 split
+                        var confirm = tagList[j].getAttributeNode(attName).value.split(' ');
+                        for (var h = 0; h < confirm.length; h++) {
+                            //class의 값들 중 attValue 와 같은게 있으면
+                            if (confirm[h] == attValue) {
+                                countValue++;
+                            }
+                        }
                     }
                 }
-            }
-        }
-        document.getElementById("inJs").value = countValue ;
+        */
+        document.getElementById("inJs").value = countValue;
     }
 
 
