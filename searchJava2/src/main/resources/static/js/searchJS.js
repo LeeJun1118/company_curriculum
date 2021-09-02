@@ -18,13 +18,25 @@ function nodeSearch() {
     //===================id + 노드명으로 찾기===================
     if (searchNode != '' && searchID != '' && attName == '' && attValue == '') {
         var tagList = document.querySelectorAll(searchNode);
-        var countNodeId = 0;
-        for (var i = 0; i < tagList.length; i++) {
+        // var countNodeId = 0;
+        var count = 0, index = 0;
+        var countNodeId = recursiveIdNode(tagList, count, index, searchID);
+
+        /*for (var i = 0; i < tagList.length; i++) {
             if (tagList[i].getAttribute('id') != null && tagList[i].getAttribute('id') == searchID) {
                 countNodeId++;
             }
-        }
+        }*/
         document.getElementById("inJs").value = countNodeId;
+    }
+
+    function recursiveIdNode(tagList, count, index, searchID) {
+        if (index >= tagList.length - 1)
+            return count;
+        else
+            return (tagList[index].getAttribute('id') != null && tagList[index].getAttribute('id') == searchID)
+                ? recursiveIdNode(tagList, count + 1, index + 1, searchID) : recursiveIdNode(tagList, count, index + 1, searchID);
+
     }
 
     //=================== 속성명 + 속성값으로 찾기 ===================
@@ -65,7 +77,7 @@ function nodeSearch() {
             if (values[i] == attValue)
                 countValue++;
         }
-        // th
+
         /* for (var i = 0; i < myHTML.length; i++) {
              var tagList = document.querySelectorAll(myHTML[i]);
              // class
@@ -101,7 +113,7 @@ function nodeSearch() {
             if (tagList.item(i).nodeName.toUpperCase() == searchNode.toUpperCase())
                 countValue++;
         }
-        // class
+
         /*
                 for (var j = 0; j < tagList.length; j++) {
                     //attName이 even 이라면
@@ -131,7 +143,6 @@ function nodeSearch() {
             tagList = document.querySelectorAll('[' + attName + '=' + attValue + ']');
 
         for (let i = 0; i < tagList.length; i++) {
-            console.log(tagList.item(i).nodeName)
             if (tagList.item(i).nodeName.toUpperCase() == searchNode.toUpperCase() && tagList.item(i).getAttribute("id") == searchID)
                 countAllCondition++;
         }
