@@ -2,6 +2,9 @@
 <html>
     <head>
         <title>게시글 작성</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
         <script>
             function formCheck(){
                 var title = document.forms[0].title.value;
@@ -21,7 +24,7 @@
         </script>
     </head>
     <body>
-      <form action="insert.jsp" method="post" onsubmit="return formCheck();">
+      <form action="insert.do" method="post" onsubmit="return formCheck();">
         제목 : <input type="text" name="title"/><br/>
         내용 : <input type="text" name="content"/><br/>
         <input type="submit">

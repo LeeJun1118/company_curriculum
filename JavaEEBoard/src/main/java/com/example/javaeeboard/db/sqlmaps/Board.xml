@@ -23,18 +23,11 @@
 		from board
 		where id_board = #value#
 	</delete>
-<!--
-	<update id="updateArticle" parameterClass="board">
-		update board set title = #title#, writer = #writer#, regdate = sysdate, count = #count#, content = #content# where idx = #idx#
-	</update>
 
-	<insert id="insertArticle" parameterClass="board">
-		INSERT INTO BOARD
-		           (IDX, TITLE, WRITER, REGDATE, COUNT, CONTENT, REGIP)
-			VALUES (board_seq.nextval, #title#, #writer# , sysdate, #count#, #content#, #regip#)
+	<insert id="insertBoard" parameterClass="board">
+		insert into board
+			(id_board, title, content)
+		VALUES (board_seq.nextval, #title#, #content#)
 	</insert>
 
-	<update id="setArticleCount" parameterClass="board">
-		update board set count = #count# where idx = #idx#
-	</update>-->
 </sqlMap>

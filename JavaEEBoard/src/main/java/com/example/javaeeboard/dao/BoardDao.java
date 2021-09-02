@@ -26,4 +26,9 @@ public class BoardDao extends CommonDao {
         GetDB().delete("deleteBoard", id_board);
         return ;
     }
+
+    public void insertBoard(board board) throws SQLException{
+        GetDB().insert("insertBoard",board);
+        return;
+    }
 }
