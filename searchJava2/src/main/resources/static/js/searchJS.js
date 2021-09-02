@@ -116,19 +116,23 @@ function nodeSearch() {
 
     //========================노드명 + 속성명 + 속성값 으로 찾기=====================
     if (searchID == '' && searchNode != '' && attName != '' && attValue != '') {
-        var countValue = 0;
+        var countValue = 0, index = 0;
         var tagList = [];
         if (attName == "class")
             tagList = document.getElementsByClassName(attValue);
         else
             tagList = document.querySelectorAll('[' + attName + '=' + attValue + ']');
 
+        countValue = recursiveNodeAtt(tagList,searchNode,countValue,index);
+
+        /* 반복 : 수정 후
         for (let i = 0; i < tagList.length; i++) {
             if (tagList.item(i).nodeName.toUpperCase() == searchNode.toUpperCase())
                 countValue++;
-        }
+        }*/
 
         /*
+        //반복 : 수정 전
                 for (var j = 0; j < tagList.length; j++) {
                     //attName이 even 이라면
                     if (tagList[j].getAttribute(attName) != null) {
@@ -145,6 +149,17 @@ function nodeSearch() {
         */
         document.getElementById("inJs").value = countValue;
     }
+    //========================재귀 : id + 속성명 + 속성값 으로 찾기========================
+    function recursiveNodeAtt(tagList, searchNode, count, index) {
+        if (index >= tagList.length)
+            return count;
+        else
+            return tagList.item(index).nodeName.toUpperCase() == searchNode.toUpperCase() ?
+                recursiveNodeAtt(tagList, searchNode, count+1, index+1) :
+                recursiveNodeAtt(tagList, searchNode, count, index+1);
+    }
+
+
 
 
     //===================id + 노드명 + 속성명 + 속성값 으로 찾기===================
@@ -161,7 +176,9 @@ function nodeSearch() {
                 countAllCondition++;
         }
 
-        /*// th 사용한 부분들 list
+        /*
+        //수정전
+        // th 사용한 부분들 list
         var tagList = document.querySelectorAll(searchNode);
         var countAllCondition = 0;
         for (var i = 0; i < tagList.length; i++) {
