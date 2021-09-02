@@ -22,4 +22,8 @@ public class BoardDao extends CommonDao {
         return (board)GetDB().queryForObject("getBoard", id_board);
     }
 
+    public void deleteBoard(int id_board) throws SQLException{ // 딜리트
+        GetDB().delete("deleteBoard", id_board);
+        return ;
+    }
 }
