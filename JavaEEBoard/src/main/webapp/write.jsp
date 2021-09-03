@@ -6,16 +6,16 @@
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
         <script>
-            function formCheck(){
+            function formCheck() {
                 var title = document.forms[0].title.value;
                 var content = document.forms[0].content.value;
 
-                if (title == null || title == ""){
+                if (title == null || title == "") {
                     alert('제목을 입력하세요');
                     document.forms[0].title.focus();
                     return false;
                 }
-                if (content == null || content == ""){
+                if (content == null || content == "") {
                     alert('내용을 입력하세요');
                     document.forms[0].content.focus();
                     return false;
@@ -24,10 +24,23 @@
         </script>
     </head>
     <body>
-      <form action="insert.do" method="post" onsubmit="return formCheck();">
-        제목 : <input type="text" name="title"/><br/>
-        내용 : <input type="text" name="content"/><br/>
-        <input type="submit">
-      </form>
+        <div class="container">
+        <div class="container-sm">
+            <h2>글쓰기</h2>
+            <br/>
+            <form action="insert.do" method="post" onsubmit="return formCheck();">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">제목</label>
+                    <input class="form-control" type="text" name="title"/><br/>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">내용</label>
+                <textarea class="form-control" type="text" name="content"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">제출</button>
+            </form>
+        </div>
+        </div>
+
     </body>
 </html>

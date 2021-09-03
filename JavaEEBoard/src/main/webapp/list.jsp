@@ -14,7 +14,9 @@
     </head>
 
     <body>
+        <div class="container">
         <div class="container-sm">
+
             <h2>게시판</h2>
             <nav class="navbar">
                 <a href="write.jsp">글쓰기</a>
@@ -43,6 +45,7 @@
                 </tbody>
             </table>
 
+        </div>
         </div>
 
 
