@@ -10,11 +10,18 @@
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
 
+        <script>
+            function onDownload(id_board) {
+                var o = document.getElementById("iframe_filedown");
+                o.src = "download.do?id_board=" + id_board;
+            }
+        </script>
         <title>게시글 조회</title>
 
 
     </head>
     <body>
+        <iframe id="iframe_filedown" style="position: absolute; z-index: 1; visibility: hidden;"></iframe>
         <div class="container">
             <div class="container-sm">
                 <h1>게시글</h1>
@@ -34,7 +41,9 @@
                     </tr>
                     <tr>
                         <th colspan="2">첨부파일</th>
-                        <td colspan="6">${board.filename}</td>
+                        <td colspan="6">
+                            <a href="#" onclick="onDownload('${board.id_board}')" > ${board.filename}</a>
+                        </td>
                     </tr>
                 </table>
                 <ul class="nav justify-content-end">
