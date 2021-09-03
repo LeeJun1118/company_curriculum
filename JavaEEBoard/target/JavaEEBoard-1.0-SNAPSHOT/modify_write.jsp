@@ -1,22 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-         pageEncoding="utf-8"%>
+         pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
         <title>게시글 수정</title>
         <script>
-            function formCheck(){
+            function formCheck() {
 
                 var title = document.forms[0].title.value;
                 var content = document.forms[0].content.value;
 
-                if (title == null || title == ""){
+                if (title == null || title == "") {
                     alert('제목을 입력하세오');
                     document.forms[0].title.focus();
                     return false;
                 }
-                if (content == null || content == ""){
+                if (content == null || content == "") {
                     alert('내용입력하세오');
                     document.forms[0].content.focus();
                     return false;
@@ -28,18 +31,24 @@
         String id_board = request.getParameter("id_board");
     %>
     <body>
-
-
-        <h1> 게시글 수정 </h1>
-        <form action="modify.do?id_board=<%=id_board%>" method="post" onsubmit="return formCheck();">
-
-            제목 : <input type="text" name="title" /> <br/>
-            내용 : <textarea rows="10" cols="20" name="content"/></textarea> <br/>
-
-            <input type="submit"/>
-        </form>
-
-
+        <div class="container">
+            <div class="container-sm">
+                <h1> 게시글 수정 </h1>
+                <form action="modify.do?id_board=<%=id_board%>" method="post" onsubmit="return formCheck();">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">제목</label>
+                        <input class="form-control" type="text" name="title"/><br/>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">내용</label>
+                        <textarea class="form-control" type="text" name="content"></textarea>
+                    </div>
+                    <div class="nav justify-content-end">
+                        <button type="submit" class="btn btn-primary">수정</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     </body>
 </html>
