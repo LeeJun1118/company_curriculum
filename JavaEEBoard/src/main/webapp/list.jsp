@@ -48,21 +48,30 @@
 
 
             </div>
-                <c:if test="${page > 0}">
-                    <a href="list.do?page=${page-10}">이전페이지</a>
-                </c:if>
-                <c:if test="${page == 0}">
-                    <a href="#">이전페이지</a>
-                </c:if>
 
-                <fmt:parseNumber value="${page/10+1 }" type="number" integerOnly="True"/>
-
-                <c:if test="${fn:length( boardList ) < 10}">
-                    <a href="#">다음페이지</a>
-                </c:if>
-                <c:if test="${fn:length( boardList ) >= 10}">
-                    <a href="list.do?page=${page+10}">다음페이지</a>
-                </c:if>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <c:if test="${page > 0}">
+                        <a class="nav-link" href="list.do?page=${page-10}">이전페이지</a>
+                    </c:if>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <fmt:parseNumber value="${page/10+1 }" type="number"
+                                         integerOnly="True"></fmt:parseNumber>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <c:if test="${fn:length( boardList ) < 10}">
+                        <a class="nav-link" href="#">다음페이지</a>
+                    </c:if>
+                </li>
+                <li class="nav-item">
+                    <c:if test="${fn:length( boardList ) >= 10}">
+                        <a class="nav-link" href="list.do?page=${page+10}">다음페이지</a>
+                    </c:if>
+                </li>
+            </ul>
         </div>
 
 
