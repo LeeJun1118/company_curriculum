@@ -2,25 +2,24 @@ package com.example.javaeeboard.action;
 
 import com.example.javaeeboard.Controller.CommandAction;
 import com.example.javaeeboard.beans.reply;
-import com.example.javaeeboard.beans.board;
-import com.example.javaeeboard.dao.BoardDao;
 import com.example.javaeeboard.dao.ReplyDao;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ContentAction implements CommandAction {
+public class ReplyAction implements CommandAction {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-        // TODO Auto-generated method stub
+
         int id_board = Integer.parseInt(request.getParameter("id_board"));
+        String content = request.getParameter("content");
 
-        board board = BoardDao.getInstance().getBoard(id_board);
-        reply reply = ReplyDao.getInstance().getReply(id_board);
+        reply reply = new reply();
+        reply.setContent(content);
+        reply.setBoard_id(id_board);
 
-        request.setAttribute("board",board);
-        request.setAttribute("reply",reply);
+        ReplyDao.getInstance().insertReply(reply);
 
-        return  "content.jsp";
+        return "content.jsp";
     }
 }

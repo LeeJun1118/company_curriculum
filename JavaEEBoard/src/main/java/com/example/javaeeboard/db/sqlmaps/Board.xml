@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
- 
- 
- 
+
+
 <sqlMap namespace="Board">
-	<typeAlias alias="map" type="java.util.Map" />
-	<typeAlias alias="str" type="java.lang.String" />
-	<typeAlias alias="int" type="java.lang.Integer" />
-	<typeAlias alias="board" type="com.example.javaeeboard.beans.board" />
+    <typeAlias alias="map" type="java.util.Map"/>
+    <typeAlias alias="str" type="java.lang.String"/>
+    <typeAlias alias="int" type="java.lang.Integer"/>
+    <typeAlias alias="board" type="com.example.javaeeboard.beans.board"/>
 
-	<select id="getBoardList" resultClass="board">
-		select * from board order by id_board desc
-	</select>
-	
-	<select id="getBoard" parameterClass="int" resultClass="board">
-		select * from board where id_board = #value#
-	</select>
+    <select id="getBoardList" resultClass="board">
+        select *
+        from board
+        order by id_board desc
+    </select>
 
-	<delete id="deleteBoard" parameterClass="int">
-		delete
-		from board
-		where id_board = #value#
-	</delete>
+    <select id="getBoard" parameterClass="int" resultClass="board">
+        select *
+        from board
+        where id_board = #value#
+    </select>
 
-	<insert id="insertBoard" parameterClass="board">
-		insert into board
-			(id_board, title, content, filename)
-		VALUES (board_seq.nextval, #title#, #content#, #filename#)
-	</insert>
+    <delete id="deleteBoard" parameterClass="int">
+        delete
+        from board
+        where id_board = #value#
+    </delete>
 
-	<update id="updateBoard" parameterClass="board">
-		update board set title = #title#, content = #content# where id_board = #id_board#
-	</update>
+    <insert id="insertBoard" parameterClass="board">
+        insert into board
+            (id_board, title, content, filename)
+        VALUES (board_seq.nextval, #title#, #content#, #filename#)
+    </insert>
+
+    <update id="updateBoard" parameterClass="board">
+        update board
+        set title   = #title#,
+            content = #content#
+        where id_board = #id_board#
+    </update>
 
 </sqlMap>

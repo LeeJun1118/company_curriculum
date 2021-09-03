@@ -35,5 +35,6 @@
  
     </transactionManager>
     <sqlMap resource="com/example/javaeeboard/db/sqlmaps/Board.xml"/>
- 
+    <sqlMap resource="com/example/javaeeboard/db/sqlmaps/Reply.xml"/>
+
 </sqlMapConfig>
