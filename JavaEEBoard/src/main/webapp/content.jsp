@@ -32,6 +32,10 @@
                         <th colspan="2">내용</th>
                         <td colspan="6">${board.content}</td>
                     </tr>
+                    <tr>
+                        <th colspan="2">첨부파일</th>
+                        <td colspan="6">${board.filename}</td>
+                    </tr>
                 </table>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">

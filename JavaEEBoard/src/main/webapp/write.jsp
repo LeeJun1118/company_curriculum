@@ -28,7 +28,7 @@
         <div class="container-sm">
             <h2>글쓰기</h2>
             <br/>
-            <form action="insert.do" method="post" onsubmit="return formCheck();">
+            <form action="insert.do" enctype="multipart/form-data" method="post" onsubmit="return formCheck();">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">제목</label>
                     <input class="form-control" type="text" name="title"/><br/>
@@ -37,7 +37,12 @@
                     <label for="exampleFormControlTextarea1">내용</label>
                 <textarea class="form-control" type="text" name="content"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">제출</button>
+                <div class="form-group">
+                    <input type="file" name="filename"/>
+                </div>
+                <div class="nav justify-content-end">
+                    <button type="submit" class="btn btn-primary">제출</button>
+                </div>
             </form>
         </div>
         </div>

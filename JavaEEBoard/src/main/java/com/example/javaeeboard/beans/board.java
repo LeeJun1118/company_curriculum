@@ -4,6 +4,7 @@ public class board {
     private int id_board;
     private String title;
     private String content;
+    private String filename;
 
     public int getId_board() {
         return id_board;
@@ -27,5 +28,13 @@ public class board {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }

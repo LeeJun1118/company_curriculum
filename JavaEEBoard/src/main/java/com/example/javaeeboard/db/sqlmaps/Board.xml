@@ -26,8 +26,8 @@
 
 	<insert id="insertBoard" parameterClass="board">
 		insert into board
-			(id_board, title, content)
-		VALUES (board_seq.nextval, #title#, #content#)
+			(id_board, title, content, filename)
+		VALUES (board_seq.nextval, #title#, #content#, #filename#)
 	</insert>
 
 	<update id="updateBoard" parameterClass="board">
