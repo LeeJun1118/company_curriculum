@@ -83,7 +83,7 @@
                                 <td colspan="6">${reply.content}</td>
 
                                 <td colspan="6">
-                                    <a class="btn btn-default"
+                                    <a class="btn btn-default" style="color: blue"
                                        onclick="document.getElementById('modalId${status.index}').style.display='block'">댓글수정</a>
                                     <a class="btn btn-default" href='deleteReply.do?id_reply=${reply.id_reply}'>댓글삭제</a>
                                 </td>
@@ -94,7 +94,8 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title">댓글 수정</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
@@ -108,12 +109,10 @@
 
                                                 <div class="modal-footer">
                                                     <button class="btn btn-default" type="submit">확인</button>
-                                                    <button id="modalClose" type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal"
-                                                            <%--onclick="close_modal()"--%>>
+                                                    <button data-target="modalId${status.index}" data-toggle="modal"
+                                                            data-backdrop="static" data-keyboard="false" class="btn btn-secondary">
                                                         취소
                                                     </button>
-
                                                 </div>
                                             </form>
                                         </div>
