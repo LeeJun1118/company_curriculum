@@ -25,10 +25,9 @@ public class ReplyAction implements CommandAction {
             reply.setContent(content);
             reply.setBoard_id(id_board);
             ReplyDao.getInstance().insertReply(reply);
-
-            ArrayList<reply> replyList = ReplyDao.getInstance().getReplyList(id_board);
-            request.setAttribute("replyList", replyList);
         }
+        ArrayList<reply> replyList = ReplyDao.getInstance().getReplyList(id_board);
+        request.setAttribute("replyList", replyList);
 
         request.setAttribute("board", board);
         return "content.jsp";

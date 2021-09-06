@@ -15,6 +15,10 @@
                 var o = document.getElementById("iframe_filedown");
                 o.src = "download.do?id_board=" + id_board;
             }
+
+            function close_modal() {
+                document.getElementById('modalId${status.index}').style.display = 'hide';
+            }
         </script>
         <title>게시글 조회</title>
 
@@ -67,26 +71,54 @@
                     </div>
 
                     <div class="nav justify-content-end">
-                        <button type="submit" class="btn btn-primary">제출</button>
+                        <button type="submit" class="btn btn-primary">등록</button>
                     </div>
                 </form>
+                <h6>댓글</h6>
                 <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">댓글</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <c:forEach items="${replyList}" var="reply" varStatus="status">
                             <tr>
-                                <td>${status.count}</td>
-                                <td>${reply.content}</td>
-                                <td>
-                                    <a class="btn btn-default" href='deleteReply.do?id_reply=${reply.id_reply}'>글 삭제</a>
-                                    <a class="btn"> 삭제</a>
+                                <td colspan="6">${status.count}</td>
+                                <td colspan="6">${reply.content}</td>
+
+                                <td colspan="6">
+                                    <a class="btn btn-default"
+                                       onclick="document.getElementById('modalId${status.index}').style.display='block'">댓글수정</a>
+                                    <a class="btn btn-default" href='deleteReply.do?id_reply=${reply.id_reply}'>댓글삭제</a>
                                 </td>
+
+                                <div id="modalId${status.index}" class="modal" tabindex="-1"
+                                     role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">댓글 수정</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+
+                                            <form name="reply" method="post"
+                                                  action='modifyReply.do?id_reply=${reply.id_reply}'>
+                                                <div class="modal-body">
+                                                    <input type="text" name="content" cols="90" rows="4"
+                                                           value="${reply.content}"></input>
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-default" type="submit">확인</button>
+                                                    <button id="modalClose" type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal"
+                                                            <%--onclick="close_modal()"--%>>
+                                                        취소
+                                                    </button>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </tr>
                         </c:forEach>
                     </tbody>

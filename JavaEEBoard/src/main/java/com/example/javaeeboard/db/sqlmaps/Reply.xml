@@ -34,4 +34,11 @@
         where id_reply = #value#
     </delete>
 
+
+    <update id="replyBoard" parameterClass="reply">
+        update reply
+        set content = #content#
+        where id_reply = #id_reply#
+    </update>
+
 </sqlMap>
