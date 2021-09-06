@@ -18,11 +18,16 @@ public class ReplyDao extends CommonDao{
         return ;
     }
 
-    public reply getReply(int id_board) throws SQLException { //리스트
-        return (reply) GetDB().queryForObject("getReply",id_board);
+    public reply getReply(int id_reply) throws SQLException {
+        return (reply)GetDB().queryForObject("getReply", id_reply);
     }
 
     public ArrayList<reply> getReplyList(int id_board) throws SQLException  {
         return (ArrayList<reply>)GetDB().queryForList("getReplyList", id_board);
+    }
+
+    public void deleteReply(int id_reply) throws SQLException{
+        GetDB().delete("deleteReply", id_reply);
+        return ;
     }
 }

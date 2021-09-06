@@ -1,16 +1,16 @@
 package com.example.javaeeboard.beans;
 
 public class reply {
-    private int id_board;
+    private int id_reply;
     private String content;
     private int board_id;
 
-    public int getId_board() {
-        return id_board;
+    public int getId_reply() {
+        return id_reply;
     }
 
-    public void setId_board(int id_board) {
-        this.id_board = id_board;
+    public void setId_reply(int id_reply) {
+        this.id_reply = id_reply;
     }
 
     public String getContent() {

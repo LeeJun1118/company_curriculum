@@ -70,14 +70,23 @@
                         <button type="submit" class="btn btn-primary">제출</button>
                     </div>
                 </form>
-                <div>댓글</div>
                 <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">댓글</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <td>${reply.content}</td>
                         <c:forEach items="${replyList}" var="reply" varStatus="status">
                             <tr>
                                 <td>${status.count}</td>
                                 <td>${reply.content}</td>
+                                <td>
+                                    <a class="btn btn-default" href='deleteReply.do?id_reply=${reply.id_reply}'>글 삭제</a>
+                                    <a class="btn"> 삭제</a>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>

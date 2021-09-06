@@ -12,7 +12,7 @@
     <select id="getReply" parameterClass="int" resultClass="reply">
         select *
         from reply
-        where board_id = #value#
+        where id_reply = #value#
     </select>
 
     <insert id="insertReply"  parameterClass="reply">
@@ -27,5 +27,11 @@
         where board_id = #value#
         order by id_reply desc
     </select>
+
+    <delete id="deleteReply" parameterClass="int">
+        delete
+        from reply
+        where id_reply = #value#
+    </delete>
 
 </sqlMap>
