@@ -13,7 +13,7 @@
         select *
         from board
         <isParameterPresent prepend="where">
-            title like '%'||#value#||'%' or content like '%'||#value#||'%'
+            title like '%'||#value#||'%'
         </isParameterPresent>
         <isNotParameterPresent prepend="order by">
             id_board desc
