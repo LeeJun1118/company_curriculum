@@ -21,9 +21,10 @@
         VALUES (reply_seq.nextval, #content#, #board_id#)
     </insert>
 
-    <select id="getReplyList" resultClass="reply">
+    <select id="getReplyList" parameterClass="int" resultClass="reply">
         select *
         from reply
+        where board_id = #value#
         order by id_reply desc
     </select>
 
