@@ -13,8 +13,8 @@ public class BoardDao extends CommonDao {
         return boardDao;
     }
 
-    public ArrayList<board>getBoardList(int page) throws SQLException{ //리스트
-        return (ArrayList<board>)GetDB().queryForList("getBoardList", null, page, 10);
+    public ArrayList<board>getBoardList(String search,int page) throws SQLException{ //리스트
+        return (ArrayList<board>)GetDB().queryForList("getBoardList", search, page, 10);
     }
 
     @SuppressWarnings("unchecked")

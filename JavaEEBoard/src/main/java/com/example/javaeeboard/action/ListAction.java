@@ -13,12 +13,13 @@ public class ListAction implements CommandAction {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         request.setCharacterEncoding("utf-8");
+        String search = request.getParameter("search");
 
         int page = 0 ;
         if(request.getParameter("page")!=null){
             page=Integer.parseInt(request.getParameter("page"));
         }
-        ArrayList<board> boardList = BoardDao.getInstance().getBoardList(page);
+        ArrayList<board> boardList = BoardDao.getInstance().getBoardList(search,page);
 
         request.setAttribute("boardList", boardList);
         request.setAttribute("page", page);

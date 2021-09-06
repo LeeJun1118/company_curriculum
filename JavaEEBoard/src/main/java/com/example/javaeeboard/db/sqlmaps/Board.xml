@@ -9,10 +9,15 @@
     <typeAlias alias="int" type="java.lang.Integer"/>
     <typeAlias alias="board" type="com.example.javaeeboard.beans.board"/>
 
-    <select id="getBoardList" resultClass="board">
+    <select id="getBoardList" parameterClass="str" resultClass="board">
         select *
         from board
-        order by id_board desc
+        <isParameterPresent prepend="where">
+            title like '%'||#value#||'%' or content like '%'||#value#||'%'
+        </isParameterPresent>
+        <isNotParameterPresent prepend="order by">
+            id_board desc
+        </isNotParameterPresent>
     </select>
 
     <select id="getBoard" parameterClass="int" resultClass="board">

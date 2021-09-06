@@ -42,32 +42,12 @@
                     <tr>
                         <th colspan="2">첨부파일</th>
                         <td colspan="6">
-                            <a href="#" onclick="onDownload('${board.id_board}')" > ${board.filename}</a>
+                            <a href="#" onclick="onDownload('${board.id_board}')"> ${board.filename}</a>
                         </td>
                     </tr>
                 </table>
-                <h4>댓글</h4>
-                <form action="insertReply.do" method="post">
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">내용</label>
-                        <textarea class="form-control" type="text" name="content"></textarea>
-                    </div>
 
-                    <div class="nav justify-content-end">
-                        <button type="submit" class="btn btn-primary">제출</button>
-                    </div>
-                </form>
-                <table class="table">
-                    <tbody>
-                        <td>${comment.content}</td>
-                       <%-- <c:forEach items="${commentList}" var="comment" varStatus="status">
-                            <tr>
-                                <td>${status.count}</td>
-                                <td>${comment.content}</td>
-                            </tr>
-                        </c:forEach>--%>
-                    </tbody>
-                </table>
+
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
                         <a class="btn btn-default" href='delete.do?id_board=${board.id_board}'>글 삭제</a>
@@ -79,6 +59,29 @@
                         <a class="btn btn-default" href="list.do">목록으로</a>
                     </li>
                 </ul>
+
+                <h5>댓글쓰기</h5>
+                <form action="insertReply.do?id_board=${board.id_board}" method="post">
+                    <div class="form-group">
+                        <textarea class="form-control" type="text" name="content"></textarea>
+                    </div>
+
+                    <div class="nav justify-content-end">
+                        <button type="submit" class="btn btn-primary">제출</button>
+                    </div>
+                </form>
+                <div>댓글</div>
+                <table class="table">
+                    <tbody>
+                        <td>${reply.content}</td>
+                        <c:forEach items="${replyList}" var="reply" varStatus="status">
+                            <tr>
+                                <td>${status.count}</td>
+                                <td>${reply.content}</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>
