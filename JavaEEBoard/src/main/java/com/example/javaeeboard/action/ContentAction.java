@@ -8,6 +8,7 @@ import com.example.javaeeboard.dao.ReplyDao;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 public class ContentAction implements CommandAction {
     @Override
@@ -16,10 +17,10 @@ public class ContentAction implements CommandAction {
         int id_board = Integer.parseInt(request.getParameter("id_board"));
 
         board board = BoardDao.getInstance().getBoard(id_board);
-        reply reply = ReplyDao.getInstance().getReply(id_board);
-
         request.setAttribute("board",board);
-        request.setAttribute("reply",reply);
+
+        ArrayList<reply> replyList = ReplyDao.getInstance().getReplyList(id_board);
+        request.setAttribute("replyList", replyList);
 
         return  "content.jsp";
     }

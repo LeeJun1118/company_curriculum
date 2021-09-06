@@ -3,7 +3,7 @@
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 
 
-<sqlMap namespace="Comment">
+<sqlMap namespace="Reply">
     <typeAlias alias="map" type="java.util.Map"/>
     <typeAlias alias="str" type="java.lang.String"/>
     <typeAlias alias="int" type="java.lang.Integer"/>
@@ -13,6 +13,18 @@
         select *
         from reply
         where board_id = #value#
+    </select>
+
+    <insert id="insertReply"  parameterClass="reply">
+        insert into reply
+            (id_reply, content, board_id)
+        VALUES (reply_seq.nextval, #content#, #board_id#)
+    </insert>
+
+    <select id="getReplyList" resultClass="reply">
+        select *
+        from reply
+        order by id_reply desc
     </select>
 
 </sqlMap>
