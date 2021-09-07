@@ -15,6 +15,6 @@ public class ModifyContentView implements CommandAction {
         board board = BoardDao.getInstance().getBoard(id_board);
         request.setAttribute("board",board);
 
-        return  "modify_write.jsp";
+        return  "modifyContent.jsp";
     }
 }

@@ -55,7 +55,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-default" href='modifyView.do?id_board=${board.id_board}'>글 수정</a>
-<%--                        <a class="btn btn-default" href='modify_write.jsp?id_board=${board.id_board}'>글 수정</a>--%>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-default" href="list.do">목록으로</a>
