@@ -35,19 +35,20 @@
         <div class="container">
             <div class="container-sm marTop">
                 <h1> 게시글 수정 </h1>
-                <form action="modify.do?id_board=<%=id_board%>" enctype="multipart/form-data" method="post" onsubmit="return formCheck();">
+                <form action="modify.do?id_board=${board.id_board}" enctype="multipart/form-data" method="post" onsubmit="return formCheck();">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">제목</label>
-                        <input class="form-control" type="text" name="title"/><br/>
+                        <input class="form-control" type="text" name="title" value="${board.title}"/>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">내용</label>
-                        <textarea class="form-control" type="text" name="content"></textarea>
+                        <textarea class="form-control" type="text" name="content">${board.content}</textarea>
                     </div>
                     <div class="form-group">
-                        <input type="file" name="filename"/>
+                        <input type="file" name="filename">${board.filename}</input>
                     </div>
                     <div class="nav justify-content-end">
+                        <a class="btn btn-primary marRight" href='content.do?id_board=${board.id_board}'>취소</a>
                         <button type="submit" class="btn btn-primary">수정</button>
                     </div>
                 </form>

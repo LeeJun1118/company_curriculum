@@ -41,7 +41,8 @@
     <update id="updateBoard" parameterClass="board">
         update board
         set title   = #title#,
-            content = #content#
+            content = #content#,
+            filename = #filename#
         where id_board = #id_board#
     </update>
 
