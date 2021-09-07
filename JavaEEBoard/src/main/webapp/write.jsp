@@ -41,7 +41,9 @@
                 <div class="form-group">
                     <input type="file" name="filename"/>
                 </div>
+
                 <div class="nav justify-content-end">
+                    <a class="btn btn-primary marRight" href="list.do">취소</a>
                     <button type="submit" class="btn btn-primary">제출</button>
                 </div>
             </form>

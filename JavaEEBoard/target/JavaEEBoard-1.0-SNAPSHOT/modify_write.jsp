@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
+        <link rel="stylesheet" href="/style.css"/>
         <title>게시글 수정</title>
         <script>
             function formCheck() {
@@ -32,7 +33,7 @@
     %>
     <body>
         <div class="container">
-            <div class="container-sm">
+            <div class="container-sm marTop">
                 <h1> 게시글 수정 </h1>
                 <form action="modify.do?id_board=<%=id_board%>" enctype="multipart/form-data" method="post" onsubmit="return formCheck();">
                     <div class="form-group">

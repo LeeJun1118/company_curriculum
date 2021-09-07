@@ -9,15 +9,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
+        <link rel="stylesheet" href="/style.css"/>
 
         <script>
             function onDownload(id_board) {
                 var o = document.getElementById("iframe_filedown");
                 o.src = "download.do?id_board=" + id_board;
-            }
-
-            function close_modal() {
-                document.getElementById('modalId${status.index}').style.display = 'hide';
             }
         </script>
         <title>게시글 조회</title>
@@ -27,8 +24,8 @@
     <body>
         <iframe id="iframe_filedown" style="position: absolute; z-index: 1; visibility: hidden;"></iframe>
         <div class="container">
-            <div class="container-sm">
-                <h1>게시글</h1>
+            <div class="container-sm marTop">
+                <h2>게시글</h2>
                 <br/>
                 <table class="table">
                     <tr>
