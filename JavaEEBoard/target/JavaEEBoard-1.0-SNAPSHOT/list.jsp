@@ -26,7 +26,7 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </nav>
-                <table class="table table-hover">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -47,26 +47,26 @@
                 </table>
             </div>
 
-            <ul class="nav justify-content-end">
+
+            <ul class="nav justify-content-center">
+                <c:set var="scope" value="10"/>
+
+                <%--                이전페이지--%>
                 <li class="nav-item">
-                    <c:if test="${page > 0}">
-                        <a class="nav-link" href="list.do?page=${page-10}">이전페이지</a>
+                    <c:if test="${startBlockPage > 1}">
+                        <a class="nav-link" href="list.do?page=${(startBlockPage+1)*10-20}">이전</a>
                     </c:if>
                 </li>
+
+                <%--                현재페이지--%>
+                <c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
+                    <a class="nav-link" href="list.do?page=${i*10}">${i+1}</a>
+                </c:forEach>
+
+                <%--                다음페이지--%>
                 <li class="nav-item">
-                    <a class="nav-link">
-                        <fmt:parseNumber value="${page/10+1 }" type="number"
-                                         integerOnly="True"></fmt:parseNumber>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <c:if test="${fn:length( boardList ) < 10}">
-                        <a class="nav-link" href="#">다음페이지</a>
-                    </c:if>
-                </li>
-                <li class="nav-item">
-                    <c:if test="${fn:length( boardList ) >= 10}">
-                        <a class="nav-link" href="list.do?page=${page+10}">다음페이지</a>
+                    <c:if test="${endBlockPage + 3 < ((fn:length(maxList)/10)/3)*3+1}">
+                        <a class="nav-link" href="list.do?page=${(endBlockPage+1)*10}">다음</a>
                     </c:if>
                 </li>
             </ul>

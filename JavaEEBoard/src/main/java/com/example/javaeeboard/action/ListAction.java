@@ -20,9 +20,21 @@ public class ListAction implements CommandAction {
             page=Integer.parseInt(request.getParameter("page"));
         }
         ArrayList<board> boardList = BoardDao.getInstance().getBoardList(search,page);
+        ArrayList<board> maxList = BoardDao.getInstance().getMaxList();
 
         request.setAttribute("boardList", boardList);
         request.setAttribute("page", page);
+        request.setAttribute("maxList", maxList);
+
+        int totalPages= maxList.size()/10 + 1;
+        int pageBlock = 3; //블럭의 수 1, 2, 3
+        int startBlockPage = ((page/10)/pageBlock)*pageBlock; //현재 페이지가 7이라면 7/3 * 3 + 1
+        int endBlockPage = startBlockPage+pageBlock-1; //7+3-1=9. 7,8,9해서 9
+        endBlockPage= totalPages<endBlockPage? totalPages:endBlockPage;
+
+        request.setAttribute("startBlockPage", startBlockPage);
+        request.setAttribute("endBlockPage", endBlockPage);
+
         return "list.jsp";
     }
 }

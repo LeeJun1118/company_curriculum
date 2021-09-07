@@ -17,6 +17,10 @@ public class BoardDao extends CommonDao {
         return (ArrayList<board>)GetDB().queryForList("getBoardList", search, page, 10);
     }
 
+    public ArrayList<board>getMaxList() throws SQLException{ //리스트
+        return (ArrayList<board>)GetDB().queryForList("getBoardList", null);
+    }
+
     @SuppressWarnings("unchecked")
     public board getBoard(int id_board) throws SQLException{ // 콘텐츠
         return (board)GetDB().queryForObject("getBoard", id_board);
