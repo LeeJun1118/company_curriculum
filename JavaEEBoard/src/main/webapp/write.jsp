@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
+        <link rel="stylesheet" href="/style.css"/>
         <script>
             function formCheck() {
                 var title = document.forms[0].title.value;
@@ -25,7 +26,7 @@
     </head>
     <body>
         <div class="container">
-        <div class="container-sm">
+        <div class="container-sm marTop">
             <h2>글쓰기</h2>
             <br/>
             <form action="insert.do" enctype="multipart/form-data" method="post" onsubmit="return formCheck();">
