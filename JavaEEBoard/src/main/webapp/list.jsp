@@ -18,6 +18,7 @@
         <div class="container marTop">
             <div class="container-sm my-auto">
                 <h2>게시판</h2>
+                <br/>
                 <nav class="navbar">
                     <a href="write.jsp">글쓰기</a>
                     <form class="form-inline my-2 my-lg-0" action="list.do" method="post">
@@ -26,31 +27,30 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </nav>
+
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>제목</th>
-                            <th>글번호</th>
+                            <th scope="col">#</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">글번호</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <c:forEach items="${boardList}" var="board" varStatus="status">
                             <tr>
-                                <td>${status.count}</td>
-                                <td><a href='content.do?id_board=${board.id_board}'>${board.title}</a></td>
-                                <td>${board.id_board}</td>
+                                <th scope="row">${status.count}</th>
+                                <td class="col-6"><a href='content.do?id_board=${board.id_board}'>${board.title}</a>
+                                </td>
+                                <td class="col-3">${board.id_board}</td>
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table>
             </div>
 
-
             <ul class="nav justify-content-center">
-                <c:set var="scope" value="10"/>
-
                 <%--                이전페이지--%>
                 <li class="nav-item">
                     <c:if test="${startBlockPage > 1}">
@@ -71,6 +71,5 @@
                 </li>
             </ul>
         </div>
-
     </body>
 </html>
