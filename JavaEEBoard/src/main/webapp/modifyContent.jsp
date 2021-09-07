@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">내용</label>
-                        <textarea class="form-control" type="text" name="content">${board.content}</textarea>
+                        <textarea class="form-control h-25" rows="10" type="text" name="content">${board.content}</textarea>
                     </div>
                     <div class="form-group">
                         <input type="file" name="filename">${board.filename}</input>

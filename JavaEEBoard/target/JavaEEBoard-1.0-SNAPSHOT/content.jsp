@@ -38,7 +38,7 @@
 
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">내용</label>
-                        <textarea class="form-control" readonly="readonly" id="exampleFormControlTextarea1"
+                        <textarea class="form-control h-25" rows="10" readonly="readonly" id="exampleFormControlTextarea1"
                                   rows="3">${board.content}</textarea>
                     </div>
                     <div>
