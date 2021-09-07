@@ -27,11 +27,35 @@
             <div class="container-sm marTop">
                 <h2>게시글</h2>
                 <br/>
-                <table class="table">
-                    <tr>
+                <form>
+                    <div class="form-group border-bottom">
+                        <label>글 번호
+                            <span>${board.id_board}</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">제목</label>
+                        <input class="form-control" readonly="readonly" id="exampleFormControlInput1"
+                               value="${board.title}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">내용</label>
+                        <textarea class="form-control" readonly="readonly" id="exampleFormControlTextarea1"
+                                  rows="3">${board.content}</textarea>
+                    </div>
+                    <div>
+                        파일
+                        <%--<a class="nav-link">파일</a>--%>
+                        <a href="#" onclick="onDownload('${board.id_board}')"> ${board.filename}</a>
+                    </div>
+                </form>
+
+                <%--<table class="table">
+                    &lt;%&ndash;<tr>
                         <th colspan="2">#</th>
                         <td>${board.id_board}</td>
-                    </tr>
+                    </tr>&ndash;%&gt;
                     <tr>
                         <th colspan="2">제목</th>
                         <td colspan="6">${board.title}</td>
@@ -46,7 +70,7 @@
                             <a href="#" onclick="onDownload('${board.id_board}')"> ${board.filename}</a>
                         </td>
                     </tr>
-                </table>
+                </table>--%>
 
 
                 <ul class="nav justify-content-end">
@@ -107,7 +131,8 @@
                                                 <div class="modal-footer">
                                                     <button class="btn btn-default" type="submit">확인</button>
                                                     <button data-target="modalId${status.index}" data-toggle="modal"
-                                                            data-backdrop="static" data-keyboard="false" class="btn btn-secondary">
+                                                            data-backdrop="static" data-keyboard="false"
+                                                            class="btn btn-secondary">
                                                         취소
                                                     </button>
                                                 </div>
