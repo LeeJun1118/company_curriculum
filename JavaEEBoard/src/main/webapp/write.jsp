@@ -25,8 +25,8 @@
         </script>
     </head>
     <body>
-        <div class="container">
-        <div class="container-sm marTop">
+        <div class="container marTop">
+        <div class="container-sm my-auto">
             <h2>글쓰기</h2>
             <br/>
             <form action="insert.do" enctype="multipart/form-data" method="post" onsubmit="return formCheck();">

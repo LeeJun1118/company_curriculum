@@ -11,10 +11,8 @@
         <title>게시글 수정</title>
         <script>
             function formCheck() {
-
                 var title = document.forms[0].title.value;
                 var content = document.forms[0].content.value;
-
                 if (title == null || title == "") {
                     alert('제목을 입력하세오');
                     document.forms[0].title.focus();
@@ -28,12 +26,9 @@
             }
         </script>
     </head>
-    <%
-        String id_board = request.getParameter("id_board");
-    %>
     <body>
-        <div class="container">
-            <div class="container-sm marTop">
+        <div class="container marTop">
+            <div class="container-sm my-auto">
                 <h1> 게시글 수정 </h1>
                 <form action="modify.do?id_board=${board.id_board}" enctype="multipart/form-data" method="post" onsubmit="return formCheck();">
                     <div class="form-group">
@@ -54,6 +49,5 @@
                 </form>
             </div>
         </div>
-
     </body>
 </html>

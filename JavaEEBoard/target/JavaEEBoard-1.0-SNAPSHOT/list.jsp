@@ -12,16 +12,12 @@
               crossorigin="anonymous">
         <link rel="stylesheet" href="/style.css"/>
         <title>게시판</title>
-
     </head>
 
     <body>
-        <div class="container">
-            <div class="container-sm marTop">
-
-                <h2>
-                    게시판
-                </h2>
+        <div class="container marTop">
+            <div class="container-sm my-auto">
+                <h2>게시판</h2>
                 <nav class="navbar">
                     <a href="write.jsp">글쓰기</a>
                     <form class="form-inline my-2 my-lg-0" action="list.do" method="post">
@@ -49,8 +45,6 @@
                         </c:forEach>
                     </tbody>
                 </table>
-
-
             </div>
 
             <ul class="nav justify-content-end">
@@ -77,7 +71,6 @@
                 </li>
             </ul>
         </div>
-
 
     </body>
 </html>

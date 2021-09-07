@@ -10,7 +10,6 @@
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
         <link rel="stylesheet" href="/style.css"/>
-
         <script>
             function onDownload(id_board) {
                 var o = document.getElementById("iframe_filedown");
@@ -18,13 +17,11 @@
             }
         </script>
         <title>게시글 조회</title>
-
-
     </head>
     <body>
         <iframe id="iframe_filedown" style="position: absolute; z-index: 1; visibility: hidden;"></iframe>
-        <div class="container">
-            <div class="container-sm marTop">
+        <div class="container marTop">
+            <div class="container-sm my-auto">
                 <h2>게시글</h2>
                 <br/>
                 <form>
@@ -46,32 +43,9 @@
                     </div>
                     <div>
                         파일
-                        <%--<a class="nav-link">파일</a>--%>
                         <a href="#" onclick="onDownload('${board.id_board}')"> ${board.filename}</a>
                     </div>
                 </form>
-
-                <%--<table class="table">
-                    &lt;%&ndash;<tr>
-                        <th colspan="2">#</th>
-                        <td>${board.id_board}</td>
-                    </tr>&ndash;%&gt;
-                    <tr>
-                        <th colspan="2">제목</th>
-                        <td colspan="6">${board.title}</td>
-                    </tr>
-                    <tr>
-                        <th colspan="2">내용</th>
-                        <td colspan="6">${board.content}</td>
-                    </tr>
-                    <tr>
-                        <th colspan="2">첨부파일</th>
-                        <td colspan="6">
-                            <a href="#" onclick="onDownload('${board.id_board}')"> ${board.filename}</a>
-                        </td>
-                    </tr>
-                </table>--%>
-
 
                 <ul class="nav justify-content-end">
                     <li class="nav-item">

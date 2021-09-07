@@ -10,6 +10,5 @@
     </head>
     <body>
         <script>location.href = "list.do";</script>
-
     </body>
 </html>
