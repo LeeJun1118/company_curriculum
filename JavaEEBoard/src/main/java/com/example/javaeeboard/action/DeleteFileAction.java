@@ -17,9 +17,11 @@ public class DeleteFileAction implements CommandAction {
         String filePath = resourcePath + "/" + id_board;
 
         File fileDir = new File(filePath);
-        File[] files = fileDir.listFiles();
-        if (files[0] != null)
-            files[0].delete();
+        if (fileDir.exists()){
+            File[] files = fileDir.listFiles();
+            if (files.length != 0)
+                files[0].delete();
+        }
 
         board board = BoardDao.getInstance().getBoard(id_board);
         board.setFilename(null);

@@ -17,12 +17,14 @@ public class DeleteAction implements CommandAction {
         String resourcePath = request.getRealPath("/upload");
         String filePath = resourcePath + "/" + id_board;
 
-        File fileDir = new File(filePath);
-        File[] files = fileDir.listFiles();
-        if (files[0] != null)
-            files[0].delete();
-        fileDir.delete();
 
+        File fileDir = new File(filePath);
+        if (fileDir.exists()){
+            File[] files = fileDir.listFiles();
+            if (files.length != 0)
+                files[0].delete();
+            fileDir.delete();
+        }
         BoardDao.getInstance().deleteBoard(id_board);
 
         return "list.do";

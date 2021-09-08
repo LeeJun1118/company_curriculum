@@ -8,6 +8,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 
 public class ModifyAction implements CommandAction {
     @Override
@@ -26,7 +27,16 @@ public class ModifyAction implements CommandAction {
 
         String title = multi.getParameter("title");
         String content = multi.getParameter("content");
-        String filename = multi.getFilesystemName("filename");
+        String filename = null;
+
+        if (multi.getFilesystemName("filename") == null) {
+            File folder = new File(savePath);
+            File[] files = folder.listFiles();
+            if (files.length != 0) {
+                filename = files[0].getName();
+            }
+        } else
+            filename = multi.getFilesystemName("filename");
 
         if (title == "" || title == null) System.out.println("제목이 없습니다.");
         if (content == "" || content == null) System.out.println("내용이 없습니다.");
@@ -35,6 +45,7 @@ public class ModifyAction implements CommandAction {
         board.setId_board(id_board);
         board.setTitle(title);
         board.setContent(content);
+
         board.setFilename(filename);
 
         BoardDao.getInstance().updateBoard(board);

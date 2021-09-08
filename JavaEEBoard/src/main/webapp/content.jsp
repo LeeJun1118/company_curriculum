@@ -57,9 +57,35 @@
                 </form>
 
                 <ul class="nav justify-content-end">
+
                     <li class="nav-item">
-                        <a class="btn btn-default" href='delete.do?id_board=${board.id_board}'>글 삭제</a>
+                        <a class="btn btn-default" style="color: blue"
+                           onclick="document.getElementById('deletePost').style.display='block'">글 삭제</a>
+                        <div id="deletePost" class="modal" tabindex="-1"
+                             role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p>게시글을 삭제하시겠습니까?</p>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <form method="post" action='delete.do?id_board=${board.id_board}'>
+                                            <button class="btn btn-default" type="submit">확인</button>
+                                        </form>
+                                        <form method="post" action='content.do?id_board=${board.id_board}'>
+                                            <button data-target="deletePost" data-toggle="modal"
+                                                    data-backdrop="static" data-keyboard="false"
+                                                    class="btn btn-secondary">
+                                                취소
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
+
                     <li class="nav-item">
                         <a class="btn btn-default" href='modifyView.do?id_board=${board.id_board}'>글 수정</a>
                     </li>
