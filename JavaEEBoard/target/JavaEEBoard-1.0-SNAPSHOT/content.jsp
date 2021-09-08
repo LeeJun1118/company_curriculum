@@ -42,7 +42,7 @@
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">내용</label>
                                     <textarea class="form-control form-control-plaintext h-25" rows="10"
-                                              readonly="readonly"
+                                              disabled="disabled"
                                               id="exampleFormControlTextarea1"
                                               rows="3">${board.content}</textarea>
                                 </div>
