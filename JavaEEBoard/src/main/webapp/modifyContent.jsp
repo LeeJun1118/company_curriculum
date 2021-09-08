@@ -40,7 +40,7 @@
                         <textarea class="form-control h-25" rows="10" type="text" name="content">${board.content}</textarea>
                     </div>
                     <div class="form-group">
-                        <input type="file" name="filename">${board.filename}</input>
+                        <input id="upload" type="file" name="filename">${board.filename}</input>
                     </div>
                     <div class="nav justify-content-end">
                         <a class="btn btn-primary marRight" href='content.do?id_board=${board.id_board}'>취소</a>

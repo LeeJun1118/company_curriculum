@@ -25,7 +25,7 @@
         select *
         from reply
         where board_id = #value#
-        order by id_reply desc
+        order by id_reply
     </select>
 
     <delete id="deleteReply" parameterClass="int">

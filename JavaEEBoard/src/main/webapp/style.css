@@ -1,6 +1,9 @@
-.marTop{
+.marTop {
     margin-top: 70px;
 }
-.marRight{
+.marRight {
     margin-right: 10px;
+}
+input::-webkit-file-upload-button {
+    cursor: pointer;
 }
