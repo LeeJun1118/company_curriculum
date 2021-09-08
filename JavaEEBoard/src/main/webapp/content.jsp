@@ -25,26 +25,35 @@
                 <h2>게시글</h2>
                 <br/>
                 <form>
-                    <div class="form-group border-bottom">
-                        <label>글 번호
-                            <span>${board.id_board}</span>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">제목</label>
-                        <input class="form-control" readonly="readonly" id="exampleFormControlInput1"
-                               value="${board.title}">
-                    </div>
+                    <form class="form-group">
+                        <div class="form-group">
+                            <label>글 번호
+                                <span>${board.id_board}</span>
+                            </label>
+                        </div>
+                        <div class="card" style="width: 69rem;">
+                            <div class="card-body">
+                                <div class="form-group border-bottom">
+                                    <label for="exampleFormControlInput1">제목</label>
+                                    <span class="form-control-plaintext">${board.title}</span>
+                                </div>
+                                <br/>
 
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">내용</label>
-                        <textarea class="form-control h-25" rows="10" readonly="readonly" id="exampleFormControlTextarea1"
-                                  rows="3">${board.content}</textarea>
-                    </div>
-                    <div>
-                        파일
-                        <a href="#" onclick="onDownload('${board.id_board}')"> ${board.filename}</a>
-                    </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">내용</label>
+                                    <textarea class="form-control form-control-plaintext h-25" rows="10"
+                                              readonly="readonly"
+                                              id="exampleFormControlTextarea1"
+                                              rows="3">${board.content}</textarea>
+                                </div>
+                                <br/>
+                                <div>
+                                    파일
+                                    <a href="#" onclick="onDownload('${board.id_board}')"> ${board.filename}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </form>
 
                 <ul class="nav justify-content-end">
@@ -58,7 +67,7 @@
                         <a class="btn btn-default" href="list.do">목록으로</a>
                     </li>
                 </ul>
-
+                <br/>
                 <h5>댓글쓰기</h5>
                 <form action="insertReply.do?id_board=${board.id_board}" method="post">
                     <div class="form-group">
