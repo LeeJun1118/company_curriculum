@@ -14,9 +14,6 @@ import java.util.ArrayList;
 public class InsertAction implements CommandAction {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-        MultipartRequest multi = null;
-        int sizeLimit = 10 * 1024 * 1024;
-
         ArrayList<board> maxList = BoardDao.getInstance().getMaxList();
         int newFolder = maxList.get(0).getId_board() + 1;
 
@@ -25,6 +22,10 @@ public class InsertAction implements CommandAction {
 
         File file = new File(filePath);
         file.mkdir();
+
+        MultipartRequest multi = null;
+        int sizeLimit = 10 * 1024 * 1024;
+
 
         try{
             multi = new MultipartRequest(request,filePath,sizeLimit,"utf-8",new DefaultFileRenamePolicy());
