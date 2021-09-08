@@ -46,9 +46,9 @@
                             <li class="nav-item justify-content">
                                 <input id="upload" type="file" name="filename">${board.filename}</input>
                             </li>
-                            <%--<li class="nav-item justify-content-end">
-                                <a class="btn btn-default" &lt;%&ndash;href='delete.do?id_board=${board.id_board}'&ndash;%&gt;>파일삭제</a>
-                            </li>--%>
+                            <li class="nav-item justify-content-end">
+                                <a class="btn btn-default" href='deleteFile.do?id_board=${board.id_board}'>파일삭제</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="nav justify-content-end">
