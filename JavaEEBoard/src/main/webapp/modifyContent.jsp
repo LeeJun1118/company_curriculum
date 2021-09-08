@@ -30,17 +30,26 @@
         <div class="container marTop">
             <div class="container-sm my-auto">
                 <h1> 게시글 수정 </h1>
-                <form action="modify.do?id_board=${board.id_board}" enctype="multipart/form-data" method="post" onsubmit="return formCheck();">
+                <form action="modify.do?id_board=${board.id_board}" enctype="multipart/form-data" method="post"
+                      onsubmit="return formCheck();">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">제목</label>
                         <input class="form-control" type="text" name="title" value="${board.title}"/>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">내용</label>
-                        <textarea class="form-control h-25" rows="10" type="text" name="content">${board.content}</textarea>
+                        <textarea class="form-control h-25" rows="10" type="text"
+                                  name="content">${board.content}</textarea>
                     </div>
                     <div class="form-group">
-                        <input id="upload" type="file" name="filename">${board.filename}</input>
+                        <ul class="nav">
+                            <li class="nav-item justify-content">
+                                <input id="upload" type="file" name="filename">${board.filename}</input>
+                            </li>
+                            <%--<li class="nav-item justify-content-end">
+                                <a class="btn btn-default" &lt;%&ndash;href='delete.do?id_board=${board.id_board}'&ndash;%&gt;>파일삭제</a>
+                            </li>--%>
+                        </ul>
                     </div>
                     <div class="nav justify-content-end">
                         <a class="btn btn-primary marRight" href='content.do?id_board=${board.id_board}'>취소</a>
