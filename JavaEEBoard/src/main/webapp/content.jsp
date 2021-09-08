@@ -31,7 +31,7 @@
                                 <span>${board.id_board}</span>
                             </label>
                         </div>
-                        <div class="card" style="width: 69rem;">
+                        <div class="card">
                             <div class="card-body">
                                 <div class="form-group border-bottom">
                                     <label for="exampleFormControlInput1">제목</label>
