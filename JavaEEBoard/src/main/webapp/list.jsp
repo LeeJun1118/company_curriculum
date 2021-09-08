@@ -59,8 +59,18 @@
                 </li>
 
                 <%--                현재페이지--%>
+                <c:set var="loop_flag" value="false"/>
                 <c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
-                    <a class="nav-link" href="list.do?page=${i*10}">${i+1}</a>
+                    <c:if test="${not loop_flag }">
+                        <c:choose>
+                            <c:when test="${i*10 > fn:length(maxList)}">
+                                <c:set var="loop_flag" value="true" />
+                            </c:when>
+                            <c:otherwise>
+                                <a class="nav-link" href="list.do?page=${i*10}">${i+1}</a>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:if>
                 </c:forEach>
 
                 <%--                다음페이지--%>
