@@ -63,7 +63,7 @@
                 <c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
                     <c:if test="${not loop_flag }">
                         <c:choose>
-                            <c:when test="${i*10 > fn:length(maxList)}">
+                            <c:when test="${i*10 >= fn:length(maxList)}">
                                 <c:set var="loop_flag" value="true" />
                             </c:when>
                             <c:otherwise>
