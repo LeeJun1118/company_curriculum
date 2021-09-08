@@ -14,20 +14,21 @@ public class ModifyAction implements CommandAction {
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         MultipartRequest multi = null;
         int sizeLimit = 10 * 1024 * 1024;
-        String savePath = request.getRealPath("/upload");
+        int id_board = Integer.parseInt(request.getParameter("id_board"));
 
-        try{
-            multi = new MultipartRequest(request,savePath,sizeLimit,"utf-8",new DefaultFileRenamePolicy());
-        }catch (Exception e){
+        String savePath = request.getRealPath("/upload" + "/" + id_board);
+
+        try {
+            multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-        int id_board = Integer.parseInt(request.getParameter("id_board"));
         String title = multi.getParameter("title");
         String content = multi.getParameter("content");
         String filename = multi.getFilesystemName("filename");
 
-        if (title =="" || title ==null) System.out.println("제목이 없습니다.");
+        if (title == "" || title == null) System.out.println("제목이 없습니다.");
         if (content == "" || content == null) System.out.println("내용이 없습니다.");
 
         board board = new board();

@@ -6,12 +6,23 @@ import com.example.javaeeboard.dao.BoardDao;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.sql.SQLException;
 
 public class DeleteAction implements CommandAction {
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws SQLException {
 
         int id_board = Integer.parseInt(request.getParameter("id_board"));
+
+        String resourcePath = request.getRealPath("/upload");
+        String filePath = resourcePath + "/" + id_board;
+
+        File fileDir = new File(filePath);
+        File[] files = fileDir.listFiles();
+        if (files[0] != null)
+            files[0].delete();
+        fileDir.delete();
+
         BoardDao.getInstance().deleteBoard(id_board);
 
         return "list.do";
