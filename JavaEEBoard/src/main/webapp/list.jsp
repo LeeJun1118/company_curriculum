@@ -40,7 +40,7 @@
                     <tbody>
                         <c:forEach items="${boardList}" var="board" varStatus="status">
                             <tr>
-                                <th scope="row">${status.count}</th>
+                                <th scope="row">${status.count + page}</th>
                                 <td class="col-6"><a href='content.do?id_board=${board.id_board}'>${board.title}</a>
                                 </td>
                                 <td class="col-3">${board.id_board}</td>
