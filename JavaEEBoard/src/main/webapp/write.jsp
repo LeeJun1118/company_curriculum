@@ -28,7 +28,7 @@
 
                 <div class="nav justify-content-end">
                     <a class="btn btn-primary marRight" href="list.do">취소</a>
-                    <button type="submit" class="btn btn-primary">제출</button>
+                    <button type="submit" class="btn btn-primary">등록</button>
                 </div>
             </form>
         </div>
