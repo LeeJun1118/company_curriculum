@@ -54,7 +54,7 @@
                         </button>
                         <div class="modal fade" id="modifyPost" tabindex="-1"
                              role="dialog" aria-hidden="true" role="document">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
                                         <p>수정하시겠습니까?</p>
