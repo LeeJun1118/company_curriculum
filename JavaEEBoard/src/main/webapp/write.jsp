@@ -6,23 +6,7 @@
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
         <link rel="stylesheet" href="/style.css"/>
-        <script>
-            function formCheck() {
-                var title = document.forms[0].title.value;
-                var content = document.forms[0].content.value;
-
-                if (title == null || title == "") {
-                    alert('제목을 입력하세요');
-                    document.forms[0].title.focus();
-                    return false;
-                }
-                if (content == null || content == "") {
-                    alert('내용을 입력하세요');
-                    document.forms[0].content.focus();
-                    return false;
-                }
-            }
-        </script>
+        <script src="/board.js"></script>
     </head>
     <body>
         <div class="container marTop">

@@ -10,12 +10,7 @@
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
         <link rel="stylesheet" href="/style.css"/>
-        <script>
-            function onDownload(id_board) {
-                var o = document.getElementById("iframe_filedown");
-                o.src = "download.do?id_board=" + id_board;
-            }
-        </script>
+        <script src="/board.js"></script>
         <title>게시글 조회</title>
     </head>
     <body>
