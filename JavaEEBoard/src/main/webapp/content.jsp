@@ -65,15 +65,15 @@
                                     </div>
 
                                     <div class="modal-footer">
-                                        <form method="post" action='delete.do?id_board=${board.id_board}'>
-                                            <button class="btn btn-default" type="submit">확인</button>
-                                        </form>
                                         <form method="post" action='content.do?id_board=${board.id_board}'>
                                             <button data-target="deletePost" data-toggle="modal"
                                                     data-backdrop="static" data-keyboard="false"
                                                     class="btn btn-secondary">
                                                 취소
                                             </button>
+                                        </form>
+                                        <form method="post" action='delete.do?id_board=${board.id_board}'>
+                                            <button class="btn btn-primary" type="submit">확인</button>
                                         </form>
                                     </div>
                                 </div>
