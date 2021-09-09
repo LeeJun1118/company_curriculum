@@ -43,6 +43,7 @@ public class InsertAction implements CommandAction {
             System.out.println("내용이 없습니다.");
 
         board board = new board();
+        board.setId_board(newFolder);
         board.setTitle(title);
         board.setContent(content);
         board.setFilename(filename);
