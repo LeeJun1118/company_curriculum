@@ -10,3 +10,6 @@
 input::-webkit-file-upload-button {
     cursor: pointer;
 }
+.table-row{
+    cursor:pointer;
+}

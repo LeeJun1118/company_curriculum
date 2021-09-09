@@ -20,13 +20,14 @@
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
         <link rel="stylesheet" href="/style.css"/>
+        <script src="/board.js"></script>
         <title>게시판</title>
     </head>
 
     <body>
         <div class="container marTop">
             <div class="container-sm my-auto">
-                <h2 >
+                <h2>
                     <a class="text-dark" href='list.do'>게시판</a>
                 </h2>
                 <br/>
@@ -38,7 +39,7 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </nav>
-                <table class="table">
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -49,7 +50,7 @@
 
                     <tbody>
                         <c:forEach items="${boardList}" var="board" varStatus="status">
-                            <tr>
+                            <tr class='table-row' data-href='content.do?id_board=${board.id_board}'>
                                 <th scope="row">${status.count + page}</th>
                                 <td class="col-6"><a href='content.do?id_board=${board.id_board}'>${board.title}</a>
                                 </td>
