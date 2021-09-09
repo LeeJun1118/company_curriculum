@@ -48,10 +48,11 @@
                         </ul>
                     </div>
                     <div class="nav justify-content-end">
+                        <a class="btn btn-secondary marRight" href='content.do?id_board=${board.id_board}'>취소</a>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifyPost">
                             수정
                         </button>
-                        <div class="modal" id="modifyPost" tabindex="-1"
+                        <div class="modal fade" id="modifyPost" tabindex="-1"
                              role="dialog" aria-hidden="true" role="document">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -63,7 +64,7 @@
                                                 class="btn btn-secondary">
                                             취소
                                         </button>
-                                        <button class="btn btn-default" type="submit">확인</button>
+                                        <button class="btn btn-primary" type="submit">확인</button>
                                     </div>
                                 </div>
                             </div>
