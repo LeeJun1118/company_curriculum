@@ -4,6 +4,9 @@
 .marRight {
     margin-right: 10px;
 }
+.marBot{
+    margin-bottom: 10px;
+}
 input::-webkit-file-upload-button {
     cursor: pointer;
 }

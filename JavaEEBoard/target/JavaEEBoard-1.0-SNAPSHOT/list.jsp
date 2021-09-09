@@ -17,7 +17,9 @@
     <body>
         <div class="container marTop">
             <div class="container-sm my-auto">
-                <h2>게시판</h2>
+                <h2 >
+                    <a class="text-dark" href='list.do'>게시판</a>
+                </h2>
                 <br/>
                 <nav class="navbar">
                     <a href="write.jsp">글쓰기</a>
@@ -27,7 +29,6 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </nav>
-
                 <table class="table">
                     <thead>
                         <tr>
@@ -64,7 +65,7 @@
                     <c:if test="${not loop_flag }">
                         <c:choose>
                             <c:when test="${i*10 >= fn:length(maxList)}">
-                                <c:set var="loop_flag" value="true" />
+                                <c:set var="loop_flag" value="true"/>
                             </c:when>
                             <c:otherwise>
                                 <a class="nav-link" href="list.do?page=${i*10}">${i+1}</a>
