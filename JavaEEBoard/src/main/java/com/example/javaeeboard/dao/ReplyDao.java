@@ -35,4 +35,9 @@ public class ReplyDao extends CommonDao{
         GetDB().update("replyBoard",reply);
         return;
     }
+
+    public void deleteAllReply(int id_board) throws SQLException {
+        GetDB().delete("deleteReply", id_board);
+        return ;
+    }
 }

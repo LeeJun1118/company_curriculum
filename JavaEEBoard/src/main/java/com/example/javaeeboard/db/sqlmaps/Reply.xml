@@ -34,6 +34,12 @@
         where id_reply = #value#
     </delete>
 
+    <delete id="deleteAllReply" parameterClass="int">
+        delete
+        from reply
+        where board_id = #value#
+    </delete>
+
 
     <update id="replyBoard" parameterClass="reply">
         update reply

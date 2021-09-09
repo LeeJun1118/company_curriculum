@@ -3,6 +3,7 @@ package com.example.javaeeboard.action;
 
 import com.example.javaeeboard.Controller.CommandAction;
 import com.example.javaeeboard.dao.BoardDao;
+import com.example.javaeeboard.dao.ReplyDao;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +26,7 @@ public class DeleteAction implements CommandAction {
                 files[0].delete();
             fileDir.delete();
         }
+        ReplyDao.getInstance().deleteAllReply(id_board);
         BoardDao.getInstance().deleteBoard(id_board);
 
         return "list.do";
