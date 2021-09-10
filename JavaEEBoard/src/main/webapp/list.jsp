@@ -31,7 +31,7 @@
                     <a class="text-dark" href='list.do'>게시판</a>
                 </h1>
                 <br/>
-                <nav class="navbar">
+                <nav class="navbar marBottom">
                     <a href="write.jsp">글쓰기</a>
                     <form class="form-inline my-2 my-lg-0" action="list.do" method="post">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
@@ -80,11 +80,11 @@
                             <c:otherwise>
                                 <c:choose>
                                     <c:when test="${page/10 == i}">
-                                        <a class="nav-link"
+                                        <a class="nav-link font-weight-bold"
                                            href="list.do?page=${i*10}&search=${param.search}">${i+1}</a>
                                     </c:when>
                                     <c:otherwise>
-                                        <a class="nav-link text-dark"
+                                        <a class="nav-link text-dark font-weight-bold"
                                            href="list.do?page=${i*10}&search=${param.search}">${i+1}</a>
                                     </c:otherwise>
                                 </c:choose>

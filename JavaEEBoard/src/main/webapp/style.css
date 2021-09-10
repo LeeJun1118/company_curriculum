@@ -13,3 +13,6 @@ input::-webkit-file-upload-button {
 .table-row{
     cursor:pointer;
 }
+.marBottom{
+    margin-bottom: 5px;
+}
