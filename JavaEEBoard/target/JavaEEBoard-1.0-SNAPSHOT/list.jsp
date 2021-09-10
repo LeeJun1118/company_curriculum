@@ -78,7 +78,7 @@
                                 <c:set var="loop_flag" value="true"/>
                             </c:when>
                             <c:otherwise>
-                                <a class="nav-link" href="list.do?page=${i*10}">${i+1}</a>
+                                <a class="nav-link" href="list.do?page=${i*10}&search=${param.search}">${i+1}</a>
                             </c:otherwise>
                         </c:choose>
                     </c:if>
