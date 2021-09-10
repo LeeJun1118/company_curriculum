@@ -20,6 +20,9 @@ public class ReplyAction implements CommandAction {
         board board = BoardDao.getInstance().getBoard(id_board);
         String content = request.getParameter("content");
 
+        if (content == "" || content == null)
+            System.out.println("내용이 없습니다.");
+
         if (content != "") {
             reply reply = new reply();
             reply.setContent(content);

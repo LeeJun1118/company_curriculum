@@ -7,12 +7,20 @@ function formCheck() {
     var title = document.forms[0].title.value;
     var content = document.forms[0].content.value;
     if (title == null || title == "") {
-        alert('제목을 입력하세오');
+        alert('제목을 입력하세요');
         document.forms[0].title.focus();
         return false;
     }
     if (content == null || content == "") {
-        alert('내용입력하세오');
+        alert('내용입력하세요');
+        document.forms[0].content.focus();
+        return false;
+    }
+}
+function replyFormCheck() {
+    var content = document.forms[0].content.value;
+    if (content == null || content == "") {
+        alert('내용입력하세요');
         document.forms[0].content.focus();
         return false;
     }

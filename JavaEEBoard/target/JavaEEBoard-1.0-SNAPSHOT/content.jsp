@@ -95,7 +95,7 @@
                 </ul>
                 <br/>
                 <h5>댓글쓰기</h5>
-                <form action="insertReply.do?id_board=${board.id_board}" method="post">
+                <form action="insertReply.do?id_board=${board.id_board}" method="post"  onsubmit="return replyFormCheck();">
                     <div class="form-group">
                         <textarea class="form-control" type="text" name="content"></textarea>
                     </div>
