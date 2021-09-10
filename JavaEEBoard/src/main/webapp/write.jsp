@@ -11,7 +11,12 @@
     <body>
         <div class="container marTop">
         <div class="container-sm my-auto">
-            <h2>글쓰기</h2>
+            <h1>
+                <a class="text-dark" href='list.do'>게시판</a>
+            </h1>
+            <br/>
+            <br/>
+            <h4>글쓰기</h4>
             <br/>
             <form action="insert.do" enctype="multipart/form-data" method="post" onsubmit="return formCheck();">
                 <div class="form-group">

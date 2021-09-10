@@ -27,9 +27,9 @@
     <body>
         <div class="container marTop">
             <div class="container-sm my-auto">
-                <h2>
+                <h1>
                     <a class="text-dark" href='list.do'>게시판</a>
-                </h2>
+                </h1>
                 <br/>
                 <nav class="navbar">
                     <a href="write.jsp">글쓰기</a>
@@ -80,11 +80,11 @@
                             <c:otherwise>
                                 <c:choose>
                                     <c:when test="${page/10 == i}">
-                                        <a class="nav-link text-dark"
+                                        <a class="nav-link"
                                            href="list.do?page=${i*10}&search=${param.search}">${i+1}</a>
                                     </c:when>
                                     <c:otherwise>
-                                        <a class="nav-link"
+                                        <a class="nav-link text-dark"
                                            href="list.do?page=${i*10}&search=${param.search}">${i+1}</a>
                                     </c:otherwise>
                                 </c:choose>

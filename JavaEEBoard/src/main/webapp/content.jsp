@@ -26,7 +26,12 @@
         <iframe id="iframe_filedown" style="position: absolute; z-index: 1; visibility: hidden;"></iframe>
         <div class="container marTop">
             <div class="container-sm my-auto">
-                <h2>게시글</h2>
+                <h1>
+                    <a class="text-dark" href='list.do'>게시판</a>
+                </h1>
+                <br/>
+                <br/>
+                <h4>게시글</h4>
                 <br/>
                 <form>
                     <form class="form-group">

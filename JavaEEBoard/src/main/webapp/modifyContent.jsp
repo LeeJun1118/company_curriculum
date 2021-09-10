@@ -25,7 +25,13 @@
     <body>
         <div class="container marTop">
             <div class="container-sm my-auto">
-                <h1> 게시글 수정 </h1>
+                <h1>
+                    <a class="text-dark" href='list.do'>게시판</a>
+                </h1>
+                <br/>
+                <br/>
+                <h4>글수정</h4>
+                <br/>
                 <form action="modify.do?id_board=${board.id_board}" enctype="multipart/form-data" method="post"
                       onsubmit="return formCheck();">
                     <div class="form-group">
