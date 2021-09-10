@@ -20,7 +20,7 @@ public class ListAction implements CommandAction {
             page=Integer.parseInt(request.getParameter("page"));
         }
         ArrayList<board> boardList = BoardDao.getInstance().getBoardList(search,page);
-        ArrayList<board> maxList = BoardDao.getInstance().getMaxList();
+        ArrayList<board> maxList = BoardDao.getInstance().getSearchList(search);
 
         request.setAttribute("boardList", boardList);
         request.setAttribute("page", page);

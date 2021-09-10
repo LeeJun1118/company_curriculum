@@ -21,6 +21,18 @@
         </isNotParameterPresent>
     </select>
 
+    <select id="getSearchList" parameterClass="str" resultClass="board">
+        select *
+        from board
+        <isParameterPresent prepend="where">
+            title like '%'||#value#||'%'
+            order by id_board desc
+        </isParameterPresent>
+        <isNotParameterPresent prepend="order by">
+            id_board desc
+        </isNotParameterPresent>
+    </select>
+
     <select id="getBoard" parameterClass="int" resultClass="board">
         select *
         from board
