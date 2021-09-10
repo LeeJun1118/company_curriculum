@@ -78,7 +78,16 @@
                                 <c:set var="loop_flag" value="true"/>
                             </c:when>
                             <c:otherwise>
-                                <a class="nav-link" href="list.do?page=${i*10}&search=${param.search}">${i+1}</a>
+                                <c:choose>
+                                    <c:when test="${page/10 == i}">
+                                        <a class="nav-link text-dark"
+                                           href="list.do?page=${i*10}&search=${param.search}">${i+1}</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a class="nav-link"
+                                           href="list.do?page=${i*10}&search=${param.search}">${i+1}</a>
+                                    </c:otherwise>
+                                </c:choose>
                             </c:otherwise>
                         </c:choose>
                     </c:if>
