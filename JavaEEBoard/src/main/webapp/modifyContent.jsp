@@ -54,7 +54,29 @@
                         </ul>
                     </div>
                     <div class="nav justify-content-end">
-                        <a class="btn btn-secondary marRight" href='content.do?id_board=${board.id_board}'>취소</a>
+                        <a class="btn btn-secondary marRight" href='#' data-toggle="modal"
+                           data-target="#cancelModify">취소</a>
+                        <div class="modal fade" id="cancelModify" tabindex="-1"
+                             role="dialog" aria-hidden="true" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">글쓰기</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>수정을 취소하시겠습니까?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal"
+                                                class="btn btn-secondary">
+                                            취소
+                                        </button>
+                                        <a class="btn btn-primary" href='content.do?id_board=${board.id_board}'>확인</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifyPost">
                             수정
                         </button>
