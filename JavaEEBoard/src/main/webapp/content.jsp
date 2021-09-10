@@ -95,9 +95,9 @@
                 </ul>
                 <br/>
                 <h5>댓글쓰기</h5>
-                <form action="insertReply.do?id_board=${board.id_board}" method="post"  onsubmit="return replyFormCheck();">
+                <form id="replyField" action="insertReply.do?id_board=${board.id_board}" method="post">
                     <div class="form-group">
-                        <textarea class="form-control" type="text" name="content"></textarea>
+                        <textarea id="replyContent" class="form-control" type="text" name="content" required></textarea>
                     </div>
 
                     <div class="nav justify-content-end">

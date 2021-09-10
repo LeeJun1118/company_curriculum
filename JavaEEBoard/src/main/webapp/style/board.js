@@ -17,14 +17,6 @@ function formCheck() {
         return false;
     }
 }
-function replyFormCheck() {
-    var content = document.forms[0].content.value;
-    if (content == null || content == "") {
-        alert('내용입력하세요');
-        document.forms[0].content.focus();
-        return false;
-    }
-}
 $(document).ready(function($) {
     $(".table-row").click(function() {
         window.document.location = $(this).data("href");
