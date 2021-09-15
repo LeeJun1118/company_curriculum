@@ -17,9 +17,9 @@ public class DownloadAction implements CommandAction {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         request.setCharacterEncoding("utf-8");
-        int id_board = Integer.parseInt(request.getParameter("id_board"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
-        board board = BoardDao.getInstance().getBoard(id_board);
+        board board = BoardDao.getInstance().getBoard(id);
         String filename = board.getFilename();
 
         String uploadFileName = request.getRealPath("/upload" + "/" + filename);

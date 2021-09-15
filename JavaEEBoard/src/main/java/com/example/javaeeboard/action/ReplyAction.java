@@ -15,9 +15,9 @@ public class ReplyAction implements CommandAction {
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
         request.setCharacterEncoding("utf-8");
-        int id_board = Integer.parseInt(request.getParameter("id_board"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
-        board board = BoardDao.getInstance().getBoard(id_board);
+        board board = BoardDao.getInstance().getBoard(id);
         String content = request.getParameter("content");
 
         if (content == "" || content == null)
@@ -26,10 +26,10 @@ public class ReplyAction implements CommandAction {
         if (content != "") {
             reply reply = new reply();
             reply.setContent(content);
-            reply.setBoard_id(id_board);
+            reply.setBoard_id(id);
             ReplyDao.getInstance().insertReply(reply);
         }
-        ArrayList<reply> replyList = ReplyDao.getInstance().getReplyList(id_board);
+        ArrayList<reply> replyList = ReplyDao.getInstance().getReplyList(id);
         request.setAttribute("replyList", replyList);
 
         request.setAttribute("board", board);

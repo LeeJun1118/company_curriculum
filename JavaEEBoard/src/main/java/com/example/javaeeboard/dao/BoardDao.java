@@ -25,12 +25,12 @@ public class BoardDao extends CommonDao {
     }
 
     @SuppressWarnings("unchecked")
-    public board getBoard(int id_board) throws SQLException{ // 콘텐츠
-        return (board)GetDB().queryForObject("getBoard", id_board);
+    public board getBoard(int id) throws SQLException{ // 콘텐츠
+        return (board)GetDB().queryForObject("getBoard", id);
     }
 
-    public void deleteBoard(int id_board) throws SQLException{ // 딜리트
-        GetDB().delete("deleteBoard", id_board);
+    public void deleteBoard(int id) throws SQLException{ // 딜리트
+        GetDB().delete("deleteBoard", id);
         return ;
     }
 

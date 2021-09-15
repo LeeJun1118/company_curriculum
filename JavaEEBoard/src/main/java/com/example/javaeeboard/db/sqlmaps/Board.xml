@@ -14,10 +14,10 @@
         from board
         <isParameterPresent prepend="where">
             title like '%'||#value#||'%'
-            order by id_board desc
+            order by id desc
         </isParameterPresent>
         <isNotParameterPresent prepend="order by">
-            id_board desc
+            id desc
         </isNotParameterPresent>
     </select>
 
@@ -26,29 +26,29 @@
         from board
         <isParameterPresent prepend="where">
             title like '%'||#value#||'%'
-            order by id_board desc
+            order by id desc
         </isParameterPresent>
         <isNotParameterPresent prepend="order by">
-            id_board desc
+            id desc
         </isNotParameterPresent>
     </select>
 
     <select id="getBoard" parameterClass="int" resultClass="board">
         select *
         from board
-        where id_board = #value#
+        where id = #value#
     </select>
 
     <delete id="deleteBoard" parameterClass="int">
         delete
         from board
-        where id_board = #value#
+        where id = #value#
     </delete>
 
     <insert id="insertBoard" parameterClass="board">
         insert into board
-            (id_board, title, content, filename)
-        VALUES (#id_board#, #title#, #content#, #filename#)
+            (id, title, content, filename)
+        VALUES (#id#, #title#, #content#, #filename#)
     </insert>
 
     <update id="updateBoard" parameterClass="board">
@@ -56,7 +56,7 @@
         set title   = #title#,
             content = #content#,
             filename = #filename#
-        where id_board = #id_board#
+        where id = #id#
     </update>
 
 </sqlMap>

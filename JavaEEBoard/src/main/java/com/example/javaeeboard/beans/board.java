@@ -1,17 +1,17 @@
 package com.example.javaeeboard.beans;
 
 public class board {
-    private int id_board;
+    private int id;
     private String title;
     private String content;
     private String filename;
 
-    public int getId_board() {
-        return id_board;
+    public int getId() {
+        return id;
     }
 
-    public void setId_board(int id_board) {
-        this.id_board = id_board;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {

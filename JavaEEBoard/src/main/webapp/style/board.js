@@ -1,6 +1,6 @@
-function onDownload(id_board) {
+function onDownload(id) {
     var o = document.getElementById("iframe_filedown");
-    o.src = "download.do?id_board=" + id_board;
+    o.src = "download.do?id=" + id;
 }
 
 function formCheck() {

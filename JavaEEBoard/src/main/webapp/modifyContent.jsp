@@ -22,7 +22,7 @@
                 <br/>
                 <h4>글수정</h4>
                 <br/>
-                <form action="modify.do?id_board=${board.id_board}" enctype="multipart/form-data" method="post"
+                <form action="modify.do?id=${board.id}" enctype="multipart/form-data" method="post"
                       onsubmit="return formCheck();">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">제목</label>
@@ -39,7 +39,7 @@
                                 <input id="upload" type="file" name="filename">${board.filename}</input>
                             </li>
                             <li class="nav-item justify-content-end">
-                                <a class="btn btn-default" href='deleteFile.do?id_board=${board.id_board}'>파일삭제</a>
+                                <a class="btn btn-default" href='deleteFile.do?id=${board.id}'>파일삭제</a>
                             </li>
                         </ul>
                     </div>
@@ -61,7 +61,7 @@
                                                 class="btn btn-secondary">
                                             취소
                                         </button>
-                                        <a class="btn btn-primary" href='content.do?id_board=${board.id_board}'>확인</a>
+                                        <a class="btn btn-primary" href='content.do?id=${board.id}'>확인</a>
                                     </div>
                                 </div>
                             </div>

@@ -42,11 +42,11 @@
 
                     <tbody>
                         <c:forEach items="${boardList}" var="board" varStatus="status">
-                            <tr class='table-row' data-href='content.do?id_board=${board.id_board}'>
+                            <tr class='table-row' data-href='content.do?id=${board.id}'>
                                 <th scope="row">${status.count + page}</th>
-                                <td class="col-6"><a href='content.do?id_board=${board.id_board}'>${board.title}</a>
+                                <td class="col-6"><a href='content.do?id=${board.id}'>${board.title}</a>
                                 </td>
-                                <td class="col-3">${board.id_board}</td>
+                                <td class="col-3">${board.id}</td>
                             </tr>
                         </c:forEach>
                     </tbody>

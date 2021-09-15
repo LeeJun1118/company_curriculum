@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 public class ModifyContentView implements CommandAction {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-        int id_board = Integer.parseInt(request.getParameter("id_board"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
-        board board = BoardDao.getInstance().getBoard(id_board);
+        board board = BoardDao.getInstance().getBoard(id);
         request.setAttribute("board",board);
 
         return  "modifyContent.jsp";

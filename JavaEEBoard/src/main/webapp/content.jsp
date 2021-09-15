@@ -29,7 +29,7 @@
                     <form class="form-group">
                         <div class="form-group">
                             <label>글 번호
-                                <span>${board.id_board}</span>
+                                <span>${board.id}</span>
                             </label>
                         </div>
                         <div class="card">
@@ -50,7 +50,7 @@
                                 <br/>
                                 <div>
                                     파일
-                                    <a href="#" onclick="onDownload('${board.id_board}')"> ${board.filename}</a>
+                                    <a href="#" onclick="onDownload('${board.id}')"> ${board.filename}</a>
                                 </div>
                             </div>
                         </div>
@@ -71,13 +71,13 @@
                                     </div>
 
                                     <div class="modal-footer">
-                                        <form method="post" action='content.do?id_board=${board.id_board}'>
+                                        <form method="post" action='content.do?id=${board.id}'>
                                             <button type="button" data-dismiss="modal"
                                                     class="btn btn-secondary">
                                                 취소
                                             </button>
                                         </form>
-                                        <form method="post" action='delete.do?id_board=${board.id_board}'>
+                                        <form method="post" action='delete.do?id=${board.id}'>
                                             <button class="btn btn-primary" type="submit">확인</button>
                                         </form>
                                     </div>
@@ -87,7 +87,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="btn" href='modifyView.do?id_board=${board.id_board}'>글 수정</a>
+                        <a class="btn" href='modifyView.do?id=${board.id}'>글 수정</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-default" href="list.do">목록으로</a>
@@ -95,7 +95,7 @@
                 </ul>
                 <br/>
                 <h5>댓글쓰기</h5>
-                <form id="replyField" action="insertReply.do?id_board=${board.id_board}" method="post">
+                <form id="replyField" action="insertReply.do?id=${board.id}" method="post">
                     <div class="form-group">
                         <textarea id="replyContent" class="form-control" type="text" name="content" required></textarea>
                     </div>

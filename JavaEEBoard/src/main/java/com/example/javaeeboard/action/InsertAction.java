@@ -15,7 +15,9 @@ public class InsertAction implements CommandAction {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         ArrayList<board> maxList = BoardDao.getInstance().getMaxList();
-        int newFolder = maxList.get(0).getId_board() + 1;
+        int newFolder = 1;
+        if(maxList.size() >= 1)
+            newFolder = maxList.get(0).getId() + 1;
 
         String resourcePath = request.getRealPath("/upload");
         String filePath = resourcePath +"/"+ newFolder;
@@ -43,7 +45,7 @@ public class InsertAction implements CommandAction {
             System.out.println("내용이 없습니다.");
 
         board board = new board();
-        board.setId_board(newFolder);
+        board.setId(newFolder);
         board.setTitle(title);
         board.setContent(content);
         board.setFilename(filename);

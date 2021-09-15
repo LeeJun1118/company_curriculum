@@ -11,10 +11,10 @@ import java.io.File;
 public class DeleteFileAction implements CommandAction {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-        int id_board = Integer.parseInt(request.getParameter("id_board"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
         String resourcePath = request.getRealPath("/upload");
-        String filePath = resourcePath + "/" + id_board;
+        String filePath = resourcePath + "/" + id;
 
         File fileDir = new File(filePath);
         if (fileDir.exists()){
@@ -23,7 +23,7 @@ public class DeleteFileAction implements CommandAction {
                 files[0].delete();
         }
 
-        board board = BoardDao.getInstance().getBoard(id_board);
+        board board = BoardDao.getInstance().getBoard(id);
         board.setFilename(null);
         request.setAttribute("board", board);
 

@@ -13,10 +13,10 @@ import java.sql.SQLException;
 public class DeleteAction implements CommandAction {
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws SQLException {
 
-        int id_board = Integer.parseInt(request.getParameter("id_board"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
         String resourcePath = request.getRealPath("/upload");
-        String filePath = resourcePath + "/" + id_board;
+        String filePath = resourcePath + "/" + id;
 
 
         File fileDir = new File(filePath);
@@ -26,8 +26,8 @@ public class DeleteAction implements CommandAction {
                 files[0].delete();
             fileDir.delete();
         }
-        ReplyDao.getInstance().deleteAllReply(id_board);
-        BoardDao.getInstance().deleteBoard(id_board);
+        ReplyDao.getInstance().deleteAllReply(id);
+        BoardDao.getInstance().deleteBoard(id);
 
         return "list.do";
     }

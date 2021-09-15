@@ -22,8 +22,8 @@ public class ReplyDao extends CommonDao{
         return (reply)GetDB().queryForObject("getReply", id_reply);
     }
 
-    public ArrayList<reply> getReplyList(int id_board) throws SQLException  {
-        return (ArrayList<reply>)GetDB().queryForList("getReplyList", id_board);
+    public ArrayList<reply> getReplyList(int id) throws SQLException  {
+        return (ArrayList<reply>)GetDB().queryForList("getReplyList", id);
     }
 
     public void deleteReply(int id_reply) throws SQLException{
@@ -36,8 +36,8 @@ public class ReplyDao extends CommonDao{
         return;
     }
 
-    public void deleteAllReply(int id_board) throws SQLException {
-        GetDB().delete("deleteReply", id_board);
+    public void deleteAllReply(int id) throws SQLException {
+        GetDB().delete("deleteReply", id);
         return ;
     }
 }

@@ -14,12 +14,12 @@ public class ContentAction implements CommandAction {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         // TODO Auto-generated method stub
-        int id_board = Integer.parseInt(request.getParameter("id_board"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
-        board board = BoardDao.getInstance().getBoard(id_board);
+        board board = BoardDao.getInstance().getBoard(id);
         request.setAttribute("board",board);
 
-        ArrayList<reply> replyList = ReplyDao.getInstance().getReplyList(id_board);
+        ArrayList<reply> replyList = ReplyDao.getInstance().getReplyList(id);
         request.setAttribute("replyList", replyList);
 
         return  "content.jsp";

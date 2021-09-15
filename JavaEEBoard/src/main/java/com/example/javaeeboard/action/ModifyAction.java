@@ -15,9 +15,9 @@ public class ModifyAction implements CommandAction {
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         MultipartRequest multi = null;
         int sizeLimit = 10 * 1024 * 1024;
-        int id_board = Integer.parseInt(request.getParameter("id_board"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
-        String savePath = request.getRealPath("/upload" + "/" + id_board);
+        String savePath = request.getRealPath("/upload" + "/" + id);
 
         try {
             multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
@@ -42,7 +42,7 @@ public class ModifyAction implements CommandAction {
         if (content == "" || content == null) System.out.println("내용이 없습니다.");
 
         board board = new board();
-        board.setId_board(id_board);
+        board.setId(id);
         board.setTitle(title);
         board.setContent(content);
 
