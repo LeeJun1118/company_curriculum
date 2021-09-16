@@ -32,3 +32,5 @@
     * [이미지에서 색상 추출(HTML Color Picker)](https://www.w3schools.com/colors/colors_picker.asp)
   * Java
     * [Java Dom Api 튜토리얼](https://howtodoinjava.com/java/xml/read-xml-dom-parser-example/)
+  * Java EE 게시판
+    * [jmoon님 블로그](https://jmoon.co.kr/category/Develop/JSP-Oracle)
