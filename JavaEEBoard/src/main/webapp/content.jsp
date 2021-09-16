@@ -25,37 +25,37 @@
                 <br/>
                 <h4>게시글</h4>
                 <br/>
-                <form>
-                    <form class="form-group">
-                        <div class="form-group">
-                            <label>글 번호
-                                <span>${board.id}</span>
-                            </label>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group border-bottom">
-                                    <label for="exampleFormControlInput1">제목</label>
-                                    <span class="form-control-plaintext">${board.title}</span>
-                                </div>
-                                <br/>
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">내용</label>
-                                    <textarea class="form-control form-control-plaintext h-25" rows="10"
-                                              disabled="disabled"
-                                              id="exampleFormControlTextarea1"
-                                              rows="3">${board.content}</textarea>
-                                </div>
-                                <br/>
-                                <div>
-                                    파일
-                                    <a href="#" onclick="onDownload('${board.id}')"> ${board.filename}</a>
-                                </div>
+                <form class="form-group">
+                    <div class="form-group">
+                        <label>글 번호
+                            <span>${board.id}</span>
+                        </label>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group border-bottom">
+                                <label for="exampleFormControlInput1">제목</label>
+                                <span class="form-control-plaintext">${board.title}</span>
+                            </div>
+                            <br/>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">내용</label>
+                                <textarea class="form-control form-control-plaintext h-25" rows="10"
+                                          disabled="disabled"
+                                          id="exampleFormControlTextarea1"
+                                          rows="3">${board.content}</textarea>
+                            </div>
+                            <br/>
+                            <div>
+                                파일
+                                <a href="#" onclick="onDownload('${board.id}')"> ${board.filename}</a>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </form>
+
 
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
