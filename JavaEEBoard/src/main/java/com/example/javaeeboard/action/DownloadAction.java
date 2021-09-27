@@ -20,7 +20,7 @@ public class DownloadAction implements CommandAction {
         int id = Integer.parseInt(request.getParameter("id"));
 
         board board = BoardDao.getInstance().getBoard(id);
-        String filename = board.getFilename();
+        String filename = id + "/" +  board.getFilename();
 
         String uploadFileName = request.getRealPath("/upload" + "/" + filename);
 
