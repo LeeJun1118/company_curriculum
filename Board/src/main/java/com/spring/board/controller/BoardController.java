@@ -54,4 +54,12 @@ public class BoardController {
         boardRepository.save(board);
         return "redirect:/board/" + board.getId();
     }
+
+    @GetMapping("/board/delete/{id}")
+    public String deleteBoard(@PathVariable("id")Long id){
+        Board board = boardRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid board Id : " + id));
+        boardRepository.delete(board);
+        return "redirect:/";
+    }
 }

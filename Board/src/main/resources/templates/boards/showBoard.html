@@ -37,12 +37,49 @@
                             <br/>
                             <div>
                                 파일
-<!--                                onclick="onDownload('${board.id}')"-->
+                                <!--                                onclick="onDownload('${board.id}')"-->
                                 <a href="#"> <!--${board.filename}--></a>
                             </div>
                         </div>
                     </div>
                 </form>
+
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="btn" data-toggle="modal" data-target="#deletePost" href="#">
+                            글삭제
+                        </a>
+                        <div class="modal fade" id="deletePost" tabindex="-1"
+                             role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p>게시글을 삭제하시겠습니까?</p>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal"
+                                                class="btn btn-secondary">
+                                            취소
+                                        </button>
+                                        <form method="get" th:action="@{/board/delete/{id}(id=${board.id})}">
+                                            <button class="btn btn-primary" type="submit">확인</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn" href='???'>글 수정</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-default" href="/">목록으로</a>
+                    </li>
+                </ul>
+
+
             </div>
         </div>
     </body>
