@@ -2,6 +2,7 @@ package com.spring.board.controller;
 
 import com.spring.board.domain.Board;
 import com.spring.board.repository.BoardRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,7 +22,7 @@ public class BoardController {
 
     @GetMapping("/")
     public String list(Model model) {
-        List<Board> boardList = boardRepository.findAll();
+        List<Board> boardList = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
         model.addAttribute("boardList", boardList);
         return "index";
     }
