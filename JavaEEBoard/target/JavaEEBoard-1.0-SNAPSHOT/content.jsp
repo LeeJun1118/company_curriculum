@@ -55,6 +55,8 @@
                         </div>
                     </div>
                 </form>
+
+
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
                         <a class="btn" data-toggle="modal" data-target="#deletePost" href="#">

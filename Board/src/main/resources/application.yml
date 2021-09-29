@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: c##coreframe
+    password: 1234
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    sql-script-encoding: utf-8
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: oracle
+    show-sql: true
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+
+server:
+  port: 8081

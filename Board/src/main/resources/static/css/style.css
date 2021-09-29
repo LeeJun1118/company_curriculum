@@ -1,0 +1,18 @@
+.marTop {
+    margin-top: 70px;
+}
+.marRight {
+    margin-right: 10px;
+}
+.marBot{
+    margin-bottom: 10px;
+}
+input::-webkit-file-upload-button {
+    cursor: pointer;
+}
+.table-row{
+    cursor:pointer;
+}
+.marBottom{
+    margin-bottom: 5px;
+}
