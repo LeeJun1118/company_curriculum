@@ -33,11 +33,20 @@
                         </tr>
                     </tbody>
                 </table>
+
+
+                <!--<ul class="nav justify-content-center">
+                    <li class="nav-item" th:classappend="${pages}==${pagesCurrent}" th:each="pages:${pagesCurrent}">
+                        <a class="page-link" th:classappend="${pages}==${pagesCurrent}" th:text="${pages}"
+                           th:href="@{list(page=${pages},search=${search})}">
+                        </a>
+                    </li>
+                </ul>-->
             </div>
         </div> <!-- /container -->
 
         <script>
-            $("#board tr").click(function() {
+            $("#board tr").click(function () {
                 window.location = $(this).find('td:eq(0)').attr("href");
             });
         </script>
