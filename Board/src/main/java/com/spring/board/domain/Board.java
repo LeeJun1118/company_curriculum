@@ -19,15 +19,11 @@ public class Board {
     //해당 테이블의 PK 필드를 나타냄
     //PK 의 생성 규칙을 나타냄 strategy = GenerationType.IDENTITY 로 자동 증가 됨
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    /*@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
-    @SequenceGenerator(name = "id_Sequence", sequenceName = "ID_SEQ")*/
     @Id
     private Long id;
 
-    @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
     private String content;
 
     private String filename;

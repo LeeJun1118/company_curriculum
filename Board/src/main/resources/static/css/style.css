@@ -16,3 +16,6 @@ input::-webkit-file-upload-button {
 .marBottom{
     margin-bottom: 5px;
 }
+.fieldError {
+    border-color: #bd2130;
+}
