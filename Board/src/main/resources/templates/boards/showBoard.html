@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/header :: header">
+    </head>
+    <body>
+        <div class="container marTop">
+            <div class="container-sm my-auto">
+                <h1>
+                    <a class="text-dark" href='/'>게시판</a>
+                </h1>
+                <br/>
+                <br/>
+                <h4>게시글</h4>
+                <br/>
+
+                <form class="form-group">
+                    <div class="form-group">
+                        <label>글 번호
+                            <span th:text="${board.id}"></span>
+                        </label>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group border-bottom">
+                                <label for="exampleFormControlInput1">제목</label>
+                                <span class="form-control-plaintext" th:text="${board.title}"></span>
+                            </div>
+                            <br/>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">내용</label>
+                                <textarea class="form-control form-control-plaintext h-25" rows="10"
+                                          disabled="disabled"
+                                          id="exampleFormControlTextarea1"
+                                          th:text="${board.content}"></textarea>
+                            </div>
+                            <br/>
+                            <div>
+                                파일
+<!--                                onclick="onDownload('${board.id}')"-->
+                                <a href="#"> <!--${board.filename}--></a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

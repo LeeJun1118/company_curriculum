@@ -3,24 +3,49 @@
     <head th:replace="fragments/header :: header">
     </head>
     <body>
-        <div class="container">
-            <div>
-                <table class="table table-striped">
+        <div class="container marTop">
+            <div class="container-sm my-auto">
+                <h1>
+                    <a class="text-dark" href='/'>게시판</a>
+                </h1>
+                <br/>
+                <nav class="navbar marBottom">
+                    <a href="write.jsp">글쓰기</a>
+                    <form class="form-inline my-2 my-lg-0" action="list.do" method="post">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                               name="search" th:value="${param.search}">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </nav>
+                <table id="board" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>title</th>
+                            <th scope="col">#</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">글번호</th>
                         </tr>
                     </thead>
+<!--                    data-href='content.do?id=${board.id}'-->
+<!--                    th:href="@{/board/{id}(id=${board.id})}"-->
                     <tbody>
-                        <tr th:each="board : ${boardList}">
-                            <td th:text="${board.id}"></td>
-                            <td th:text="${board.title}"></td>
+                        <tr class='table-row'
+                            th:each="board,index : ${boardList}"
+                            th:onclick="">
+                            <td scope="row" th:text="${index.count}" th:href="@{/board/{id}(id=${board.id})}"></td>
+                            <td class="col-6" th:text="${board.id}"></td>
+                            <td class="col-3" th:text="${board.title}"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div> <!-- /container -->
+
+        <script>
+            $("#board tr").click(function() {
+                //do more javascript code to meet your needs
+                window.location = $(this).find('td:eq(0)').attr("href");
+            });
+        </script>
         <div th:replace="fragments/footer :: footer"></div>
     </body>
 </html>
