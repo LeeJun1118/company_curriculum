@@ -25,15 +25,11 @@
                             <th scope="col">글번호</th>
                         </tr>
                     </thead>
-<!--                    data-href='content.do?id=${board.id}'-->
-<!--                    th:href="@{/board/{id}(id=${board.id})}"-->
                     <tbody>
-                        <tr class='table-row'
-                            th:each="board,index : ${boardList}"
-                            th:onclick="">
+                        <tr class='table-row' th:each="board,index : ${boardList}">
                             <td scope="row" th:text="${index.count}" th:href="@{/board/{id}(id=${board.id})}"></td>
-                            <td class="col-6" th:text="${board.id}"></td>
-                            <td class="col-3" th:text="${board.title}"></td>
+                            <td class="col-6" th:text="${board.title}"></td>
+                            <td class="col-3" th:text="${board.id}"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -42,7 +38,6 @@
 
         <script>
             $("#board tr").click(function() {
-                //do more javascript code to meet your needs
                 window.location = $(this).find('td:eq(0)').attr("href");
             });
         </script>

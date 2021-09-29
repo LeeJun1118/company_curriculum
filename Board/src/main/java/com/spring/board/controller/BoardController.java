@@ -4,9 +4,12 @@ import com.spring.board.domain.Board;
 import com.spring.board.repository.BoardRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -36,7 +39,20 @@ public class BoardController {
 
     @GetMapping("/board/new")
     public String boardForm(Model model){
-        model.addAttribute("newBoard",new BoardForm());
+        model.addAttribute("boardForm",new BoardForm());
         return "boards/newBoard";
+    }
+
+    @PostMapping("/board/new")
+    public String createBoard(@Valid BoardForm boardForm, BindingResult result){
+        if (result.hasErrors()){
+            return "boards/newBoard";
+        }
+        Board board = new Board();
+        board.setTitle(boardForm.getTitle());
+        board.setContent(boardForm.getContent());
+        board.setFilename(boardForm.getFilename());
+        boardRepository.save(board);
+        return "redirect:/board/" + board.getId();
     }
 }
