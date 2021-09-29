@@ -56,10 +56,31 @@ public class BoardController {
     }
 
     @GetMapping("/board/delete/{id}")
-    public String deleteBoard(@PathVariable("id")Long id){
+    public String deleteBoard(@PathVariable("id") Long id) {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid board Id : " + id));
         boardRepository.delete(board);
         return "redirect:/";
+    }
+
+    @GetMapping("/board/update/{id}")
+    public String updateBoardForm(@PathVariable("id") Long id, Model model) {
+        Board board = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid board Id:" + id));
+        model.addAttribute("board", board);
+        return "boards/updateBoard";
+    }
+
+    @PostMapping("/board/update/{id}")
+    public String updateBoard(@PathVariable("id") Long id, @Valid BoardForm boardForm, BindingResult result) {
+        if (result.hasErrors()) {
+            return "boards/updateBoard";
+        }
+        Board board = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid board Id : " + id));
+        board.setTitle(boardForm.getTitle());
+        board.setContent(boardForm.getContent());
+        board.setFilename(boardForm.getFilename());
+
+        boardRepository.save(board);
+        return "redirect:/board/" + board.getId();
     }
 }

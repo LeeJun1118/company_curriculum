@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/header :: header">
+    </head>
+    <body>
+        <div class="container marTop">
+            <div class="container-sm my-auto">
+                <h1>
+                    <a class="text-dark" href='/'>게시판</a>
+                </h1>
+                <br/>
+                <br/>
+                <h4>글수정</h4>
+                <br/>
+                <form action="/" th:action="@{/board/update/{id}(id=${board.id})}" th:object="${board}" method="post">
+                    <div class="form-group">
+                        <label for="title">제목</label>
+                        <input id="title" class="form-control" type="text" name="title" th:field="*{title}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">내용</label>
+                        <textarea id="content" class="form-control h-25" rows="10" type="text"
+                                  name="content" th:field="*{content}"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <ul class="nav">
+                            <li class="nav-item justify-content">
+                                <input id="upload" type="file" name="filename" th:field="*{filename}"/>
+                            </li>
+                            <li class="nav-item justify-content-end">
+                                <a class="btn btn-default" href='deleteFile.do?id=${board.id}'>파일삭제</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav justify-content-end">
+                        <a class="btn btn-secondary marRight" href='#' data-toggle="modal"
+                           data-target="#cancelModify">취소</a>
+                        <div class="modal fade" id="cancelModify" tabindex="-1"
+                             role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">글쓰기</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>수정을 취소하시겠습니까?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal"
+                                                class="btn btn-secondary">
+                                            취소
+                                        </button>
+                                        <a class="btn btn-primary" th:href='@{/board/{id}(id=${board.id})}'>확인</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<input type="submit" class="btn btn-primary" value="수정">-->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifyPost">
+                            수정
+                        </button>
+                        <div class="modal fade" id="modifyPost" tabindex="-1"
+                             role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p>수정하시겠습니까?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal"
+                                                class="btn btn-secondary">
+                                            취소
+                                        </button>
+                                        <button class="btn btn-primary" type="submit">확인</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </body>
+</html>
