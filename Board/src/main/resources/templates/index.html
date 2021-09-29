@@ -10,7 +10,7 @@
                 </h1>
                 <br/>
                 <nav class="navbar marBottom">
-                    <a href="write.jsp">글쓰기</a>
+                    <a th:href="@{/board/new}">글쓰기</a>
                     <form class="form-inline my-2 my-lg-0" action="list.do" method="post">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                                name="search" th:value="${param.search}">

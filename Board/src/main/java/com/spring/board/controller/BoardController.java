@@ -33,4 +33,10 @@ public class BoardController {
 
         return "boards/showBoard";
     }
+
+    @GetMapping("/board/new")
+    public String boardForm(Model model){
+        model.addAttribute("newBoard",new BoardForm());
+        return "boards/newBoard";
+    }
 }
