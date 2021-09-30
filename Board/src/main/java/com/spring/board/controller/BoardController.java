@@ -33,6 +33,12 @@ public class BoardController {
         return "index";
     }
 
+    @GetMapping("/search")
+    public String search(@RequestParam(value = "search")String search, Model model){
+        List<Board> boardList = boardService.searchBoards(search);
+        model.addAttribute("boardList",boardList);
+        return "index";
+    }
     /*    @GetMapping("/")
         public String list(@RequestParam("search") String search,
                            Model model, Pageable pageable) throws Exception {

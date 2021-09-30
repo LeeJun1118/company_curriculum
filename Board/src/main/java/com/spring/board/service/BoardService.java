@@ -21,7 +21,16 @@ public class BoardService {
 
     private final BoardRepository boardRepository;
 
-    public Page<Board> searchBoardList(Pageable pageable, String search) throws Exception {
+    public List<Board> searchBoards(String search) {
+        List<Board> boards = boardRepository.findByTitleContaining(search);
+        List<Board> allBoard = boardRepository.findAll();
+        if (boards.isEmpty())
+            return allBoard;
+        return boards;
+    }
+
+
+   /* public Page<Board> searchBoardList(Pageable pageable, String search) throws Exception {
         List<Board> boardList = boardRepository.findAll();
         Page<Board> searchBoardList = null;
         pageable = PageRequest.of(pageable.getPageNumber() <= 0 ? 0 : pageable.getPageNumber() - 1,
@@ -34,6 +43,6 @@ public class BoardService {
         else
             searchBoardList = boardRepository.findAll(pageable);
         return searchBoardList;
-    }
+    }*/
 
 }
