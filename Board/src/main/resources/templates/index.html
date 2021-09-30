@@ -12,9 +12,10 @@
                 <nav class="navbar marBottom">
                     <a th:href="@{/board/new}">글쓰기</a>
                     <form class="form-inline my-2 my-lg-0" action="/search" method="get">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"
                                name="search" th:value="${param.search}">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <input type="hidden" name="page" th:value="1"/>
+                        <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
                     </form>
                 </nav>
                 <table id="board" class="table table-striped table-hover">
@@ -35,13 +36,11 @@
                 </table>
 
 
-                <!--<ul class="nav justify-content-center">
-                    <li class="nav-item" th:classappend="${pages}==${pagesCurrent}" th:each="pages:${pagesCurrent}">
-                        <a class="page-link" th:classappend="${pages}==${pagesCurrent}" th:text="${pages}"
-                           th:href="@{list(page=${pages},search=${search})}">
-                        </a>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item" th:each="pageNum : ${pageList}" th:inline="text">
+                        <a class="nav-link" th:href="@{'/?page=' + ${pageNum}}">[[${pageNum}]]</a>
                     </li>
-                </ul>-->
+                </ul>
             </div>
         </div> <!-- /container -->
 

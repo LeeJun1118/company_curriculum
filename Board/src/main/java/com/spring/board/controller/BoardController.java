@@ -6,6 +6,7 @@ import com.spring.board.service.BoardService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +21,8 @@ public class BoardController {
 
     private final BoardRepository boardRepository;
     private final BoardService boardService;
+    //블럭에 존재하는 페이지 번호 수
+    private static final int BLOCK_PAGE_NUM_COUNT = 3;
 
     public BoardController(BoardRepository boardRepository, BoardService boardService) {
         this.boardRepository = boardRepository;
@@ -27,47 +30,27 @@ public class BoardController {
     }
 
     @GetMapping("/")
-    public String list(Model model) {
-        List<Board> boardList = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+    public String list(Model model, @RequestParam(value = "page", defaultValue = "1") Integer pageNum) {
+        List<Board> boardList = boardService.getBoardList(pageNum);
+        Integer[] pageList = boardService.getPageList(pageNum);
+        int prevPage = 0;
+        if (pageNum > BLOCK_PAGE_NUM_COUNT)
+            prevPage = pageNum - (pageNum % BLOCK_PAGE_NUM_COUNT);
+
         model.addAttribute("boardList", boardList);
+        model.addAttribute("pageList", pageList);
+        model.addAttribute("curPage", pageNum);
+        model.addAttribute("prevPage", prevPage);
+        model.addAttribute("blockPage", BLOCK_PAGE_NUM_COUNT);
         return "index";
     }
 
     @GetMapping("/search")
-    public String search(@RequestParam(value = "search")String search, Model model){
+    public String search(@RequestParam(value = "search") String search, Model model) {
         List<Board> boardList = boardService.searchBoards(search);
-        model.addAttribute("boardList",boardList);
-        return "index";
-    }
-    /*    @GetMapping("/")
-        public String list(@RequestParam("search") String search,
-                           Model model, Pageable pageable) throws Exception {
-            Page<Board> boardList = boardService.searchBoardList(pageable, search);
-            model.addAttribute("boardList", boardList);
-            return "index";
-        }*/
-    /*@GetMapping("/list")
-    public String list(@RequestParam(value = "search", defaultValue = "") String search,
-                       @RequestParam(value = "page", defaultValue = "0") int page,
-                       Model model, Pageable pageable) throws Exception {
-        Page<Board> boardList = null;
-        if (Objects.equals(search, ""))
-            boardList = boardRepository.findAll(pageable);
-        else
-            boardList = boardRepository.findAllByTitleContaining(search, pageable);
-        int pageCount = boardList.getTotalPages();
-        int[] pages = new int[pageCount];
-        for (int i = 0; i < pageCount; i++) {
-            pages[i] = i;
-        }
-        model.addAttribute("pages", pages);
-        model.addAttribute("pagesCurrent", page);
-        model.addAttribute("search", search);
-
-
         model.addAttribute("boardList", boardList);
         return "index";
-    }*/
+    }
 
     @GetMapping("/board/{id}")
     public String showBoard(@PathVariable("id") Long id, Model model) {
