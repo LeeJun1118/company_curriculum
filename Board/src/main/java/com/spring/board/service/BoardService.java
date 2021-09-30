@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -83,32 +84,32 @@ public class BoardService {
     }
 
     public Integer[] getPageList(String search, Integer curPageNum) {
+        Integer[] pageList = new Integer[BLOCK_PAGE_NUM_COUNT];
+
         //총 게시글 수
         Double boardsTotalCount = null;
 
+        //검색된 게시글 수
         if (Objects.equals(search, ""))
             boardsTotalCount = Double.valueOf(this.getBoardCount());
         else
-            boardsTotalCount = Double.valueOf(this.getSearchBoardCount(search));
+            boardsTotalCount = (double) this.getSearchBoardCount(search);
 
-        //총 게시글 수 기준으로 마지막 페이지 번호
-        Integer totalLastPageNum = (int) (Math.ceil(boardsTotalCount / PAGE_POST_COUNT));
-
-        Integer[] pageList = new Integer[totalLastPageNum];
-
-        //현재 페이지를 기준으로 블럭의 마지막 페이지 번호
-        Integer blockLastPageNum = (totalLastPageNum > curPageNum + BLOCK_PAGE_NUM_COUNT)
-                ? curPageNum + BLOCK_PAGE_NUM_COUNT
-                : totalLastPageNum;
+        //총 게시글 수 기준으로 마지막 페이지 번호 올림
+        Integer totalLastPageNum = (int) (boardsTotalCount / PAGE_POST_COUNT + 1);
 
         //페이지 시작 번호
-        curPageNum = (curPageNum <= 3) ? 1 : curPageNum - 2;
+        int blockNum = (int)Math.floor((curPageNum-1)/ BLOCK_PAGE_NUM_COUNT);
+        curPageNum  = (BLOCK_PAGE_NUM_COUNT * blockNum) + 1;
+
+        //현재 페이지를 기준으로 블럭의 마지막 페이지 번호
+        Integer blockLastPageNum = curPageNum + BLOCK_PAGE_NUM_COUNT - 1;
+        blockLastPageNum = totalLastPageNum < blockLastPageNum ? totalLastPageNum : blockLastPageNum;
 
         //페이지 번호 할당
-        for (int val = curPageNum, idx = 0; val <= blockLastPageNum; val++, idx++) {
-            pageList[idx] = val;
+        for (int i = curPageNum, idx = 0; i <= blockLastPageNum; i++, idx++) {
+            pageList[idx] = i;
         }
-
         return pageList;
     }
 

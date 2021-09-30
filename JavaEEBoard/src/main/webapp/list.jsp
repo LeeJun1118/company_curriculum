@@ -87,7 +87,7 @@
 
                 <%--                다음페이지--%>
                 <li class="nav-item">
-                    <c:if test="${endBlockPage + 3 < ((fn:length(maxList)/10+1)/3)*3}">
+                    <c:if test="${endBlockPage + 3 < ((fn:length(maxList)/10)/3)*3 + 1}">
                         <a class="nav-link" href="list.do?page=${(endBlockPage+1)*10}">다음</a>
                     </c:if>
                 </li>

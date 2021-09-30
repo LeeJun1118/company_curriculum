@@ -37,15 +37,14 @@
 
 
                 <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{'/list?search='+${search}+'&page=' + ${prevPage}}">이전</a>
+                    </li>
                     <li class="nav-item" th:each="pageNum : ${pageList}" th:inline="text">
-                        <!--<div th:if="${not #strings.isEmpty(param.search)}">
-                            <a class="nav-link" th:href="@{'/search?search=&page=' + ${pageNum}}">[[${pageNum}]]</a>
-                        </div>
-                        <div th:if="${#strings.isEmpty(param.search)}">
-                            <a class="nav-link"  th:href="@{'/search?search='+${param.search}+'&page=' + ${pageNum}}">[[${pageNum}]]</a>
-                        </div>-->
-
                         <a class="nav-link" th:href="@{'/list?search='+${search}+'&page=' + ${pageNum}}">[[${pageNum}]]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{'/list?search='+${search}+'&page=' + ${nextPage}}">다음</a>
                     </li>
                 </ul>
             </div>
