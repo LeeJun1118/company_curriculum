@@ -11,10 +11,10 @@
                 <br/>
                 <nav class="navbar marBottom">
                     <a th:href="@{/board/new}">글쓰기</a>
-                    <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+                    <form class="form-inline my-2 my-lg-0" action="/list" method="get">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"
-                               name="search" th:value="${param.search}">
-                        <input type="hidden" name="page" th:value="1"/>
+                               name="search" >
+                        <input type="hidden" name="page"  th:if="${not #strings.isEmpty(curPage)}" th:value="1"/>
                         <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
                     </form>
                 </nav>
@@ -38,7 +38,14 @@
 
                 <ul class="nav justify-content-center">
                     <li class="nav-item" th:each="pageNum : ${pageList}" th:inline="text">
-                        <a class="nav-link" th:href="@{'/?page=' + ${pageNum}}">[[${pageNum}]]</a>
+                        <!--<div th:if="${not #strings.isEmpty(param.search)}">
+                            <a class="nav-link" th:href="@{'/search?search=&page=' + ${pageNum}}">[[${pageNum}]]</a>
+                        </div>
+                        <div th:if="${#strings.isEmpty(param.search)}">
+                            <a class="nav-link"  th:href="@{'/search?search='+${param.search}+'&page=' + ${pageNum}}">[[${pageNum}]]</a>
+                        </div>-->
+
+                        <a class="nav-link" th:href="@{'/list?search='+${search}+'&page=' + ${pageNum}}">[[${pageNum}]]</a>
                     </li>
                 </ul>
             </div>

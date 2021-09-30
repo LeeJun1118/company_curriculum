@@ -3,13 +3,10 @@ package com.spring.board.service;
 import com.spring.board.domain.Board;
 import com.spring.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.dialect.Ingres9Dialect;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.thymeleaf.util.StringUtils;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -40,6 +37,30 @@ public class BoardService {
         return boardList;
     }
 
+    public List<Board> searchPageBoards(String search, Integer pageNum) {
+        //검색
+        Page<Board> pageSearchBoardList = boardRepository.
+                findByTitleContaining(search, PageRequest.of(pageNum - 1, PAGE_POST_COUNT, Sort.by(Sort.Direction.DESC, "id")));
+        Page<Board> pageAllBoardList = null;
+        List<Board> boards = null;
+        List<Board> boardList = new ArrayList<>();
+
+        //search
+        boards = pageSearchBoardList.getContent();
+
+        //All
+        if (boards.isEmpty()) {
+            pageAllBoardList = boardRepository.findAll
+                    (PageRequest.of(pageNum - 1, PAGE_POST_COUNT, Sort.by(Sort.Direction.DESC, "id")));
+            boards = pageAllBoardList.getContent();
+        }
+
+        for (Board board : boards) {
+            boardList.add(this.convertEntityBoard(board));
+        }
+        return boardList;
+    }
+
     public List<Board> getBoardList(Integer pageNum) {
         Page<Board> page = boardRepository.findAll
                 (PageRequest.of(pageNum - 1, PAGE_POST_COUNT, Sort.by(Sort.Direction.DESC, "id")));
@@ -57,9 +78,18 @@ public class BoardService {
         return boardRepository.count();
     }
 
-    public Integer[] getPageList(Integer curPageNum) {
+    public int getSearchBoardCount(String search) {
+        return boardRepository.findByTitleContaining(search).size();
+    }
+
+    public Integer[] getPageList(String search, Integer curPageNum) {
         //총 게시글 수
-        Double boardsTotalCount = Double.valueOf(this.getBoardCount());
+        Double boardsTotalCount = null;
+
+        if (Objects.equals(search, ""))
+            boardsTotalCount = Double.valueOf(this.getBoardCount());
+        else
+            boardsTotalCount = Double.valueOf(this.getSearchBoardCount(search));
 
         //총 게시글 수 기준으로 마지막 페이지 번호
         Integer totalLastPageNum = (int) (Math.ceil(boardsTotalCount / PAGE_POST_COUNT));

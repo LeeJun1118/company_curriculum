@@ -30,25 +30,23 @@ public class BoardController {
     }
 
     @GetMapping("/")
-    public String list(Model model, @RequestParam(value = "page", defaultValue = "1") Integer pageNum) {
-        List<Board> boardList = boardService.getBoardList(pageNum);
-        Integer[] pageList = boardService.getPageList(pageNum);
+    public String list(Model model) {
+        return "redirect:/list";
+    }
+    @GetMapping("/list")
+    public String search(Model model,
+                         @RequestParam(value = "search", defaultValue = "") String search,
+                         @RequestParam(value = "page", defaultValue = "1") Integer pageNum) {
+        List<Board> boardList = boardService.searchPageBoards(search,pageNum);
+        Integer[] pageList = boardService.getPageList(search,pageNum);
         int prevPage = 0;
         if (pageNum > BLOCK_PAGE_NUM_COUNT)
             prevPage = pageNum - (pageNum % BLOCK_PAGE_NUM_COUNT);
-
+        model.addAttribute("search", search);
+        model.addAttribute("curPage", pageNum);
         model.addAttribute("boardList", boardList);
         model.addAttribute("pageList", pageList);
-        model.addAttribute("curPage", pageNum);
-        model.addAttribute("prevPage", prevPage);
-        model.addAttribute("blockPage", BLOCK_PAGE_NUM_COUNT);
-        return "index";
-    }
 
-    @GetMapping("/search")
-    public String search(@RequestParam(value = "search") String search, Model model) {
-        List<Board> boardList = boardService.searchBoards(search);
-        model.addAttribute("boardList", boardList);
         return "index";
     }
 
