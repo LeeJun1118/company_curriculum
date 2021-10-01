@@ -13,7 +13,7 @@
                 <h4>글쓰기</h4>
                 <br/>
                 <form id="frm" role="form" action="/board/new" th:object="${boardForm}"
-                      method="post">
+                      method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label th:for="title">제목</label>
                         <input type="text" th:field="*{title}" class="form-control" placeholder="제목을 입력하세요"
@@ -28,7 +28,7 @@
                         <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Incorrect data</p>
                     </div>
                     <div class="form-group">
-                        <input type="file" name="filename"/>
+                        <input type="file" name="uploadFile"/>
                     </div>
 
                     <div class="nav justify-content-end">

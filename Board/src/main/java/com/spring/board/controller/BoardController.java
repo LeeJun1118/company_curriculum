@@ -7,13 +7,17 @@ import com.spring.board.repository.ReplyRepository;
 import com.spring.board.service.BoardService;
 
 import lombok.AllArgsConstructor;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.io.File;
 import java.util.List;
+import java.util.Locale;
 
 
 @Controller
@@ -81,15 +85,20 @@ public class BoardController {
     }
 
     @PostMapping("/board/new")
-    public String createBoard(@Valid BoardForm boardForm, BindingResult result) {
+    public String createBoard(@Valid BoardForm boardForm, BindingResult result,
+                              @RequestParam(value = "uploadFile", required = false) List<MultipartFile> files) throws Exception {
+
         if (result.hasErrors()) {
             return "boards/newBoard";
         }
         Board board = new Board();
         board.setTitle(boardForm.getTitle());
         board.setContent(boardForm.getContent());
-        board.setFilename(boardForm.getFilename());
-        boardRepository.save(board);
+
+        if (!files.isEmpty())
+            boardService.uploadFile(board, files);
+        else
+            boardRepository.save(board);
         return "redirect:/board/" + board.getId();
     }
 
@@ -116,7 +125,7 @@ public class BoardController {
         Board board = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid board Id : " + id));
         board.setTitle(boardForm.getTitle());
         board.setContent(boardForm.getContent());
-        board.setFilename(boardForm.getFilename());
+        //board.setFilename(boardForm.getFilename());
 
         boardRepository.save(board);
         return "redirect:/board/" + board.getId();

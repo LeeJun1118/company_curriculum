@@ -4,6 +4,8 @@ package com.spring.board.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 //lombok 어노테이션
 //클래스 내 모든 필드의 Get 매소드를 자동 생성
@@ -26,5 +28,16 @@ public class Board {
 
     private String content;
 
-    private String filename;
+    @OneToMany
+    private List<MyFile> fileList = new ArrayList<>();
+
+    // Board에서 파일 처리 위함
+    public void addFile(MyFile file) {
+        this.fileList.add(file);
+
+        // 게시글에 파일이 저장되어있지 않은 경우
+        if(file.getBoard() != this)
+            // 파일 저장
+            file.setBoard(this);
+    }
 }

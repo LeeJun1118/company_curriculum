@@ -1,16 +1,18 @@
 package com.spring.board.service;
 
 import com.spring.board.domain.Board;
+import com.spring.board.domain.MyFile;
 import com.spring.board.repository.BoardRepository;
+import com.spring.board.repository.MyFileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,6 +22,9 @@ import java.util.Objects;
 public class BoardService {
 
     private final BoardRepository boardRepository;
+    private final FileHandler fileHandler;
+    private final MyFileRepository fileRepository;
+
     //블럭에 존재하는 페이지 번호 수
     private static final int BLOCK_PAGE_NUM_COUNT = 3;
     //한 페이지에 존재하는 게시글의 수
@@ -123,7 +128,18 @@ public class BoardService {
                 .id(board.getId())
                 .title(board.getTitle())
                 .content(board.getContent())
-                .filename(board.getFilename())
+//                .filename(board.getFilename())
                 .build();
+    }
+
+    public Long uploadFile(Board board, List<MultipartFile> files) throws Exception {
+        List<MyFile> fileList = fileHandler.parseFileInfo(board,files);
+
+        if(!fileList.isEmpty()){
+            for (MyFile file : fileList){
+                board.addFile(fileRepository.save(file));
+            }
+        }
+        return boardRepository.save(board).getId();
     }
 }
