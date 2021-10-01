@@ -22,22 +22,27 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group border-bottom">
-                                <label for="exampleFormControlInput1">제목</label>
-                                <span class="form-control-plaintext" th:text="${board.title}"></span>
+                                <label for="cardTitle">제목</label>
+                                <span id="cardTitle" class="form-control-plaintext" th:text="${board.title}"></span>
                             </div>
                             <br/>
 
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">내용</label>
+                                <label for="cardTextArea">내용</label>
                                 <textarea class="form-control form-control-plaintext h-25" rows="10"
                                           disabled="disabled"
-                                          id="exampleFormControlTextarea1"
+                                          id="cardTextArea"
                                           th:text="${board.content}"></textarea>
                             </div>
                             <br/>
-                            <div th:each="myFile : ${myFileList}" th:text="파일">
+                            <!--<div th:each="myFile : ${myFileList}" th:text="파일">
                                 <a href="#" th:text="${myFile.getOriginFileName()}"> </a>
+                                <a href="#" th:text="${myFile.getOriginFileName()}"> </a>
+                            </div>-->
+                            <div>파일
+                                <a href="#" th:text="${myFileName}"></a>
                             </div>
+
                         </div>
                     </div>
                 </form>
@@ -103,7 +108,8 @@
                                    href="#">
                                     댓글수정
                                 </a>
-                                <a class="btn btn-default" th:href="@{/reply/delete/{id}(id=${reply.id_reply})}">댓글삭제</a>
+                                <a class="btn btn-default"
+                                   th:href="@{/reply/delete/{id}(id=${reply.id_reply})}">댓글삭제</a>
                             </td>
                             <div th:id="'modalId' + ${index.count}"
                                  class="modal fade" tabindex="-1"

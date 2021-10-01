@@ -82,6 +82,9 @@ public class BoardController {
         List<MyFile> myFileList = myFileRepository.findAllByBoard(board);
         model.addAttribute("myFileList", myFileList);
 
+        String myFileName = myFileList.get(0).getOriginFileName();
+        model.addAttribute("myFileName", myFileName);
+
         return "boards/showBoard";
     }
 
@@ -98,13 +101,6 @@ public class BoardController {
         if (result.hasErrors()) {
             return "boards/newBoard";
         }
-        /*if (!files.isEmpty()) {
-            boardRepository.save(board);
-            return "redirect:/board/" + board.getId();
-        } else {
-            //boardService.uploadFile(board, files);
-            return "redirect:/board/" + boardService.uploadFile(board, files);
-        }*/
         return "redirect:/board/" + boardService.uploadFile(boardForm, files);
     }
 
