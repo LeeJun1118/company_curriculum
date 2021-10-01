@@ -117,7 +117,7 @@
                                         </div>
 
                                         <form name="reply" method="post"
-                                              action='?'>
+                                              th:action="@{/reply/update/{id}(id=${reply.id_reply})}">
                                             <div class="modal-body">
                                                 <input class="form-control no-border" type="text" name="content"
                                                        cols="90" rows="4"
