@@ -45,7 +45,7 @@
                            th:href="@{'/list?search='+${search}+'&page=' + ${pageNum}}">[[${pageNum}]]</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:if="${maxPage} >= ${nextPage}" th:href="@{'/list?search='+${search}+'&page=' + ${nextPage}}">다음</a>
+                        <a class="nav-link" th:if="${maxPage} >= ${nextPage} and ${maxPage} > 3" th:href="@{'/list?search='+${search}+'&page=' + ${nextPage}}">다음</a>
                     </li>
                 </ul>
             </div>

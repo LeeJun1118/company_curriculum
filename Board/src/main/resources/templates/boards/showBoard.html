@@ -79,6 +79,66 @@
                     </li>
                 </ul>
 
+                <br/>
+                <h5>댓글쓰기</h5>
+                <form id="replyField" th:action="@{/reply/new/{id}(id=${board.id})}" method="post">
+                    <div class="form-group">
+                        <textarea id="replyContent" class="form-control" type="text" name="content" required></textarea>
+                    </div>
+
+                    <div class="nav justify-content-end">
+                        <button type="submit" class="btn btn-primary">등록</button>
+                    </div>
+                </form>
+
+                <h6>댓글</h6>
+                <table class="table">
+                    <tbody th:each="reply,index : ${replyList}">
+
+                        <tr>
+                            <td colspan="6" th:text="${index.count}"></td>
+                            <td colspan="6" th:text="${reply.content}"></td>
+                            <td colspan="6">
+                                <!--th:attr="data-target='#modalId' +'${index.count}'"-->
+                                <a class="btn" data-toggle="modal"
+                                   th:attr="data-target='#modalId' +${index.count}"
+                                   href="#">
+                                    댓글수정
+                                </a>
+                                <a class="btn btn-default" href='?'>댓글삭제</a>
+                            </td>
+                            <div th:id="'modalId' + ${index.count}"
+                                 class="modal fade" tabindex="-1"
+                                 role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">댓글 수정</h5>
+                                        </div>
+
+                                        <form name="reply" method="post"
+                                              action='?'>
+                                            <div class="modal-body">
+                                                <input class="form-control no-border" type="text" name="content"
+                                                       cols="90" rows="4"
+                                                       th:value="${reply.content}"/>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal"
+                                                        data-keyboard="false"
+                                                        class="btn btn-secondary">
+                                                    취소
+                                                </button>
+                                                <button class="btn btn-primary" type="submit">확인</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </tr>
+
+                    </tbody>
+                </table>
 
             </div>
         </div>

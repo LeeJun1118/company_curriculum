@@ -1,35 +1,30 @@
 package com.spring.board.controller;
 
 import com.spring.board.domain.Board;
+import com.spring.board.domain.Reply;
 import com.spring.board.repository.BoardRepository;
+import com.spring.board.repository.ReplyRepository;
 import com.spring.board.service.BoardService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
+
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
+
 
 @Controller
+@AllArgsConstructor
 public class BoardController {
 
     private final BoardRepository boardRepository;
+    private final ReplyRepository replyRepository;
     private final BoardService boardService;
     //블럭에 존재하는 페이지 번호 수
     private static final int BLOCK_PAGE_NUM_COUNT = 3;
-
-    public BoardController(BoardRepository boardRepository, BoardService boardService) {
-        this.boardRepository = boardRepository;
-        this.boardService = boardService;
-    }
 
     @GetMapping("/")
     public String list() {
@@ -42,17 +37,19 @@ public class BoardController {
                          @RequestParam(value = "page", defaultValue = "1") Integer pageNum) {
         List<Board> boardList = boardService.searchPageBoards(search, pageNum);
         Integer[] pageList = boardService.getPageList(search, pageNum);
-        int maxPage = boardService.getSearchBoardCount(search)/10 + 1;
-        int nextPage = Math.max(maxPage, pageList[0] + 3);
+        int maxPage = boardService.getSearchBoardCount(search) / 10 + 1;
+        int nextPage = 1;
         int prevPage = 1;
 
-        if (pageList[0] > 1)
+        //다음 페이지
+        if (pageList[0] != null)
+            Math.max(maxPage, pageList[0] + 3);
+
+        //이전 페이지
+        if (pageList[0] != null && pageList[0] > 1)
             prevPage = pageList[0] - 1;
-
-
         if (pageNum > BLOCK_PAGE_NUM_COUNT)
             prevPage = pageNum - (pageNum % BLOCK_PAGE_NUM_COUNT);
-
 
         model.addAttribute("prevPage", prevPage);
         model.addAttribute("nextPage", nextPage);
@@ -70,6 +67,9 @@ public class BoardController {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid board Id:" + id));
         model.addAttribute("board", board);
+
+        List<Reply> replyList = replyRepository.findAllByBoard(board);
+        model.addAttribute("replyList", replyList);
 
         return "boards/showBoard";
     }
