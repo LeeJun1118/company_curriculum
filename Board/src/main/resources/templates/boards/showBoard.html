@@ -105,7 +105,7 @@
                                    href="#">
                                     댓글수정
                                 </a>
-                                <a class="btn btn-default" href='?'>댓글삭제</a>
+                                <a class="btn btn-default" th:href="@{/reply/delete/{id}(id=${reply.id_reply})}">댓글삭제</a>
                             </td>
                             <div th:id="'modalId' + ${index.count}"
                                  class="modal fade" tabindex="-1"

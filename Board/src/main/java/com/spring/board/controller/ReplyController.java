@@ -47,10 +47,20 @@ public class ReplyController {
         }
         Reply reply = replyRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid reply Id:" + id));
+        Long boardId = reply.getBoard().getId();
 
         reply.setContent(replyForm.getContent());
-
         replyRepository.save(reply);
-        return "redirect:/board/" +id;
+
+        return "redirect:/board/" + boardId;
+    }
+
+    @GetMapping("/reply/delete/{id}")
+    public String deleteReply(@PathVariable("id") Long id) {
+        Reply reply = replyRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid reply Id:" + id));
+        Long boardId = reply.getBoard().getId();
+        replyRepository.delete(reply);
+        return "redirect:/board/" + boardId;
     }
 }
