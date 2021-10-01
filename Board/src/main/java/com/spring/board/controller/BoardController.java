@@ -82,8 +82,11 @@ public class BoardController {
         List<MyFile> myFileList = myFileRepository.findAllByBoard(board);
         model.addAttribute("myFileList", myFileList);
 
-        String myFileName = myFileList.get(0).getOriginFileName();
-        model.addAttribute("myFileName", myFileName);
+        String myFileName = null;
+        if (myFileList.size() >= 1) {
+            myFileName = myFileList.get(0).getOriginFileName();
+            model.addAttribute("myFileName", myFileName);
+        }
 
         return "boards/showBoard";
     }
