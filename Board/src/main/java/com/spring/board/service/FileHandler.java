@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 public class FileHandler {
 
-    public List<MyFile> parseFileInfo(Board board, List<MultipartFile> multipartFiles) throws Exception{
+    public List<MyFile> parseFileInfo(List<MultipartFile> multipartFiles) throws Exception{
         //반환할 파일 리스트
         List<MyFile> fileList = new ArrayList<>();
 

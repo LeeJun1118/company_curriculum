@@ -28,7 +28,9 @@ public class Board {
 
     private String content;
 
-    @OneToMany
+    @OneToMany(mappedBy = "board",
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            orphanRemoval = true)
     private List<MyFile> fileList = new ArrayList<>();
 
     // Board에서 파일 처리 위함
@@ -36,7 +38,7 @@ public class Board {
         this.fileList.add(file);
 
         // 게시글에 파일이 저장되어있지 않은 경우
-        if(file.getBoard() != this)
+        if (file.getBoard() != this)
             // 파일 저장
             file.setBoard(this);
     }

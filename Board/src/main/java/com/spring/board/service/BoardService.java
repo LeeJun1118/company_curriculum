@@ -1,5 +1,6 @@
 package com.spring.board.service;
 
+import com.spring.board.controller.BoardForm;
 import com.spring.board.domain.Board;
 import com.spring.board.domain.MyFile;
 import com.spring.board.repository.BoardRepository;
@@ -13,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -132,14 +134,21 @@ public class BoardService {
                 .build();
     }
 
-    public Long uploadFile(Board board, List<MultipartFile> files) throws Exception {
-        List<MyFile> fileList = fileHandler.parseFileInfo(board,files);
+    public Long uploadFile(BoardForm boardForm, List<MultipartFile> files) throws Exception {
+        Board board = new Board();
+        board.setTitle(boardForm.getTitle());
+        board.setContent(boardForm.getTitle());
 
-        if(!fileList.isEmpty()){
-            for (MyFile file : fileList){
-                board.addFile(fileRepository.save(file));
+
+        List<MyFile> fileList = fileHandler.parseFileInfo(files);
+
+        files.forEach(f -> {
+            if (f.getSize() != 0) {
+                for (MyFile file : fileList) {
+                    board.addFile(fileRepository.save(file));
+                }
             }
-        }
+        });
         return boardRepository.save(board).getId();
     }
 }

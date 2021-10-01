@@ -98,15 +98,14 @@ public class BoardController {
         if (result.hasErrors()) {
             return "boards/newBoard";
         }
-        Board board = new Board();
-        board.setTitle(boardForm.getTitle());
-        board.setContent(boardForm.getContent());
-
-        if (!files.isEmpty())
-            boardService.uploadFile(board, files);
-        else
+        /*if (!files.isEmpty()) {
             boardRepository.save(board);
-        return "redirect:/board/" + board.getId();
+            return "redirect:/board/" + board.getId();
+        } else {
+            //boardService.uploadFile(board, files);
+            return "redirect:/board/" + boardService.uploadFile(board, files);
+        }*/
+        return "redirect:/board/" + boardService.uploadFile(boardForm, files);
     }
 
     @GetMapping("/board/delete/{id}")

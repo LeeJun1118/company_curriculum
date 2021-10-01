@@ -24,10 +24,13 @@ public class MyFile {
     @ManyToOne
     private Board board;
 
+    @Column(nullable = false)
     private String originFileName;
 
+    @Column(nullable = false)
     private String filePath;
 
+    @Column(nullable = false)
     private Long fileSize;
 
     // Board 정보 저장
