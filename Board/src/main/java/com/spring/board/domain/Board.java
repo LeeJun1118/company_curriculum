@@ -33,6 +33,11 @@ public class Board {
             orphanRemoval = true)
     private List<MyFile> fileList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "board",
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            orphanRemoval = true)
+    private List<Reply> replyList;
+
     // Board에서 파일 처리 위함
     public void addFile(MyFile file) {
         this.fileList.add(file);
