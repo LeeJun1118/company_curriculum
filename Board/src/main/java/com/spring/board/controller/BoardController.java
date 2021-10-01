@@ -1,8 +1,10 @@
 package com.spring.board.controller;
 
 import com.spring.board.domain.Board;
+import com.spring.board.domain.MyFile;
 import com.spring.board.domain.Reply;
 import com.spring.board.repository.BoardRepository;
+import com.spring.board.repository.MyFileRepository;
 import com.spring.board.repository.ReplyRepository;
 import com.spring.board.service.BoardService;
 
@@ -26,6 +28,8 @@ public class BoardController {
 
     private final BoardRepository boardRepository;
     private final ReplyRepository replyRepository;
+    private final MyFileRepository myFileRepository;
+
     private final BoardService boardService;
     //블럭에 존재하는 페이지 번호 수
     private static final int BLOCK_PAGE_NUM_COUNT = 3;
@@ -74,6 +78,9 @@ public class BoardController {
 
         List<Reply> replyList = replyRepository.findAllByBoard(board);
         model.addAttribute("replyList", replyList);
+
+        List<MyFile> myFileList = myFileRepository.findAllByBoard(board);
+        model.addAttribute("myFileList", myFileList);
 
         return "boards/showBoard";
     }

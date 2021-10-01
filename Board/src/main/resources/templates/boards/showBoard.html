@@ -35,10 +35,10 @@
                                           th:text="${board.content}"></textarea>
                             </div>
                             <br/>
-                            <div>
+                            <div th:each="myFile : ${myFileList}">
                                 파일
                                 <!--                                onclick="onDownload('${board.id}')"-->
-                                <a href="#"> <!--${board.filename}--></a>
+                                <a href="#" th:text="${myFile.getOriginFileName()}"> </a>
                             </div>
                         </div>
                     </div>
