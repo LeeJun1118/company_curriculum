@@ -22,3 +22,9 @@ $(document).ready(function($) {
         window.document.location = $(this).data("href");
     });
 });
+
+$(document).ready(function($) {
+    $("#goBoard tr").click(function() {
+        window.document.location = $(this).find('td:eq(0)').attr("href");
+    });
+});

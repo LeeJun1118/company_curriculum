@@ -26,8 +26,8 @@
                             <th scope="col">글번호</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class='table-row' th:each="board,index : ${boardList}">
+                    <tbody id="goBoard">
+                        <tr  class='table-row' th:each="board,index : ${boardList}">
                             <td scope="row" th:text="${index.count}" th:href="@{/board/{id}(id=${board.id})}"></td>
                             <td class="col-6" th:text="${board.title}"></td>
                             <td class="col-3" th:text="${board.id}"></td>
@@ -50,12 +50,6 @@
                 </ul>
             </div>
         </div> <!-- /container -->
-
-        <script>
-            $("#board tr").click(function () {
-                window.location = $(this).find('td:eq(0)').attr("href");
-            });
-        </script>
         <div th:replace="fragments/footer :: footer"></div>
     </body>
 </html>
