@@ -38,13 +38,14 @@
 
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{'/list?search='+${search}+'&page=' + ${prevPage}}">이전</a>
+                        <a class="nav-link" th:if="${curPage} > 3" th:href="@{'/list?search='+${search}+'&page=' + ${prevPage}}">이전</a>
                     </li>
                     <li class="nav-item" th:each="pageNum : ${pageList}" th:inline="text">
-                        <a class="nav-link" th:href="@{'/list?search='+${search}+'&page=' + ${pageNum}}">[[${pageNum}]]</a>
+                        <a class="nav-link font-weight-bold" th:classappend="${curPage} == ${pageNum} ? 'text-dark' : '' "
+                           th:href="@{'/list?search='+${search}+'&page=' + ${pageNum}}">[[${pageNum}]]</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{'/list?search='+${search}+'&page=' + ${nextPage}}">다음</a>
+                        <a class="nav-link" th:if="${maxPage} >= ${nextPage}" th:href="@{'/list?search='+${search}+'&page=' + ${nextPage}}">다음</a>
                     </li>
                 </ul>
             </div>

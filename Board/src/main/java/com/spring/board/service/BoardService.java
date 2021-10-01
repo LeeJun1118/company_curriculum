@@ -96,15 +96,20 @@ public class BoardService {
             boardsTotalCount = (double) this.getSearchBoardCount(search);
 
         //총 게시글 수 기준으로 마지막 페이지 번호 올림
-        Integer totalLastPageNum = (int) (boardsTotalCount / PAGE_POST_COUNT + 1);
+        Integer totalLastPageNum = (int) (Math.ceil((boardsTotalCount / PAGE_POST_COUNT)));
 
-        //페이지 시작 번호
-        int blockNum = (int)Math.floor((curPageNum-1)/ BLOCK_PAGE_NUM_COUNT);
-        curPageNum  = (BLOCK_PAGE_NUM_COUNT * blockNum) + 1;
+
+        // 페이지 시작 번호 조정
+        if (curPageNum % BLOCK_PAGE_NUM_COUNT == 0)
+            curPageNum = curPageNum - 2;
+        else {
+            curPageNum = (curPageNum <= 3) ? 1 : curPageNum / BLOCK_PAGE_NUM_COUNT * BLOCK_PAGE_NUM_COUNT + 1;
+        }
 
         //현재 페이지를 기준으로 블럭의 마지막 페이지 번호
-        Integer blockLastPageNum = curPageNum + BLOCK_PAGE_NUM_COUNT - 1;
-        blockLastPageNum = totalLastPageNum < blockLastPageNum ? totalLastPageNum : blockLastPageNum;
+        Integer blockLastPageNum = (totalLastPageNum > curPageNum + 2)
+                ? curPageNum + 2
+                : totalLastPageNum;
 
         //페이지 번호 할당
         for (int i = curPageNum, idx = 0; i <= blockLastPageNum; i++, idx++) {

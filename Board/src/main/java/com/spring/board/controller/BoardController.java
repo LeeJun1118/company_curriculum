@@ -42,24 +42,21 @@ public class BoardController {
                          @RequestParam(value = "page", defaultValue = "1") Integer pageNum) {
         List<Board> boardList = boardService.searchPageBoards(search, pageNum);
         Integer[] pageList = boardService.getPageList(search, pageNum);
-//        int prevPage = 1;
+        int maxPage = boardService.getSearchBoardCount(search)/10 + 1;
+        int nextPage = Math.max(maxPage, pageList[0] + 3);
         int prevPage = 1;
+
         if (pageList[0] > 1)
             prevPage = pageList[0] - 1;
-//        int nextPage = BLOCK_PAGE_NUM_COUNT - (pageNum%BLOCK_PAGE_NUM_COUNT) + 1;
-        int nextPage = 1;
-        if (pageList[2] < boardList.size() / 10 + 1)
-            nextPage = pageList[2] + 1;
+
+
         if (pageNum > BLOCK_PAGE_NUM_COUNT)
             prevPage = pageNum - (pageNum % BLOCK_PAGE_NUM_COUNT);
 
-        System.out.println(Arrays.toString(pageList));
-        System.out.println(pageList[0]);
-        System.out.println(pageList[1]);
-        System.out.println(pageList[2]);
 
         model.addAttribute("prevPage", prevPage);
         model.addAttribute("nextPage", nextPage);
+        model.addAttribute("maxPage", maxPage);
         model.addAttribute("search", search);
         model.addAttribute("curPage", pageNum);
         model.addAttribute("boardList", boardList);
