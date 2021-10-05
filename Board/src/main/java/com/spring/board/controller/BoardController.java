@@ -129,6 +129,13 @@ public class BoardController {
     public String updateBoardForm(@PathVariable("id") Long id, Model model) {
         Board board = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid board Id:" + id));
         model.addAttribute("board", board);
+
+        //DB에 저장된 파일 불러오기
+        List<MyFile> dbFileList = myFileRepository.findAllByBoard(board);
+        if (dbFileList != null){
+            model.addAttribute("filename", dbFileList.get(0).getOriginFileName());
+        }
+
         return "boards/updateBoard";
     }
 
