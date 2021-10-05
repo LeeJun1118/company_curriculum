@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 public class FileHandler {
 
-    public List<MyFile> parseFileInfo(List<MultipartFile> multipartFiles) throws Exception{
+    public List<MyFile> parseFileInfo(List<MultipartFile> multipartFiles,Board board) throws Exception{
         //반환할 파일 리스트
         List<MyFile> fileList = new ArrayList<>();
 
@@ -62,6 +62,9 @@ public class FileHandler {
                 uploadFile.setOriginFileName(multipartFile.getOriginalFilename());
                 uploadFile.setFilePath(path + File.separator + newFileName);
                 uploadFile.setFileSize(multipartFile.getSize());
+
+                if (board.getId() != null)
+                    uploadFile.setBoard(board);
 
                 // 생성 후 리스트에 추가
                 fileList.add(uploadFile);

@@ -9,18 +9,18 @@ import com.spring.board.repository.ReplyRepository;
 import com.spring.board.service.BoardService;
 
 import lombok.AllArgsConstructor;
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Controller
 @AllArgsConstructor
@@ -123,16 +123,104 @@ public class BoardController {
     }
 
     @PostMapping("/board/update/{id}")
-    public String updateBoard(@PathVariable("id") Long id, @Valid BoardForm boardForm, BindingResult result) {
+    public String updateBoard(@PathVariable("id") Long id, @Valid BoardForm boardForm,
+                              @RequestParam(value = "uploadFile", required = false) List<MultipartFile> files,
+                              BindingResult result) throws Exception {
         if (result.hasErrors()) {
             return "boards/updateBoard";
         }
         Board board = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid board Id : " + id));
-        board.setTitle(boardForm.getTitle());
-        board.setContent(boardForm.getContent());
-        //board.setFilename(boardForm.getFilename());
 
-        boardRepository.save(board);
-        return "redirect:/board/" + board.getId();
+        //DB에 저장된 파일 불러오기
+        List<MyFile> dbFileList = myFileRepository.findAllByBoard(board);
+
+        //전달된 파일
+        List<MultipartFile> multipartFileList = files;
+        System.out.println(multipartFileList.toString());
+
+        //새롭게 전달된 파일들의 목록을 저장할 List
+        List<MultipartFile> addFileList = new ArrayList<>();
+
+        System.out.println("1. Null Check~~~!!!!!!!!!!!!!!!");
+
+        //DB에 없다면
+        if (CollectionUtils.isEmpty(dbFileList)) {
+            System.out.println("2. Null Check~~~!!!!!!!!!!!!!!!");
+            //전달된 파일이 하나라도 있다면
+            multipartFileList.forEach(f -> {
+                if (f.getSize() > 0)
+                    for (MultipartFile multipartFile : multipartFileList)
+                        //저장할 파일 목록에 추가
+                        addFileList.add(multipartFile);
+
+            });
+
+           /* if (!CollectionUtils.isEmpty(multipartFileList)) {
+                System.out.println("3. Null Check~~~!!!!!!!!!!!!!!!");
+                for (MultipartFile multipartFile : multipartFileList)
+                    //저장할 파일 목록에 추가
+                    addFileList.add(multipartFile);
+            }*/
+        }
+        //DB에 파일이 하나 이상 존재한다면
+        else {
+            System.out.println("4. Null Check~~~!!!!!!!!!!!!!!!");
+            //전달된 파일이 아예 없다면
+            multipartFileList.forEach(f -> {
+                if (f.getSize() <= 0)
+                    for (MyFile file : dbFileList)
+                        myFileRepository.deleteById(file.getId());
+                else {
+                    System.out.println("6. Null Check~~~!!!!!!!!!!!!!!!");
+
+                    //DB에 저장된 파일 원본명 목록
+                    List<String> dbOriginNameList = new ArrayList<>();
+                    System.out.println("dbOriginNameList ==="+dbOriginNameList.toString());
+
+                    //DB의 파일 원본명 추출
+                    for (MyFile myFile : dbFileList) {
+                        //File id 로 DB에 저장된 파일 정보 얻기
+                        MyFile file = myFileRepository.findById(myFile.getId())
+                                .orElseThrow(() -> new IllegalArgumentException("Invalid file Id : " + myFile.getId()));
+
+                        //DB의 파일 원본명
+                        String dbOriginFileName = file.getOriginFileName();
+
+                        //서버에 저장된 파일 중 전달된 파일이 존재하지 않으면 삭제 그게 아니면 DB에 저장할 파일 목록에 추가
+                        AtomicBoolean deleteOrAdd = new AtomicBoolean(false);
+                        multipartFileList.forEach(mlist -> {
+                            for (MultipartFile mf : multipartFileList) {
+                                if (Objects.equals(mf.getOriginalFilename(), dbOriginFileName))
+                                    deleteOrAdd.set(true);
+                            }
+                        });
+                        if (deleteOrAdd.get())
+                            myFileRepository.delete(myFile);
+                        else{
+                            myFileRepository.delete(myFile);
+                            dbOriginNameList.add(dbOriginFileName);
+                        }
+
+                    }
+
+                    //전달된 파일 하나씩 검사
+                    for (MultipartFile multipartFile : multipartFileList) {
+                        //파일의 원본명 얻기
+                        String multipartOriginName = multipartFile.getOriginalFilename();
+                        //DB에 없는 파일이면
+                        if (!dbOriginNameList.contains(multipartOriginName)) {
+                            //DB에 저장할 파일 목록 추가
+                            addFileList.add(multipartFile);
+                        }
+                    }
+                }
+            });
+
+        }
+
+        boardService.update(id, boardForm, addFileList);
+
+        //boardRepository.save(board);
+        return "redirect:/board/" + id;
     }
 }

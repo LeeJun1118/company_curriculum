@@ -140,7 +140,7 @@ public class BoardService {
         board.setContent(boardForm.getTitle());
 
 
-        List<MyFile> fileList = fileHandler.parseFileInfo(files);
+        List<MyFile> fileList = fileHandler.parseFileInfo(files,board);
 
         files.forEach(f -> {
             if (f.getSize() != 0) {
@@ -150,5 +150,23 @@ public class BoardService {
             }
         });
         return boardRepository.save(board).getId();
+    }
+
+    public void update(Long id, BoardForm boardForm, List<MultipartFile> files) throws Exception {
+        System.out.println("들어옴");
+        Board board = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid board Id"));
+
+        List<MyFile> myFileList = fileHandler.parseFileInfo(files,board);
+
+        if (!myFileList.isEmpty()){
+            for (MyFile file :myFileList)
+                fileRepository.save(file);
+        }
+
+        board.setTitle(boardForm.getTitle());
+        board.setContent(board.getContent());
+
+        boardRepository.save(board);
+        System.out.println("나감");
     }
 }

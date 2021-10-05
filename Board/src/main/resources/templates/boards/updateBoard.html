@@ -12,7 +12,8 @@
                 <br/>
                 <h4>글수정</h4>
                 <br/>
-                <form action="/" th:action="@{/board/update/{id}(id=${board.id})}" th:object="${board}" method="post">
+                <form action="/" th:action="@{/board/update/{id}(id=${board.id})}" th:object="${board}"
+                      method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title">제목</label>
                         <input id="title" class="form-control" type="text" name="title" th:field="*{title}"/>
@@ -25,7 +26,7 @@
                     <div class="form-group">
                         <ul class="nav">
                             <li class="nav-item justify-content">
-                                <input id="upload" type="file" name="filename"/>
+                                <input id="upload" type="file" name="uploadFile"/>
                             </li>
                             <li class="nav-item justify-content-end">
                                 <a class="btn btn-default" href='deleteFile.do?id=${board.id}'>파일삭제</a>
