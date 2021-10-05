@@ -36,7 +36,7 @@
                             </div>
                             <br/>
                             <div>파일
-                                <a href="#" th:text="${myFileName}"></a>
+                                <a th:href="@{/board/download/{id}(id=${board.id})}" th:text="${myFileName}"></a>
                             </div>
 
                         </div>

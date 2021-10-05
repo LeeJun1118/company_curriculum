@@ -9,6 +9,9 @@ import com.spring.board.repository.ReplyRepository;
 import com.spring.board.service.BoardService;
 
 import lombok.AllArgsConstructor;
+import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
@@ -16,7 +19,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.io.File;
+import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,6 +32,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Controller
 @AllArgsConstructor
 public class BoardController {
+
+    @Autowired
+    ResourceLoader resourceLoader;
 
     private final BoardRepository boardRepository;
     private final ReplyRepository replyRepository;
@@ -141,11 +151,8 @@ public class BoardController {
         //새롭게 전달된 파일들의 목록을 저장할 List
         List<MultipartFile> addFileList = new ArrayList<>();
 
-        System.out.println("1. Null Check~~~!!!!!!!!!!!!!!!");
-
         //DB에 없다면
         if (CollectionUtils.isEmpty(dbFileList)) {
-            System.out.println("2. Null Check~~~!!!!!!!!!!!!!!!");
             //전달된 파일이 하나라도 있다면
             multipartFileList.forEach(f -> {
                 if (f.getSize() > 0)
@@ -154,25 +161,15 @@ public class BoardController {
                         addFileList.add(multipartFile);
 
             });
-
-           /* if (!CollectionUtils.isEmpty(multipartFileList)) {
-                System.out.println("3. Null Check~~~!!!!!!!!!!!!!!!");
-                for (MultipartFile multipartFile : multipartFileList)
-                    //저장할 파일 목록에 추가
-                    addFileList.add(multipartFile);
-            }*/
         }
         //DB에 파일이 하나 이상 존재한다면
         else {
-            System.out.println("4. Null Check~~~!!!!!!!!!!!!!!!");
             //전달된 파일이 아예 없다면
             multipartFileList.forEach(f -> {
                 if (f.getSize() <= 0)
                     for (MyFile file : dbFileList)
                         myFileRepository.deleteById(file.getId());
                 else {
-                    System.out.println("6. Null Check~~~!!!!!!!!!!!!!!!");
-
                     //DB에 저장된 파일 원본명 목록
                     List<String> dbOriginNameList = new ArrayList<>();
                     System.out.println("dbOriginNameList ==="+dbOriginNameList.toString());
@@ -222,5 +219,24 @@ public class BoardController {
 
         //boardRepository.save(board);
         return "redirect:/board/" + id;
+    }
+
+    @GetMapping("/board/download/{id}")
+    public void download(@PathVariable("id") Long id,
+                         HttpServletResponse response) throws IOException {
+        String absolutePath = new File("").getAbsolutePath() + File.separator + File.separator;
+        Board board = boardRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid board Id:" + id));
+        List<MyFile> myFileList = myFileRepository.findAllByBoard(board);
+        String filePath  = absolutePath + myFileList.get(0).getFilePath();
+
+        byte[] fileByte = FileUtils.readFileToByteArray(new File(filePath));
+
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode(myFileList.get(0).getOriginFileName(), "UTF-8")+"\";");
+        response.setHeader("Content-Transfer-Encoding", "binary");
+
+        response.getOutputStream().write(fileByte);
+        response.getOutputStream().flush();
+        response.getOutputStream().close();
     }
 }
